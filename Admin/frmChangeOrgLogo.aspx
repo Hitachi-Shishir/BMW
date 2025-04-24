@@ -20,7 +20,7 @@
 				<div class="card-footer">
 					<div class="row">
 						<div class="col-md-6">
-							<label class="control-label font-label">
+							<label class="form-label">
 								Organisation :
                                         <asp:RequiredFieldValidator ID="RfvOrganisation" runat="server" InitialValue="0" ControlToValidate="ddlOrg" ErrorMessage="*" ForeColor="Red" ValidationGroup="SaveForm"></asp:RequiredFieldValidator>
 							</label>

@@ -169,8 +169,7 @@
     <asp:Literal ID="chartScript" runat="server" />
     <asp:Literal ID="ltrcallstatus" runat="server" />
     <asp:HiddenField ID="hdnfldVariable" runat="server" />
-    <script src="https://pcv-demo.hitachi-systems-mc.com:5723/assetsdata/plugins/apexchart/apexcharts.min.js"></script>
-
+        <script src="<%= ResolveUrl("~/assetsdata/plugins/apexchart/apexcharts.min.js") %>"></script>
 
 
 </asp:Content>

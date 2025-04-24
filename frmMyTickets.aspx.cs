@@ -49,11 +49,11 @@ public partial class frmMyTickets : System.Web.UI.Page
                 {
                     if(Request.QueryString["Desk"].ToString()=="Incident")
                     {
-                        lblsofname.Text = "Issue Management Ticket Details";
+                        lblsofname.Text = "Incident Managemnt Details";
                     }
                     else if(Request.QueryString["Desk"].ToString().Replace("%20","") == "Service Request")
                     {
-                        lblsofname.Text = "Service Request Ticket Details";
+                        lblsofname.Text = "Service Request Details";
 btnCreatTicket.Text="New Request";
                     }
                     else if (Request.QueryString["Desk"].ToString().Replace("%20", "") == "Change Request")

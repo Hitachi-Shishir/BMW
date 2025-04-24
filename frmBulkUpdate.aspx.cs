@@ -262,7 +262,7 @@ public partial class frmBulkUpdate : System.Web.UI.Page
             ddlStatus.DataTextField = "StatusCodeRef";
             ddlStatus.DataValueField = "id";
             ddlStatus.DataBind();
-            ddlStatus.Items.Insert(0, new System.Web.UI.WebControls.ListItem("----------Select Status----------", "0"));
+            ddlStatus.Items.Insert(0, new System.Web.UI.WebControls.ListItem("-----Select----", "0"));
         }
         catch (ThreadAbortException e2)
         {
@@ -315,7 +315,7 @@ public partial class frmBulkUpdate : System.Web.UI.Page
                                 ddlCategory1.DataTextField = "CategoryCodeRef";
                                 ddlCategory1.DataValueField = "Categoryref";
                                 ddlCategory1.DataBind();
-                                ddlCategory1.Items.Insert(0, new ListItem("----------Select Category----------", "0"));
+                                ddlCategory1.Items.Insert(0, new ListItem("-----Select----", "0"));
                             }
 
                         }
@@ -414,8 +414,8 @@ dbo.fnGetCategoryFullPathForPartition(1," + Convert.ToString(Session["SD_OrgID"]
                 ddlCategory2.DataTextField = "CategoryCodeRef";
                 ddlCategory2.DataValueField = "Categoryref";
                 ddlCategory2.DataBind();
-                ddlCategory2.Items.Insert(0, new ListItem("----------Select Category Level 2----------", "0"));
-                divCategory2.Attributes.Add("style", "display: flex;");
+                ddlCategory2.Items.Insert(0, new ListItem("-----Select----", "0"));
+                divCategory2.Attributes.Add("style", "display: block;");
                 lblCategory2.Visible = true;
                 ddlCategory2.Visible = true;
                 ddlCategory2.Enabled = true;
@@ -480,8 +480,8 @@ dbo.fnGetCategoryFullPathForPartition(1," + Convert.ToString(Session["SD_OrgID"]
                 ddlCategory3.DataTextField = "CategoryCodeRef";
                 ddlCategory3.DataValueField = "Categoryref";
                 ddlCategory3.DataBind();
-                ddlCategory3.Items.Insert(0, new ListItem("----------Select Category Level 3----------", "0"));
-                divCategory3.Attributes.Add("style", "display: flex;");
+                ddlCategory3.Items.Insert(0, new ListItem("-----Select----", "0"));
+                divCategory3.Attributes.Add("style", "display: block;");
 
             }
             else
@@ -544,11 +544,11 @@ dbo.fnGetCategoryFullPathForPartition(1," + Convert.ToString(Session["SD_OrgID"]
                 ddlCategory4.DataTextField = "CategoryCodeRef";
                 ddlCategory4.DataValueField = "Categoryref";
                 ddlCategory4.DataBind();
-                ddlCategory4.Items.Insert(0, new ListItem("----------Select Category Level 4----------", "0"));
+                ddlCategory4.Items.Insert(0, new ListItem("-----Select----", "0"));
                 ddlCategory4.Enabled = true;
                 ddlCategory4.Visible = true;
                 lblCategory4.Visible = true;
-                divCategory4.Attributes.Add("style", "display: flex;");
+                divCategory4.Attributes.Add("style", "display: block;");
             }
             else
             {
@@ -606,9 +606,9 @@ dbo.fnGetCategoryFullPathForPartition(1," + Convert.ToString(Session["SD_OrgID"]
                 ddlCategory5.DataTextField = "CategoryCodeRef";
                 ddlCategory5.DataValueField = "Categoryref";
                 ddlCategory5.DataBind();
-                ddlCategory5.Items.Insert(0, new ListItem("----------Select Category Level 4----------", "0"));
+                ddlCategory5.Items.Insert(0, new ListItem("-----Select----", "0"));
                 ddlCategory5.Enabled = true;
-                divCategory5.Attributes.Add("style", "display: flex;");
+                divCategory5.Attributes.Add("style", "display: block;");
             }
             else
             {
@@ -661,7 +661,7 @@ dbo.fnGetCategoryFullPathForPartition(1," + Convert.ToString(Session["SD_OrgID"]
                 ddlCategory6.DataTextField = "CategoryCodeRef";
                 ddlCategory6.DataValueField = "Categoryref";
                 ddlCategory6.DataBind();
-                ddlCategory6.Items.Insert(0, new ListItem("----------Select Category Level 4----------", "0"));
+                ddlCategory6.Items.Insert(0, new ListItem("-----Select----", "0"));
             }
             else
             {
@@ -797,7 +797,7 @@ dbo.fnGetCategoryFullPathForPartition(1," + Convert.ToString(Session["SD_OrgID"]
                 ddlResoultion.DataTextField = "ResolutionCodeRef";
                 ddlResoultion.DataValueField = "id";
                 ddlResoultion.DataBind();
-                ddlResoultion.Items.Insert(0, new System.Web.UI.WebControls.ListItem("----------Select Resolution----------", "0"));
+                ddlResoultion.Items.Insert(0, new System.Web.UI.WebControls.ListItem("-----Select----", "0"));
             }
             else
             {
@@ -843,7 +843,7 @@ dbo.fnGetCategoryFullPathForPartition(1," + Convert.ToString(Session["SD_OrgID"]
             ddlSeverity.DataTextField = "Serveritycoderef";
             ddlSeverity.DataValueField = "id";
             ddlSeverity.DataBind();
-            ddlSeverity.Items.Insert(0, new ListItem("----------Select Severity----------", "0"));
+            ddlSeverity.Items.Insert(0, new ListItem("-----Select----", "0"));
         }
         catch (ThreadAbortException e2)
         {
@@ -882,7 +882,7 @@ dbo.fnGetCategoryFullPathForPartition(1," + Convert.ToString(Session["SD_OrgID"]
             ddlPriority.DataTextField = "PriorityCodeRef";
             ddlPriority.DataValueField = "id";
             ddlPriority.DataBind();
-            ddlPriority.Items.Insert(0, new ListItem("----------Select Priority----------", "0"));
+            ddlPriority.Items.Insert(0, new ListItem("-----Select----", "0"));
 
 
         }
@@ -923,7 +923,7 @@ dbo.fnGetCategoryFullPathForPartition(1," + Convert.ToString(Session["SD_OrgID"]
             ddlDepartment.DataTextField = "DepartmentName";
             ddlDepartment.DataValueField = "DepartmentCode";
             ddlDepartment.DataBind();
-            ddlDepartment.Items.Insert(0, new System.Web.UI.WebControls.ListItem("----------Select Department----------", "0"));
+            ddlDepartment.Items.Insert(0, new System.Web.UI.WebControls.ListItem("-----Select----", "0"));
 
 
         }
@@ -962,7 +962,7 @@ dbo.fnGetCategoryFullPathForPartition(1," + Convert.ToString(Session["SD_OrgID"]
             ddlLocation.DataTextField = "LocName";
             ddlLocation.DataValueField = "LocCode";
             ddlLocation.DataBind();
-            ddlLocation.Items.Insert(0, new System.Web.UI.WebControls.ListItem("----------Select Location----------", "0"));
+            ddlLocation.Items.Insert(0, new System.Web.UI.WebControls.ListItem("-----Select----", "0"));
 
 
         }
@@ -1297,7 +1297,7 @@ dbo.fnGetCategoryFullPathForPartition(1," + Convert.ToString(Session["SD_OrgID"]
             ddlAssigne.DataTextField = "TechLoginName";
             ddlAssigne.DataValueField = "TechID";
             ddlAssigne.DataBind();
-            ddlAssigne.Items.Insert(0, new System.Web.UI.WebControls.ListItem("----------Select Assignee----------", "0"));
+            ddlAssigne.Items.Insert(0, new System.Web.UI.WebControls.ListItem("-----Select----", "0"));
 
 
         }
@@ -1618,7 +1618,7 @@ dbo.fnGetCategoryFullPathForPartition(1," + Convert.ToString(Session["SD_OrgID"]
             lstTechAssoc.DataTextField = "TechLoginName";
             lstTechAssoc.DataValueField = "TechID";
             lstTechAssoc.DataBind();
-            lstTechAssoc.Items.Insert(0, new System.Web.UI.WebControls.ListItem("----------Select Assignee----------", "0"));
+            lstTechAssoc.Items.Insert(0, new System.Web.UI.WebControls.ListItem("-----Select----", "0"));
         }
         catch (ThreadAbortException e2)
         {
@@ -1669,7 +1669,7 @@ dbo.fnGetCategoryFullPathForPartition(1," + Convert.ToString(Session["SD_OrgID"]
                     selectList.DataTextField = lbl.Text;
                     selectList.DataValueField = lbl.Text;
                     selectList.DataBind();
-                    selectList.Items.Insert(0, new ListItem("----------Select Value----------", "0"));
+                    selectList.Items.Insert(0, new ListItem("-----Select----", "0"));
 
                     //selectList.DataTextField = "SomeColumn";
                     //selectList.DataValueField = "SomeID";
@@ -1721,7 +1721,7 @@ dbo.fnGetCategoryFullPathForPartition(1," + Convert.ToString(Session["SD_OrgID"]
                     selectList.DataTextField = lbl.Text;
                     selectList.DataValueField = lbl.Text;
                     selectList.DataBind();
-                    selectList.Items.Insert(0, new ListItem("----------Select Value----------", "0"));
+                    selectList.Items.Insert(0, new ListItem("-----Select----", "0"));
                 }
             }
         }
@@ -1769,7 +1769,7 @@ dbo.fnGetCategoryFullPathForPartition(1," + Convert.ToString(Session["SD_OrgID"]
             ddlChangeType.DataTextField = "ChangeTypeRef";
             ddlChangeType.DataValueField = "ChangeTypeRef";
             ddlChangeType.DataBind();
-            ddlChangeType.Items.Insert(0, new System.Web.UI.WebControls.ListItem("----------Select ChangeType----------", "0"));
+            ddlChangeType.Items.Insert(0, new System.Web.UI.WebControls.ListItem("-----Select----", "0"));
 
 
         }
@@ -1808,7 +1808,7 @@ dbo.fnGetCategoryFullPathForPartition(1," + Convert.ToString(Session["SD_OrgID"]
             ddlRFC.DataTextField = "ReasonTypeRef";
             ddlRFC.DataValueField = "ReasonTypeRef";
             ddlRFC.DataBind();
-            ddlRFC.Items.Insert(0, new System.Web.UI.WebControls.ListItem("----------Select Reason----------", "0"));
+            ddlRFC.Items.Insert(0, new System.Web.UI.WebControls.ListItem("-----Select----", "0"));
 
 
         }

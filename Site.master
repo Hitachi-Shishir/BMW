@@ -875,7 +875,7 @@
 										<a href="https://hitachi-systems.co.in/" target="_blank">
 											<div class="app-wrapper d-flex flex-column gap-2 text-center">
 												<div class="app-icon">
-													<img src="<%= ResolveUrl("~/assetsdata/images/Hitachi.png") %>" width="40" alt="">
+                                                      <img src="<%= ResolveUrl("~/assetsdata/images/06.png") %>" width="40" alt="">
 												</div>
 												<div class="app-name">
 													<p class="mb-0">Hitachi</p>
@@ -981,7 +981,7 @@
 									<a class="dropdown-item border-bottom py-2" href="javascript:;">
 										<div class="d-flex align-items-center gap-3">
 											<div class="">
-												<img src="https://pcv-demo.hitachi-systems-mc.com:5723/assetsdata/images/avatars/01.png" class="rounded-circle" width="45" height="45" alt="">
+												<img src="assetsdata/images/avatars/01.png" class="rounded-circle" width="45" height="45" alt="">
 											</div>
 											<div class="">
 												<h5 class="notify-title">Congratulations Jhon</h5>
@@ -1100,8 +1100,7 @@
 						<div class="dropdown-menu dropdown-user dropdown-menu-end shadow">
 							<a class="dropdown-item  gap-2 py-2" href="javascript:;">
 								<div class="text-center">
-									<%--<img src="https://pcv-demo.hitachi-systems-mc.com:5723/assetsdata/images/avatars/01.png" class="rounded-circle p-1 shadow mb-3" width="90" height="90"
-                                        alt="">--%>
+						
 									<asp:Label ID="lblUserID" runat="server" class="user-name mb-0 fw-bold"></asp:Label>
 
 								</div>
@@ -1134,7 +1133,6 @@
         <aside class="sidebar-wrapper" data-simplebar="true">
             <div class="sidebar-header">
                 <div class="logo-icon">
-                    <%--<img src="https://pcv-demo.hitachi-systems-mc.com:5723/assetsdata/images/logo-icon.png" class="logo-img" alt="">--%>
                     <asp:Image ID="imgOrg" runat="server" CssClass="logo-img" style="width:236px" />
                 </div>
                 <div class="logo-name flex-grow-1" hidden>
@@ -1383,7 +1381,6 @@
     <script src="<%= ResolveUrl("~/assetsdata/plugins/perfect-scrollbar/js/perfect-scrollbar.js") %>"></script>
     <script src="<%= ResolveUrl("~/assetsdata/plugins/metismenu/metisMenu.min.js") %>"></script>
     <script src="<%= ResolveUrl("~/assetsdata/plugins/simplebar/js/simplebar.min.js") %>"></script>
-    <!--<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>-->
     <script src="<%= ResolveUrl("~/assetsdata/js/select2.min.js") %>"></script>
     <script src="<%= ResolveUrl("~/assetsdata/plugins/select2/js/select2-custom.js") %>"></script>
     <script src="<%= ResolveUrl("~/assetsdata/plugins/bs-stepper/js/bs-stepper.min.js") %>"></script>
@@ -1430,7 +1427,6 @@
     <script>
         $(".data-attributes span").peity("donut")
     </script>
-    <%--<script src="https://pcv-demo.hitachi-systems-mc.com:5723/assetsdata/js/dashboard2.js"></script>--%>
     <script>
         $(".datepicker").flatpickr({
             dateFormat: "d-m-Y"

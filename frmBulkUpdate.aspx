@@ -13,8 +13,8 @@
     </style>
     <script src="assetsdata/plugins/summernote/jquery.js"></script>
     <link href="assetsdata/plugins/summernote/summernote-bs4.css" rel="stylesheet" />
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<%--    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>--%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
 
@@ -55,7 +55,7 @@
                               
                         </label>
 
-                        <asp:DropDownList ID="ddlPriority" runat="server" CssClass="form-control form-control-sm chzn-select"></asp:DropDownList>
+                        <asp:DropDownList ID="ddlPriority" runat="server" CssClass="form-select form-select-sm single-select-optgroup-field"></asp:DropDownList>
                     </div>
 
                     <div class="col-md-6">
@@ -63,14 +63,14 @@
                             Status  
                         </label>
 
-                        <asp:DropDownList ID="ddlStatus" runat="server" CssClass="form-control  form-control-sm chzn-select"></asp:DropDownList>
+                        <asp:DropDownList ID="ddlStatus" runat="server" CssClass="form-select form-select-sm single-select-optgroup-field"></asp:DropDownList>
                     </div>
                     <div class="col-md-6">
                         <label for="staticEmail" class="form-label">
                             Location
                         </label>
 
-                        <asp:DropDownList ID="ddlLocation" runat="server" CssClass="form-control form-control-sm chzn-select">
+                        <asp:DropDownList ID="ddlLocation" runat="server" CssClass="form-select form-select-sm single-select-optgroup-field">
                             <asp:ListItem Selected="True" Text="---- Select Location ----" Value="0"></asp:ListItem>
                             <asp:ListItem Text="Gurgaon" Value="Gurgaon"></asp:ListItem>
                             <asp:ListItem Text="Mumbai" Value="Mumbai"></asp:ListItem>
@@ -90,7 +90,7 @@
                               
                         </label>
 
-                        <asp:DropDownList ID="ddlDepartment" runat="server" CssClass="form-control form-control-sm chzn-select"></asp:DropDownList>
+                        <asp:DropDownList ID="ddlDepartment" runat="server" CssClass="form-select form-select-sm single-select-optgroup-field"></asp:DropDownList>
                     </div>
                     <div class="col-md-6">
                         <label for="staticEmail" class="form-label">
@@ -99,14 +99,14 @@
                         </label>
 
 
-                        <asp:DropDownList ID="ddlResoultion" runat="server" CssClass="form-control form-control-sm chzn-select"></asp:DropDownList>
+                        <asp:DropDownList ID="ddlResoultion" runat="server" CssClass="form-select form-select-sm single-select-optgroup-field"></asp:DropDownList>
                     </div>
                     <div class="col-md-6">
                         <label for="staticEmail" class="form-label">
                             Severity 
                         </label>
 
-                        <asp:DropDownList ID="ddlSeverity" runat="server" CssClass="form-control form-control-sm chzn-select"></asp:DropDownList>
+                        <asp:DropDownList ID="ddlSeverity" runat="server" CssClass="form-select form-select-sm single-select-optgroup-field"></asp:DropDownList>
                     </div>
                 </div>
                 <div class=" row ">
@@ -119,7 +119,7 @@
 
                                     <asp:Label ID="lblCategory1" runat="server" Text="Category 1 "></asp:Label>
                                 </label>
-                                <asp:DropDownList ID="ddlCategory1" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlCategory1_SelectedIndexChanged" CssClass="form-control form-control-sm chzn-select"></asp:DropDownList>
+                                <asp:DropDownList ID="ddlCategory1" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlCategory1_SelectedIndexChanged" CssClass="form-select form-select-sm single-select-optgroup-field"></asp:DropDownList>
                             </div>
 
 
@@ -131,7 +131,7 @@
                                 </label>
 
 
-                                <asp:DropDownList ID="ddlCategory2" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlCategory2_SelectedIndexChanged" CssClass="form-control form-control-sm chzn-select"></asp:DropDownList>
+                                <asp:DropDownList ID="ddlCategory2" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlCategory2_SelectedIndexChanged" CssClass="form-select form-select-sm single-select-optgroup-field"></asp:DropDownList>
                             </div>
 
                             <div id="divCategory3" class="col-md-12" runat="server">
@@ -143,7 +143,7 @@
 
 
 
-                                <asp:DropDownList ID="ddlCategory3" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlCategory3_SelectedIndexChanged" CssClass="form-control form-control-sm chzn-select"></asp:DropDownList>
+                                <asp:DropDownList ID="ddlCategory3" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlCategory3_SelectedIndexChanged" CssClass="form-select form-select-sm single-select-optgroup-field"></asp:DropDownList>
                             </div>
 
                             <div id="divCategory4" class="col-md-12" runat="server">
@@ -153,7 +153,7 @@
                                 </label>
 
 
-                                <asp:DropDownList ID="ddlCategory4" runat="server" CssClass="form-control form-control-sm chzn-select" AutoPostBack="true" OnSelectedIndexChanged="ddlCategory4_SelectedIndexChanged"></asp:DropDownList>
+                                <asp:DropDownList ID="ddlCategory4" runat="server" CssClass="form-select form-select-sm single-select-optgroup-field" AutoPostBack="true" OnSelectedIndexChanged="ddlCategory4_SelectedIndexChanged"></asp:DropDownList>
                             </div>
 
                             <div id="divCategory5" class="col-md-12" runat="server">
@@ -162,7 +162,7 @@
                                     <asp:Label ID="lblCategory5" runat="server" Text="Category 5 "></asp:Label>
                                 </label>
 
-                                <asp:DropDownList ID="ddlCategory5" runat="server" CssClass="form-control form-control-sm chzn-select hidden-dropdown" AutoPostBack="true" OnSelectedIndexChanged="ddlCategory5_SelectedIndexChanged"></asp:DropDownList>
+                                <asp:DropDownList ID="ddlCategory5" runat="server" CssClass="form-select form-select-sm single-select-optgroup-field hidden-dropdown" AutoPostBack="true" OnSelectedIndexChanged="ddlCategory5_SelectedIndexChanged"></asp:DropDownList>
                             </div>
 
                             <div class="form-group row " hidden>
@@ -173,7 +173,7 @@
                                 <div class="col-sm-8 pr-5">
 
 
-                                    <asp:DropDownList ID="ddlCategory6" runat="server" CssClass="form-control form-control-sm chzn-select "></asp:DropDownList>
+                                    <asp:DropDownList ID="ddlCategory6" runat="server" CssClass="form-select form-select-sm single-select-optgroup-field "></asp:DropDownList>
                                 </div>
                             </div>
 
@@ -296,7 +296,7 @@
                                               <asp:RequiredFieldValidator ID="rfvddlAssigne" runat="server" ControlToValidate="ddlAssigne" ValidationGroup="Submit" ForeColor="Red" ErrorMessage="Required" InitialValue="0"></asp:RequiredFieldValidator>
                             </label>
 
-                            <asp:DropDownList ID="ddlAssigne" runat="server" CssClass="form-control form-control-sm chzn-select"></asp:DropDownList>
+                            <asp:DropDownList ID="ddlAssigne" runat="server" CssClass="form-select form-select-sm single-select-optgroup-field"></asp:DropDownList>
                         </div>
 
                     </div>
@@ -307,7 +307,7 @@
                                            <asp:RequiredFieldValidator ID="rfvddlChangeType" runat="server" InitialValue="0" ControlToValidate="ddlChangeType" ValidationGroup="Addticket" ForeColor="Red" ErrorMessage="*"></asp:RequiredFieldValidator>
                             </label>
                             <div class="col-sm-4 pr-5">
-                                <asp:DropDownList ID="ddlChangeType" runat="server" CssClass="form-control form-control-sm chzn-select"></asp:DropDownList>
+                                <asp:DropDownList ID="ddlChangeType" runat="server" CssClass="form-select form-select-sm single-select-optgroup-field"></asp:DropDownList>
                             </div>
                             <label for="staticEmail" class="form-label">
                                 Reason For Change : 
@@ -315,7 +315,7 @@
                                 <asp:RequiredFieldValidator ID="rfvddlRFC" runat="server" ControlToValidate="ddlRFC" ErrorMessage="*" ForeColor="Red" InitialValue="0" ValidationGroup="Addticket"></asp:RequiredFieldValidator>
                             </label>
                             <div class="col-sm-4 pr-5">
-                                <asp:DropDownList ID="ddlRFC" runat="server" CssClass="form-control form-control-sm chzn-select"></asp:DropDownList>
+                                <asp:DropDownList ID="ddlRFC" runat="server" CssClass="form-select form-select-sm single-select-optgroup-field"></asp:DropDownList>
                             </div>
                         </div>
                         <div class="form-group row ">
@@ -615,7 +615,7 @@
                                     Task Status :
                                 </label>
 
-                                <asp:DropDownList ID="ddlTaskStatus" runat="server" Enabled="false" CssClass="form-control form-control-sm chzn-select">
+                                <asp:DropDownList ID="ddlTaskStatus" runat="server" Enabled="false" CssClass="form-select form-select-sm single-select-optgroup-field">
                                     <asp:ListItem Text="Open" Selected="True" Value="Open"></asp:ListItem>
                                     <asp:ListItem Text="WIP" Value="WIP"></asp:ListItem>
                                     <asp:ListItem Text="Hold" Value="Hold"></asp:ListItem>
@@ -630,7 +630,7 @@
                                                 </asp:RequiredFieldValidator>
                                 </label>
 
-                                <asp:ListBox ID="lstTechAssoc" runat="server" CssClass="form-control form-control-sm chzn-select" SelectionMode="Multiple"></asp:ListBox>
+                                <asp:ListBox ID="lstTechAssoc" runat="server" CssClass="form-select form-select-sm single-select-optgroup-field" SelectionMode="Multiple"></asp:ListBox>
 
                             </div>
 

@@ -16,7 +16,8 @@
     <script src="assetsdata/plugins/summernote/jquery.js"></script>
     <link href="assetsdata/plugins/summernote/summernote-bs4.css" rel="stylesheet" />
     <script src="assetsdata/assetsdata/js/jQuery v3.3.1.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="assetsdata/js/bootstrap.bundle.min.js"></script>
+    
 <link rel="stylesheet" href="<%= ResolveUrl("~/Asset/css/bootstrapv5.min.css") %>">
     <link rel="stylesheet" href="<%= ResolveUrl("~/assets/fontawesome/css/fontawesome.css") %>" />
     <link rel="stylesheet" href="<%= ResolveUrl("~/assets/fontawesome/css/brands.css") %>" />
@@ -25,13 +26,16 @@
     <link rel="stylesheet" href="<%= ResolveUrl("~/assets/fontawesome/css/duotone-thin.css") %>" />
     <link rel="stylesheet" href="<%= ResolveUrl("~/assets/fontawesome/css/sharp-duotone-thin.css") %>" />
 
-    <link href="https://pcv-demo.hitachi-systems-mc.com:5723/assetsdata/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
-    <link href="https://pcv-demo.hitachi-systems-mc.com:5723/sassdata/main.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css">
-    <link href="https://pcv-demo.hitachi-systems-mc.com:5723/assetsdata/plugins/select2/css/select2-bootstrap-5-theme.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <link href="assetsdata/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assetsdata/plugins/fullcalendar/css/main.css" rel="stylesheet" />
+    <link href="assetsdata/css/select2.min.css" rel="stylesheet" />
+    <link href="assetsdata/plugins/select2/css/select2-bootstrap-5-theme.min.css" rel="stylesheet" />
+    <link href="assetsdata/css/all.min.css" rel="stylesheet" />
+    <link href="assetsdata/css/googleapis.css" rel="stylesheet" />
+    <link href="assetsdata/css/googleapis_material.css" rel="stylesheet" />
+
+
 
     <style>
 
@@ -207,7 +211,7 @@ color:white! important;
 														<div class=" row   ">
 															<div class="col-md-12">
 																<label for="staticEmail" class="form-label">
-																	<asp:Label ID="Label13" Text="HOD Email " runat="server"></asp:Label>
+																	<asp:Label ID="Label13" Text="IT Manager Email " runat="server"></asp:Label>
 																	<asp:RequiredFieldValidator ID="rfvddlHodApproval" runat="server" ControlToValidate="ddlHodApproval" Enabled="false" ErrorMessage="Required" InitialValue="0" Font-Bold="true" ForeColor="Red" ValidationGroup="Addticket"></asp:RequiredFieldValidator>
 																</label>
 
@@ -801,8 +805,12 @@ color:white! important;
         </div>
     </form>
     <script src="assetsdata/plugins/summernote/summernote-bs4.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <script src="https://pcv-demo.hitachi-systems-mc.com:5723/assetsdata/plugins/select2/js/select2-custom.js"></script>
+   
+        <script src="<%= ResolveUrl("~/assetsdata/js/select2.min.js") %>"></script>
+        <script src="<%= ResolveUrl("~/assetsdata/plugins/select2/js/select2-custom.js") %>"></script>
+
+
+  
     <script>
         $(document).ready(function () {
             $('#<%= txtDescription.ClientID %>').summernote();
