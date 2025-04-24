@@ -1,0 +1,292 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1EE2FE61-346F-48FC-98F9-D09BC1726007}|HitachiSendMail.csproj|D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\hitachi_sendmail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EE2FE61-346F-48FC-98F9-D09BC1726007}|HitachiSendMail.csproj|solutionrelative:hitachi_sendmail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EE2FE61-346F-48FC-98F9-D09BC1726007}|HitachiSendMail.csproj|D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\hitachi_sendmail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1EE2FE61-346F-48FC-98F9-D09BC1726007}|HitachiSendMail.csproj|solutionrelative:hitachi_sendmail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EE2FE61-346F-48FC-98F9-D09BC1726007}|HitachiSendMail.csproj|d:\\inhouse\\hitachi_sd_services\\hitachi_sendmail\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{1EE2FE61-346F-48FC-98F9-D09BC1726007}|HitachiSendMail.csproj|solutionrelative:app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EE2FE61-346F-48FC-98F9-D09BC1726007}|HitachiSendMail.csproj|D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EE2FE61-346F-48FC-98F9-D09BC1726007}|HitachiSendMail.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EE2FE61-346F-48FC-98F9-D09BC1726007}|POC_HitachiSendMail.csproj|D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EE2FE61-346F-48FC-98F9-D09BC1726007}|POC_HitachiSendMail.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EE2FE61-346F-48FC-98F9-D09BC1726007}|HitachiSendMail.csproj|D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\sendmailconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EE2FE61-346F-48FC-98F9-D09BC1726007}|HitachiSendMail.csproj|solutionrelative:sendmailconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EE2FE61-346F-48FC-98F9-D09BC1726007}|POC_HitachiSendMail.csproj|D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\hitachi_sendmail.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EE2FE61-346F-48FC-98F9-D09BC1726007}|POC_HitachiSendMail.csproj|solutionrelative:hitachi_sendmail.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EE2FE61-346F-48FC-98F9-D09BC1726007}|POC_HitachiSendMail.csproj|D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\hitachi_sendmail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EE2FE61-346F-48FC-98F9-D09BC1726007}|POC_HitachiSendMail.csproj|solutionrelative:hitachi_sendmail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EE2FE61-346F-48FC-98F9-D09BC1726007}|POC_HitachiSendMail.csproj|D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\hitachi_sendmail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1EE2FE61-346F-48FC-98F9-D09BC1726007}|POC_HitachiSendMail.csproj|solutionrelative:hitachi_sendmail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EE2FE61-346F-48FC-98F9-D09BC1726007}|HitachiSendMail.csproj|D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\projectinstaller.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EE2FE61-346F-48FC-98F9-D09BC1726007}|HitachiSendMail.csproj|solutionrelative:projectinstaller.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EE2FE61-346F-48FC-98F9-D09BC1726007}|POC_HitachiSendMail.csproj|D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\projectinstaller.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EE2FE61-346F-48FC-98F9-D09BC1726007}|POC_HitachiSendMail.csproj|solutionrelative:projectinstaller.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EE2FE61-346F-48FC-98F9-D09BC1726007}|HitachiSendMail.csproj|D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\projectinstaller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EE2FE61-346F-48FC-98F9-D09BC1726007}|HitachiSendMail.csproj|solutionrelative:projectinstaller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EE2FE61-346F-48FC-98F9-D09BC1726007}|POC_HitachiSendMail.csproj|D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\projectinstaller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EE2FE61-346F-48FC-98F9-D09BC1726007}|POC_HitachiSendMail.csproj|solutionrelative:projectinstaller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EE2FE61-346F-48FC-98F9-D09BC1726007}|HitachiSendMail.csproj|D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\projectinstaller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1EE2FE61-346F-48FC-98F9-D09BC1726007}|HitachiSendMail.csproj|solutionrelative:projectinstaller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EE2FE61-346F-48FC-98F9-D09BC1726007}|POC_HitachiSendMail.csproj|D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\projectinstaller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1EE2FE61-346F-48FC-98F9-D09BC1726007}|POC_HitachiSendMail.csproj|solutionrelative:projectinstaller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EE2FE61-346F-48FC-98F9-D09BC1726007}|POC_HitachiSendMail.csproj|D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\sendmailconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EE2FE61-346F-48FC-98F9-D09BC1726007}|POC_HitachiSendMail.csproj|solutionrelative:sendmailconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EE2FE61-346F-48FC-98F9-D09BC1726007}|HitachiSendMail.csproj|D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\hitachi_sendmail.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EE2FE61-346F-48FC-98F9-D09BC1726007}|HitachiSendMail.csproj|solutionrelative:hitachi_sendmail.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-09T12:02:50.203Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Hitachi_SendMail.cs [Design]",
+              "DocumentMoniker": "D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\Hitachi_SendMail.cs",
+              "RelativeDocumentMoniker": "Hitachi_SendMail.cs",
+              "ToolTip": "D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\Hitachi_SendMail.cs [Design]",
+              "RelativeToolTip": "Hitachi_SendMail.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T11:00:30.519Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Hitachi_SendMail.cs",
+              "DocumentMoniker": "D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\Hitachi_SendMail.cs",
+              "RelativeDocumentMoniker": "Hitachi_SendMail.cs",
+              "ToolTip": "D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\Hitachi_SendMail.cs",
+              "RelativeToolTip": "Hitachi_SendMail.cs",
+              "ViewState": "AgIAAMkAAAAAAAAAAAAcwBsAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T11:00:30.323Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SendMailConfig.cs",
+              "DocumentMoniker": "D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\SendMailConfig.cs",
+              "RelativeDocumentMoniker": "SendMailConfig.cs",
+              "ToolTip": "D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\SendMailConfig.cs",
+              "RelativeToolTip": "SendMailConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T09:25:34.93Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAcAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-10T10:34:46.58Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "App.config",
+              "DocumentMoniker": "D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\App.config",
+              "RelativeDocumentMoniker": "App.config",
+              "ToolTip": "D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\App.config*",
+              "RelativeToolTip": "App.config*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-02-07T09:25:02.399Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Hitachi_SendMail.Designer.cs",
+              "DocumentMoniker": "D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\Hitachi_SendMail.Designer.cs",
+              "RelativeDocumentMoniker": "Hitachi_SendMail.Designer.cs",
+              "ToolTip": "D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\Hitachi_SendMail.Designer.cs",
+              "RelativeToolTip": "Hitachi_SendMail.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-10T10:35:43.509Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Hitachi_SendMail.Designer.cs",
+              "DocumentMoniker": "D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\Hitachi_SendMail.Designer.cs",
+              "RelativeDocumentMoniker": "Hitachi_SendMail.Designer.cs",
+              "ToolTip": "D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\Hitachi_SendMail.Designer.cs",
+              "RelativeToolTip": "Hitachi_SendMail.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-08T06:48:59.238Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Hitachi_SendMail.cs",
+              "DocumentMoniker": "D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\Hitachi_SendMail.cs",
+              "RelativeDocumentMoniker": "Hitachi_SendMail.cs",
+              "ToolTip": "D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\Hitachi_SendMail.cs",
+              "RelativeToolTip": "Hitachi_SendMail.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAA7wBsAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-10T10:34:35.561Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Hitachi_SendMail.cs [Design]",
+              "DocumentMoniker": "D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\Hitachi_SendMail.cs",
+              "RelativeDocumentMoniker": "Hitachi_SendMail.cs",
+              "ToolTip": "D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\Hitachi_SendMail.cs [Design]",
+              "RelativeToolTip": "Hitachi_SendMail.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-10T10:34:33.597Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ProjectInstaller.Designer.cs",
+              "DocumentMoniker": "D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\ProjectInstaller.Designer.cs",
+              "RelativeDocumentMoniker": "ProjectInstaller.Designer.cs",
+              "ToolTip": "D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\ProjectInstaller.Designer.cs",
+              "RelativeToolTip": "ProjectInstaller.Designer.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAYwCsAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T11:00:13.343Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ProjectInstaller.Designer.cs",
+              "DocumentMoniker": "D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\ProjectInstaller.Designer.cs",
+              "RelativeDocumentMoniker": "ProjectInstaller.Designer.cs",
+              "ToolTip": "D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\ProjectInstaller.Designer.cs",
+              "RelativeToolTip": "ProjectInstaller.Designer.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAYwCsAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-10T10:36:17.802Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ProjectInstaller.cs",
+              "DocumentMoniker": "D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\ProjectInstaller.cs",
+              "RelativeDocumentMoniker": "ProjectInstaller.cs",
+              "ToolTip": "D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\ProjectInstaller.cs",
+              "RelativeToolTip": "ProjectInstaller.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T11:00:14.559Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ProjectInstaller.cs",
+              "DocumentMoniker": "D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\ProjectInstaller.cs",
+              "RelativeDocumentMoniker": "ProjectInstaller.cs",
+              "ToolTip": "D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\ProjectInstaller.cs",
+              "RelativeToolTip": "ProjectInstaller.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-10T10:36:00.862Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ProjectInstaller.cs [Design]",
+              "DocumentMoniker": "D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\ProjectInstaller.cs",
+              "RelativeDocumentMoniker": "ProjectInstaller.cs",
+              "ToolTip": "D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\ProjectInstaller.cs [Design]",
+              "RelativeToolTip": "ProjectInstaller.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T11:00:14.303Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ProjectInstaller.cs [Design]",
+              "DocumentMoniker": "D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\ProjectInstaller.cs",
+              "RelativeDocumentMoniker": "ProjectInstaller.cs",
+              "ToolTip": "D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\ProjectInstaller.cs [Design]",
+              "RelativeToolTip": "ProjectInstaller.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-10T10:35:59.857Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "SendMailConfig.cs",
+              "DocumentMoniker": "D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\SendMailConfig.cs",
+              "RelativeDocumentMoniker": "SendMailConfig.cs",
+              "ToolTip": "D:\\Inhouse\\Hitachi_SD_services\\Hitachi_SendMail\\SendMailConfig.cs",
+              "RelativeToolTip": "SendMailConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-10T10:34:27.84Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+C:\Users\m6730.MCIPL\source\repos\Hitachi_ExecProc\Hitachi_ExecProc\bin\Debug\Hitachi_ExecProc.exe.config
+C:\Users\m6730.MCIPL\source\repos\Hitachi_ExecProc\Hitachi_ExecProc\bin\Debug\Hitachi_ExecProc.exe
+C:\Users\m6730.MCIPL\source\repos\Hitachi_ExecProc\Hitachi_ExecProc\bin\Debug\Hitachi_ExecProc.pdb
+C:\Users\m6730.MCIPL\source\repos\Hitachi_ExecProc\Hitachi_ExecProc\obj\Debug\Hitachi_ExecProc.csproj.AssemblyReference.cache
+C:\Users\m6730.MCIPL\source\repos\Hitachi_ExecProc\Hitachi_ExecProc\obj\Debug\Hitachi_ExecProc.ProjectInstaller.resources
+C:\Users\m6730.MCIPL\source\repos\Hitachi_ExecProc\Hitachi_ExecProc\obj\Debug\Hitachi_ExecProc.csproj.GenerateResource.cache
+C:\Users\m6730.MCIPL\source\repos\Hitachi_ExecProc\Hitachi_ExecProc\obj\Debug\Hitachi_ExecProc.csproj.CoreCompileInputs.cache
+C:\Users\m6730.MCIPL\source\repos\Hitachi_ExecProc\Hitachi_ExecProc\obj\Debug\Hitachi_ExecProc.exe
+C:\Users\m6730.MCIPL\source\repos\Hitachi_ExecProc\Hitachi_ExecProc\obj\Debug\Hitachi_ExecProc.pdb

@@ -1,0 +1,1760 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="Site" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<%--data-bs-theme="blue-theme"--%>
+<head runat="server">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <!--favicon-->
+<link rel="icon" href="<%= ResolveUrl("~/assetsdata/images/Hitachi/Hitachi_logo.png") %>" type="image/png">
+
+<!-- loader-->
+<link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/css/pace.min.css") %>">
+<% if (!Page.Items.Contains("SkipPace"))
+   { %>
+<script src="<%= ResolveUrl("~/assetsdata/js/pace.min.js") %>"></script>
+<% } %>
+
+
+    <link rel="icon" type="image/png" href="AgentTicketCSS/images/icons/favicon.ico" />
+    <link rel="stylesheet" href="<%= ResolveUrl("~/Asset/css/bootstrapv5.min.css") %>">
+    <link rel="stylesheet" href="<%= ResolveUrl("~/assets/fontawesome/css/fontawesome.css") %>" />
+    <link rel="stylesheet" href="<%= ResolveUrl("~/assets/fontawesome/css/brands.css") %>" />
+    <link rel="stylesheet" href="<%= ResolveUrl("~/assets/fontawesome/css/solid.css") %>" />
+    <link rel="stylesheet" href="<%= ResolveUrl("~/assets/fontawesome/css/sharp-thin.css") %>" />
+    <link rel="stylesheet" href="<%= ResolveUrl("~/assets/fontawesome/css/duotone-thin.css") %>" />
+    <link rel="stylesheet" href="<%= ResolveUrl("~/assets/fontawesome/css/sharp-duotone-thin.css") %>" />
+
+
+<!--plugins-->
+<link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/plugins/perfect-scrollbar/css/perfect-scrollbar.css") %>">
+<link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/css/all.min.css") %>">
+
+<link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/plugins/metismenu/metisMenu.min.css") %>">
+<link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/plugins/metismenu/mm-vertical.css") %>">
+<link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/plugins/simplebar/css/simplebar.css") %>">
+<link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/plugins/datatable/css/dataTables.bootstrap5.min.css") %>">
+<link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/plugins/bs-stepper/css/bs-stepper.css") %>">
+<link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/css/date-picker.css") %>">
+
+<!-- bootstrap css -->
+<link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/css/bootstrap.min.css") %>">
+<link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/plugins/bs-stepper/css/bs-stepper.css") %>">
+<link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/css/extra-icons.css") %>">
+
+<!-- Google Fonts -->
+<link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/css/googleapis.css") %>">
+<link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/css/googleapis_material.css") %>">
+
+
+<link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/plugins/notifications/css/lobibox.min.css") %>">
+
+<!-- main css -->
+<link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/css/bootstrap-extended.css") %>">
+<link rel="stylesheet" href="<%= ResolveUrl("~/sassdata/main.css") %>">
+<link rel="stylesheet" href="<%= ResolveUrl("~/sassdata/dark-theme.css") %>">
+<link rel="stylesheet" href="<%= ResolveUrl("~/sassdata/blue-theme.css") %>">
+<link rel="stylesheet" href="<%= ResolveUrl("~/sassdata/semi-dark.css") %>">
+<link rel="stylesheet" href="<%= ResolveUrl("~/sassdata/bordered-theme.css") %>">
+<link rel="stylesheet" href="<%= ResolveUrl("~/sassdata/responsive.css") %>">
+
+<!-- Plugins -->
+<link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/css/select2.min.css") %>">
+<link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/plugins/select2/css/select2-bootstrap-5-theme.min.css") %>">
+
+<!-- Flatpickr -->
+<link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/css/flatpickr.min.css") %>">
+
+<!-- jQuery and Bootstrap JS -->
+<script src="<%= ResolveUrl("~/assetsdata/js/jquery-3.6.0.min.js") %>"></script>
+<script src="<%= ResolveUrl("~/assetsdata/js/bootstrap.bundle.min.js") %>"></script>
+
+
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        /* Centering the content inside the LinkButton */
+        .center-btn {
+            display: inline-flex; /* Makes the button behave like a flex container */
+            justify-content: center; /* Centers the icon horizontally */
+            align-items: center; /* Centers the icon vertically */
+            text-align: center; /* Optional: Ensures any text inside the button is centered */
+            padding: 0; /* Optional: Remove extra padding if any */
+            width: 100%; /* Ensure the button takes full width of the column */
+            height: 100%; /* Optional: Make button full height (optional) */
+        }
+
+        /* Initially, hide tooltips during page load by preventing interactions */
+        body.loading [data-bs-toggle="tooltip"] {
+            pointer-events: none; /* Disable tooltip activation */
+        }
+
+        /* Once the page is loaded, remove the 'loading' class, and tooltips will be active again */
+        body:not(.loading) [data-bs-toggle="tooltip"] {
+            pointer-events: auto; /* Enable tooltip activation */
+        }
+
+        .sidebar-wrapper .sidebar-nav .metismenu a {
+            white-space: nowrap;
+        }
+
+        [data-bs-theme=semi-dark] .app-name {
+            color: #767676;
+        }
+
+        [data-bs-theme=semi-dark] .fa-plus {
+            color: #5b6166 !important;
+        }
+
+        [data-bs-theme=light] .fa-plus {
+            color: #5b6166 !important;
+        }
+
+        [data-bs-theme=semi-dark] .fa-refresh {
+            color: #5b6166 !important;
+        }
+
+        [data-bs-theme=light] .fa-refresh {
+            color: #5b6166 !important;
+        }
+
+        .ai-output {
+            font-family: monospace;
+            background-color: #f5f5f517 !important;
+            padding: 15px;
+            border-radius: 5px;
+            min-height: 50px;
+            display: block;
+            white-space: pre-wrap;
+            margin-top: 1rem;
+            margin-bottom: 4rem;
+        }
+	.select2-container{
+        display:block;
+ 
+    }
+
+        [data-bs-theme=semi-dark] .ai-output {
+            background-color: #212529 !important;
+            color: #cecece !important;
+        }
+
+        [data-bs-theme=light] .ai-output {
+            background-color: #212529 !important;
+            color: #cecece !important;
+        }
+
+        [data-bs-theme=semi-dark] .page-footer > p > a {
+            color: #474747;
+        }
+
+        [data-bs-theme=light] .page-footer > p > a {
+            color: #474747;
+        }
+
+        [data-bs-theme=light] td > a {
+            color: #474747;
+        }
+
+        [data-bs-theme=semi-dark] td > a {
+            color: #474747;
+        }
+
+        [data-bs-theme=semi-dark] body .card {
+            background-image: linear-gradient(127.09deg, rgb(255 255 255 / 94%) 19.41%, rgb(255 255 255 / 49%) 76.65%);
+        }
+
+        [data-bs-theme=semi-dark] .form-check-input:checked {
+            background-color: #212529;
+            border-color: #212529;
+        }
+
+        [data-bs-theme=dark] .form-check-input:checked {
+            background-color: #6e6e6e;
+            border-color: #7a7a7a;
+        }
+
+        [data-bs-theme=light] body .card {
+            background-image: linear-gradient(127.09deg, rgb(255 255 255 / 94%) 19.41%, rgb(255 255 255 / 49%) 76.65%);
+        }
+
+        [data-bs-theme=light] .fa-info-circle .fa-reset {
+            color: #474747;
+        }
+
+        [data-bs-theme=semi-dark] .fa-info-circle .fa-reset {
+            color: #474747;
+        }
+
+        [data-bs-theme=dark] body .card {
+            background-image: linear-gradient(127.09deg, rgb(6 11 40 / 0%) 19.41%, rgb(10 14 35 / 0%) 76.65%);
+        }
+
+        tbody > tr > td {
+            border-left: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+        }
+
+
+        thead > tr > th {
+            border-left: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+        }
+
+        tbody > tr > th {
+            border-left: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+        }
+
+        [data-bs-theme=blue-theme] body {
+            background-color: #0f1535;
+        background-image: url("Images/img.jpg")!important ;
+        }
+
+        [data-bs-theme=semi-dark] .logo-name {
+            color: #bbbbbb !important;
+        }
+
+        [data-bs-theme=semi-dark] .btn-grd-primary {
+            color: #ffffff !important;
+        }
+
+        [data-bs-theme=light] .btn-grd-primary {
+            color: #ffffff !important;
+        }
+
+
+
+        [data-bs-theme=semi-dark] .paging > a {
+            color: #474747 !important;
+        }
+
+        [data-bs-theme=semi-dark] th > a {
+            color: #474747 !important;
+        }
+
+        [data-bs-theme=light] .paging > a {
+            color: #474747 !important;
+        }
+
+        [data-bs-theme=light] th > a {
+            color: #474747 !important;
+        }
+
+        [data-bs-theme=dark] body {
+            background-color: #181c1f;
+        }
+
+        .fa-plus {
+            color: var(--bs-body-color) !important;
+            font-weight: 400;
+        }
+
+        .fa-floppy-disk {
+            color: var(--bs-body-color) !important;
+            font-weight: 400;
+        }
+
+        .fa-refresh {
+            color: var(--bs-body-color) !important;
+            font-weight: 400;
+        }
+
+        .flatpickr-calendar {
+            top: 85.583px !important;
+        }
+        /* Custom Tooltip Styles */
+        [data-bs-theme=blue-theme] .tooltip-inner {
+            background-color: white !important;
+            color: black !important;
+            border: 1px solid black;
+        }
+        [data-bs-theme=semi-dark] .app-name {
+            color: #767676;
+            font-size: 0.8rem;
+        }
+
+        [data-bs-theme=light] .app-name {
+            color: #767676;
+            font-size: 0.8rem;
+        }
+
+        .table-container::-webkit-scrollbar {
+            width: 3px !important;
+            height: 4px !important;
+        }
+
+        [data-bs-theme=semi-dark] .table-container::-webkit-scrollbar-track {
+            background-color: #dddddd !important
+        }
+
+        [data-bs-theme=semi-dark] .table-container::-webkit-scrollbar-thumb {
+            background-color: #565656 !important;
+            border-radius: 0px !important;
+        }
+
+        [data-bs-theme=dark] .table-container::-webkit-scrollbar-thumb {
+            background-color: #ffffff !important;
+            border-radius: 0px !important;
+        }
+
+            [data-bs-theme=dark] .table-container::-webkit-scrollbar-thumb:hover {
+                background-color: black !important;
+            }
+
+        [data-bs-theme=blue-theme] .table-container::-webkit-scrollbar-thumb:hover {
+            background-color: #b7b7b7 !important;
+        }
+
+        [data-bs-theme=light] .table-container::-webkit-scrollbar-thumb:hover {
+            background-color: #212529 !important;
+        }
+
+        [data-bs-theme=semi-dark] .table-container::-webkit-scrollbar-thumb:hover {
+            background-color: #212529 !important;
+        }
+
+        [data-bs-theme=dark] .table-container::-webkit-scrollbar-track {
+            background-color: #565656 !important;
+        }
+
+        [data-bs-theme=semi-dark].table-container::-webkit-scrollbar-thumb:hover {
+            background-color: indianred !important;
+            border-radius: 0px !important;
+        }
+
+        [data-bs-theme=blue-theme].table-container::-webkit-scrollbar-thumb:hover {
+            background-color: red !important;
+            border-radius: 0px !important;
+        }
+
+        [data-bs-theme=light] .table-container::-webkit-scrollbar-track {
+            background-color: #dddddd !important
+        }
+
+        [data-bs-theme=light] .btn-grd-danger {
+            color: white !important;
+        }
+
+        [data-bs-theme=light] .btn-grd-info {
+            color: white !important;
+        }
+
+        .note-modal .modal-dialog {
+            box-shadow: 0 3px 9px rgb(0 0 0 / 0%) !important;
+        }
+
+        [data-bs-theme=light] .table-container::-webkit-scrollbar-thumb {
+            background-color: #565656 !important;
+            border-radius: 0px !important;
+        }
+
+            [data-bs-theme=light].table-container::-webkit-scrollbar-thumb:hover {
+                background-color: indianred !important;
+                border-radius: 0px !important;
+            }
+
+        [data-bs-theme=dark].table-container::-webkit-scrollbar-track {
+            background-color: #ffffff40 !important;
+        }
+
+        body .page-breadcrumb .breadcrumb-title {
+            color: var(--bs-heading-color);
+            font-size: 20px;
+            border-right: 1.5px solid;
+            border-color: var(--bs-border-color);
+        }
+
+        .active > .page-link, .page-link.active {
+            z-index: 0;
+        }
+
+        .page-link:hover, .page-link:focus {
+            z-index: 0;
+        }
+
+        .table-container > table {
+            overflow-x: scroll !important
+        }
+
+        .top-header .navbar {
+            height: 58px !important;
+        }
+
+        .dropdown-item {
+            font-size: 12px !important;
+            padding: 0.5rem 1rem !important;
+        }
+
+        body .page-breadcrumb .breadcrumb-item.active {
+            color: var(--bs-heading-color);
+            font-size: 10px !important;
+        }
+
+        .sidebar-wrapper .sidebar-nav .metismenu a {
+            font-size: 13.5px !important;
+        }
+
+        .main-wrapper .main-content {
+            padding: 0.3rem 1rem;
+        }
+
+        .form-label {
+            margin-bottom: .3rem;
+            font-size: 0.75rem;
+        }
+
+        .material-icons-outlined {
+            font-size: 19px !important;
+        }
+
+        .input-group-sm > .btn, .input-group-sm > .form-control, .input-group-sm > .form-select, .input-group-sm > .input-group-text {
+            padding: .25rem .5rem;
+            font-size: .675rem !important;
+        }
+
+        .form-select-sm ~ .select2-container--bootstrap-5 .select2-selection {
+            padding: .25rem .5rem;
+            font-size: .675rem;
+        }
+
+        .select2-container--bootstrap-5 .select2-dropdown .select2-results__options .select2-results__option {
+            /* padding: .25rem .5rem !important; */
+            font-size: 0.675rem !important;
+        }
+
+        .form-control-sm {
+            min-height: calc(1.5em + .5rem + calc(var(--bs-border-width)* 2));
+            padding: .25rem .5rem;
+            font-size: .675rem !important;
+            border-radius: var(--bs-border-radius-sm);
+        }
+
+        .btn-group-sm > .btn, .btn-sm {
+            --bs-btn-font-size: 0.705rem;
+        }
+
+        .search-results {
+            display: none;
+            position: absolute;
+            width: 100%;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .search-result-item {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+            .search-result-item:hover {
+                background-color: #f0f0f0;
+            }
+    </style>
+    <style>
+        .main-wrapper .main-content .page-breadcrumb .breadcrumb li.breadcrumb-item {
+            font-size: 13px;
+        }
+
+        body .page-breadcrumb .breadcrumb-title {
+            font-size: 11px !important;
+        }
+
+            body .page-breadcrumb .breadcrumb-title > span {
+                font-size: 10px !important;
+            }
+
+        .select2-container--bootstrap-5 .select2-dropdown .select2-search .select2-search__field {
+            color: #0f1535 !important;
+            padding: .175rem .75rem;
+        }
+
+        .select2-container--bootstrap-5 .select2-dropdown .select2-results__options .select2-results__option {
+            font-weight: 400;
+            line-height: 1.2 !important;
+        }
+
+        table td {
+            color: var(--bs-table-color-state, var(--bs-table-color-type, var(--bs-table-color))) !important;
+            font-size: 11.5px !important;
+        }
+
+        th {
+            background: var(--bs-body-bg) !important;
+        }
+
+        .logo-img {
+            width: 229px !important;
+        }
+
+        th {
+            position: sticky;
+            top: -0.1px;
+            z-index: 1; /* Ensure header stays on top of other content */
+            padding: 10px;
+            font-size: 11px;
+            /*  --bs-table-border-color: var(--bs-border-color);*/
+        }
+
+        .fa-edit {
+            color: var(--bs-body-color) !important;
+        
+        }
+
+        .wh-42 {
+            width: 20px;
+            height: 20px;
+        }
+
+        [data-bs-theme=semi-dark] .btn-grd-info, .btn-primary {
+            background-color: #6c757d !important;
+            background-image: none !important;
+            border-color: #6c757d;
+            color: white;
+        }
+
+        [data-bs-theme=semi-dark] .btn-primary {
+            border-color: #6c757d !important;
+        }
+
+        [data-bs-theme=semi-dark] .btn-grd-danger {
+            background-color: #fc185a !important;
+            background-image: none !important;
+            color: white;
+        }
+
+        [data-bs-theme=semi-dark] .active > .page-link, .page-link.active {
+            z-index: 3;
+            color: var(--bs-pagination-active-color);
+            background-color: #6c757d;
+            border-color: #6c757d;
+        }
+
+        [data-bs-theme=semi-dark] .page-link {
+            color: #6c757d
+        }
+
+        [data-bs-theme=semi-dark] .active > .page-link, .page-link.active {
+            z-index: 0;
+        }
+
+        [data-bs-theme=semi-dark] .page-link:hover, .page-link:focus {
+            z-index: 0;
+        }
+
+        [data-bs-theme=dark] body .select2-selection__rendered {
+            color: var(--bs-body-color) !important;
+        }
+
+        [data-bs-theme=dark] .select2-container--bootstrap-5 .select2-selection {
+            background-color: #ffffff00;
+            border: var(--bs-border-width) solid var(--bs-border-color);
+            border-radius: var(--bs-border-radius-sm);
+        }
+
+        [data-bs-theme=semi-dark] .select2-container--bootstrap-5 .select2-dropdown .select2-results__options .select2-results__option.select2-results__option--selected, .select2-container--bootstrap-5 .select2-dropdown .select2-results__options .select2-results__option[aria-selected=true]:not(.select2-results__option--highlighted) {
+            color: #fff;
+            background-color: #6c757d;
+        }
+
+        [data-bs-theme=dark] .select2-container--bootstrap-5 .select2-dropdown .select2-results__options .select2-results__option.select2-results__option--selected, .select2-container--bootstrap-5 .select2-dropdown .select2-results__options .select2-results__option[aria-selected=true]:not(.select2-results__option--highlighted) {
+            color: #fff;
+            background-color: #6c757d;
+        }
+
+        [data-bs-theme=light] .pagging_label {
+            color: #474747;
+        }
+
+        [data-bs-theme=semi-dark] .pagging_label {
+            color: #474747;
+        }
+    </style>
+    <style>
+        @media print {
+            @page {
+                size: A4 landscape !important; /* Specifies the page size and orientation */
+            }
+
+            /* Styles for shrinking or adjusting the table */
+            table {
+                width: 100% !important; /* Ensure table width fills the page */
+                font-size: 2px !important; /* Adjust font size */
+            }
+
+            th, td {
+                padding: 3.5px !important; /* Adjust cell padding for compact layout */
+            }
+
+            /* Ensure the entire table is visible */
+            body {
+                margin: 0 !important;
+            }
+
+            * {
+                overflow: visible !important;
+            }
+
+            /* Hide unnecessary elements for the PDF */
+            .no-print, .no-pdf {
+                display: none !important;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            div.dataTables_wrapper div.dataTables_length, div.dataTables_wrapper div.dataTables_filter, div.dataTables_wrapper div.dataTables_info, div.dataTables_wrapper div.dataTables_paginate {
+                text-align: end;
+            }
+
+                div.dataTables_wrapper div.dataTables_filter input {
+                    width: 7rem;
+                }
+
+            div.dataTables_wrapper div.dataTables_paginate {
+                text-align: center !important;
+                margin-top: 30px !important;
+            }
+
+                div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+                    justify-content: end !important;
+                }
+
+            #MainContent_gvAllTickets_length {
+                display: none
+            }
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!--start header-->
+
+		<header class="top-header">
+			<nav class="navbar navbar-expand align-items-center gap-4">
+				<div class="btn-toggle">
+					<a href="javascript:;"><i class="material-icons-outlined">menu</i></a>
+				</div>
+				<div class="page-breadcrumb d-none d-sm-flex align-items-center border px-3 py-2 rounded-5">
+					<div class="breadcrumb-title pe-3">
+						<asp:Label ID="lblpnl" runat="server">Tickets</asp:Label>
+					</div>
+					<div class="ps-3">
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb mb-0 p-0 ">
+								<li class="breadcrumb-item active" aria-current="page">
+									<asp:Label ID="lblpnlPage" runat="server">Edit Ticket By Assignee</asp:Label>
+								</li>
+
+							</ol>
+						</nav>
+					</div>
+
+				</div>
+
+				<div class="search-bar flex-grow-1">
+					<div class="position-relative">
+						<input id="searchInput" class="form-control rounded-5 px-5 search-control d-lg-block d-none form-control-sm py-2" type="text" placeholder="Search menu items">
+						<span class="material-icons-outlined position-absolute d-lg-block d-none ms-3 translate-middle-y start-0 top-50 opacity-50">search</span>
+						<span id="searchClose" class="material-icons-outlined position-absolute me-3 translate-middle-y end-0 top-50 search-close">close</span>
+						<div id="searchPopup" class="search-popup p-3" style="display: none;">
+							<div class="card rounded-4 overflow-hidden">
+								<div class="card-body search-content">
+									<div id="recentSearchesContainer">
+										<p class="search-title">Recent Searches</p>
+										<div id="recentSearches" class="d-flex align-items-start flex-wrap gap-2 kewords-wrapper">
+											<!-- Recent searches will be dynamically added here -->
+										</div>
+										<hr>
+									</div>
+									<div id="searchResultsContainer" style="display: none;">
+										<p class="search-title">Search Results</p>
+										<div id="searchResults" class="search-list d-flex flex-column gap-2">
+											<!-- Search results will be dynamically added here -->
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<ul class="navbar-nav gap-1 nav-right-links align-items-center">
+
+					<li class="nav-item dropdown position-static  d-none">
+						<a class="nav-link dropdown-toggle dropdown-toggle-nocaret" data-bs-auto-close="outside"
+							data-bs-toggle="dropdown" href="javascript:;"><i class="material-icons-outlined ">done_all</i></a>
+						<div class="dropdown-menu dropdown-menu-end mega-menu shadow-lg p-4 p-lg-5 d-none">
+							<div class="mega-menu-widgets">
+								<div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3 g-4 g-lg-5">
+									<div class="col">
+										<div class="card rounded-4 shadow-none border mb-0">
+											<div class="card-body">
+												<div class="d-flex align-items-start gap-3">
+													<div class="mega-menu-icon flex-shrink-0 bg-danger">
+														<i class="material-icons-outlined">question_answer</i>
+													</div>
+													<div class="mega-menu-content">
+														<h5>Marketing</h5>
+														<p class="mb-0 f-14">
+															In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                                                                the visual form of a document.
+                                                       
+														</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="card rounded-4 shadow-none border mb-0">
+											<div class="card-body">
+												<div class="d-flex align-items-start gap-3">
+													<img src="<%= ResolveUrl("~/assetsdata/images/megaIcons/02.png") %>" width="40" alt="">
+													<div class="mega-menu-content">
+														<h5>Website</h5>
+														<p class="mb-0 f-14">
+															In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                           the visual form of a document.
+                                                       
+														</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="card rounded-4 shadow-none border mb-0">
+											<div class="card-body">
+												<div class="d-flex align-items-start gap-3">
+                                                    <img src="<%= ResolveUrl("~/assetsdata/images/megaIcons/03.png") %>" width="40" alt="">
+													<div class="mega-menu-content">
+														<h5>Subscribers</h5>
+														<p class="mb-0 f-14">
+															In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                                                            the visual form of a document.
+                                                       
+														</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="card rounded-4 shadow-none border mb-0">
+											<div class="card-body">
+												<div class="d-flex align-items-start gap-3">
+												<img src="<%= ResolveUrl("~/assetsdata/images/megaIcons/01.png") %>" width="40" alt="">
+													<div class="mega-menu-content">
+														<h5>Hubspot</h5>
+														<p class="mb-0 f-14">
+															In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                           the visual form of a document.
+                                                       
+														</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="card rounded-4 shadow-none border mb-0">
+											<div class="card-body">
+												<div class="d-flex align-items-start gap-3">
+													<img src="<%= ResolveUrl("~/assetsdata/images/megaIcons/11.png") %>" width="40" alt="">
+													<div class="mega-menu-content">
+														<h5>Templates</h5>
+														<p class="mb-0 f-14">
+															In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                           the visual form of a document.
+                                                       
+														</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="card rounded-4 shadow-none border mb-0">
+											<div class="card-body">
+												<div class="d-flex align-items-start gap-3">
+													<img src="<%= ResolveUrl("~/assetsdata/images/megaIcons/13.png") %>" width="40" alt="">
+													<div class="mega-menu-content">
+														<h5>Ebooks</h5>
+														<p class="mb-0 f-14">
+															In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                           the visual form of a document.
+                                                       
+														</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="card rounded-4 shadow-none border mb-0">
+											<div class="card-body">
+												<div class="d-flex align-items-start gap-3">
+													<img src="<%= ResolveUrl("~/assetsdata/images/megaIcons/12.png") %>" width="40" alt="">
+													<div class="mega-menu-content">
+														<h5>Sales</h5>
+														<p class="mb-0 f-14">
+															In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                           the visual form of a document.
+                                                       
+														</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="card rounded-4 shadow-none border mb-0">
+											<div class="card-body">
+												<div class="d-flex align-items-start gap-3">
+													<img src="<%= ResolveUrl("~/assetsdata/images/megaIcons/08.png") %>" width="40" alt="">
+													<div class="mega-menu-content">
+														<h5>Tools</h5>
+														<p class="mb-0 f-14">
+															In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                           the visual form of a document.
+                                                       
+														</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="card rounded-4 shadow-none border mb-0">
+											<div class="card-body">
+												<div class="d-flex align-items-start gap-3">
+													<img src="<%= ResolveUrl("~/assetsdata/images/megaIcons/09.png") %>" width="40" alt="">
+													<div class="mega-menu-content">
+														<h5>Academy</h5>
+														<p class="mb-0 f-14">
+															In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                           the visual form of a document.
+                                                       
+														</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!--end row-->
+							</div>
+						</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle dropdown-toggle-nocaret" data-bs-auto-close="outside"
+							data-bs-toggle="dropdown" href="javascript:;"><i class="material-icons-outlined">apps</i></a>
+						<div class="dropdown-menu dropdown-menu-end dropdown-apps shadow-lg p-3">
+							<div class="border rounded-4 overflow-hidden">
+
+								<!--end row-->
+
+								<div class="row row-cols-3 g-0 border-bottom">
+									<div class="col border-end">
+										<a href="https://www.youtube.com/@hitachisystemsindiapvtltd9106" target="_blank">
+											<div class="app-wrapper d-flex flex-column gap-2 text-center">
+												<div class="app-icon">
+													<img src="<%= ResolveUrl("~/assetsdata/images/apps/04.png") %>" width="40" alt="">
+												</div>
+												<div class="app-name">
+													<p class="mb-0">YouTube</p>
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="col border-end">
+										<a href="https://hitachi-systems.co.in/" target="_blank">
+											<div class="app-wrapper d-flex flex-column gap-2 text-center">
+												<div class="app-icon">
+													<img src="<%= ResolveUrl("~/assetsdata/images/Hitachi.png") %>" width="40" alt="">
+												</div>
+												<div class="app-name">
+													<p class="mb-0">Hitachi</p>
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="col">
+										<a href="https://www.instagram.com/hitachisystemsindia?igsh=MXB6aHR3YzQ1OW01Ng==" target="_blank">
+											<div class="app-wrapper d-flex flex-column gap-2 text-center">
+												<div class="app-icon">
+													 <img src="<%= ResolveUrl("~/assetsdata/images/apps/06.png") %>" width="40" alt="">
+												</div>
+												<div class="app-name">
+													<p class="mb-0">Instagram</p>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+
+								<div class="row row-cols-3 g-0 border-bottom" hidden>
+									<div class="col border-end">
+										<div class="app-wrapper d-flex flex-column gap-2 text-center">
+											<div class="app-icon">
+												<img src="<%= ResolveUrl("~/assetsdata/images/apps/01.png") %>" width="40" alt="">
+											</div>
+											<div class="app-name">
+												<p class="mb-0">Gmail</p>
+											</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="app-wrapper d-flex flex-column gap-2 text-center">
+											<div class="app-icon">
+												<img src="<%= ResolveUrl("~/assetsdata/images/apps/09.png") %>" width="40" alt="">
+											</div>
+											<div class="app-name">
+												<p class="mb-0">Facebook</p>
+											</div>
+										</div>
+									</div>
+									<div class="col border-start">
+										<div class="app-wrapper d-flex flex-column gap-2 text-center">
+											<div class="app-icon">
+												<img src="<%= ResolveUrl("~/assetsdata/images/apps/11.png") %>" width="40" alt="">
+											</div>
+											<div class="app-name">
+												<p class="mb-0">Paypal</p>
+											</div>
+										</div>
+									</div>
+
+								</div>
+								<!--end row-->
+
+							</div>
+						</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" data-bs-auto-close="outside" tooltip="Coming Soon" style="cursor: not-allowed;"
+							data-bs-toggle="dropdown" href="javascript:;"><i class="material-icons-outlined">notifications</i>
+							<span class="badge-notify d-none">5</span>
+						</a>
+						<div class="dropdown-menu dropdown-notify dropdown-menu-end shadow d-none">
+							<div class="px-3 py-1 d-flex align-items-center justify-content-between border-bottom">
+								<h5 class="notiy-title mb-0">Notifications</h5>
+								<div class="dropdown">
+									<button class="btn btn-secondary dropdown-toggle dropdown-toggle-nocaret option" type="button"
+										data-bs-toggle="dropdown" aria-expanded="false">
+										<span class="material-icons-outlined">more_vert
+										</span>
+									</button>
+									<div class="dropdown-menu dropdown-option dropdown-menu-end shadow">
+										<div>
+											<a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
+												class="material-icons-outlined fs-6">inventory_2</i>Archive All</a>
+										</div>
+										<div>
+											<a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
+												class="material-icons-outlined fs-6">done_all</i>Mark all as read</a>
+										</div>
+										<div>
+											<a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
+												class="material-icons-outlined fs-6">mic_off</i>Disable Notifications</a>
+										</div>
+										<div>
+											<a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
+												class="material-icons-outlined fs-6">grade</i>What's new ?</a>
+										</div>
+										<div>
+											<hr class="dropdown-divider">
+										</div>
+										<div>
+											<a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
+												class="material-icons-outlined fs-6">leaderboard</i>Reports</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="notify-list">
+								<div>
+									<a class="dropdown-item border-bottom py-2" href="javascript:;">
+										<div class="d-flex align-items-center gap-3">
+											<div class="">
+												<img src="https://pcv-demo.hitachi-systems-mc.com:5723/assetsdata/images/avatars/01.png" class="rounded-circle" width="45" height="45" alt="">
+											</div>
+											<div class="">
+												<h5 class="notify-title">Congratulations Jhon</h5>
+												<p class="mb-0 notify-desc">Many congtars jhon. You have won the gifts.</p>
+												<p class="mb-0 notify-time">Today</p>
+											</div>
+											<div class="notify-close position-absolute end-0 me-3">
+												<i class="material-icons-outlined fs-6">close</i>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div>
+									<a class="dropdown-item border-bottom py-2" href="javascript:;">
+										<div class="d-flex align-items-center gap-3">
+											<div class="user-wrapper bg-primary text-primary bg-opacity-10">
+												<span>RS</span>
+											</div>
+											<div class="">
+												<h5 class="notify-title">New Account Created</h5>
+												<p class="mb-0 notify-desc">From USA an user has registered.</p>
+												<p class="mb-0 notify-time">Yesterday</p>
+											</div>
+											<div class="notify-close position-absolute end-0 me-3">
+												<i class="material-icons-outlined fs-6">close</i>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div>
+									<a class="dropdown-item border-bottom py-2" href="javascript:;">
+										<div class="d-flex align-items-center gap-3">
+											<div class="">
+												<img src="<%= ResolveUrl("~/assetsdata/images/apps/13.png") %>" class="rounded-circle" width="45" height="45" alt="">
+
+											</div>
+											<div class="">
+												<h5 class="notify-title">Payment Recived</h5>
+												<p class="mb-0 notify-desc">New payment recived successfully</p>
+												<p class="mb-0 notify-time">1d ago</p>
+											</div>
+											<div class="notify-close position-absolute end-0 me-3">
+												<i class="material-icons-outlined fs-6">close</i>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div>
+									<a class="dropdown-item border-bottom py-2" href="javascript:;">
+										<div class="d-flex align-items-center gap-3">
+											<div class="">
+												<img src="<%= ResolveUrl("~/assetsdata/images/apps/14.png") %>" class="rounded-circle" width="45" height="45" alt="">
+
+											</div>
+											<div class="">
+												<h5 class="notify-title">New Order Recived</h5>
+												<p class="mb-0 notify-desc">Recived new order from michle</p>
+												<p class="mb-0 notify-time">2:15 AM</p>
+											</div>
+											<div class="notify-close position-absolute end-0 me-3">
+												<i class="material-icons-outlined fs-6">close</i>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div>
+									<a class="dropdown-item border-bottom py-2" href="javascript:;">
+										<div class="d-flex align-items-center gap-3">
+											<div class="">
+												<img src="<%= ResolveUrl("~/assetsdata/images/avatars/06.png") %>" class="rounded-circle" width="45" height="45" alt="">
+
+											</div>
+											<div class="">
+												<h5 class="notify-title">Congratulations Jhon</h5>
+												<p class="mb-0 notify-desc">Many congtars jhon. You have won the gifts.</p>
+												<p class="mb-0 notify-time">Today</p>
+											</div>
+											<div class="notify-close position-absolute end-0 me-3">
+												<i class="material-icons-outlined fs-6">close</i>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div>
+									<a class="dropdown-item py-2" href="javascript:;">
+										<div class="d-flex align-items-center gap-3">
+											<div class="user-wrapper bg-danger text-danger bg-opacity-10">
+												<span>PK</span>
+											</div>
+											<div class="">
+												<h5 class="notify-title">New Account Created</h5>
+												<p class="mb-0 notify-desc">From USA an user has registered.</p>
+												<p class="mb-0 notify-time">Yesterday</p>
+											</div>
+											<div class="notify-close position-absolute end-0 me-3">
+												<i class="material-icons-outlined fs-6">close</i>
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+					</li>
+
+					<li class="nav-item d-md-flex " id="divtoggletheme" runat="server">
+						<a class="nav-link position-relative" data-bs-toggle="offcanvas" href="#offcanvasCart"><i
+							class="material-icons-outlined">tune</i>
+
+						</a>
+					</li>
+
+					<li class="nav-item dropdown">
+						<a href="javascrpt:;" class="dropdown-toggle dropdown-toggle-nocaret" data-bs-toggle="dropdown">
+							<asp:Image ID="img" runat="server" class="rounded-circle p-1 border" Width="45" Height="45" alt="" />
+						</a>
+						<div class="dropdown-menu dropdown-user dropdown-menu-end shadow">
+							<a class="dropdown-item  gap-2 py-2" href="javascript:;">
+								<div class="text-center">
+									<%--<img src="https://pcv-demo.hitachi-systems-mc.com:5723/assetsdata/images/avatars/01.png" class="rounded-circle p-1 shadow mb-3" width="90" height="90"
+                                        alt="">--%>
+									<asp:Label ID="lblUserID" runat="server" class="user-name mb-0 fw-bold"></asp:Label>
+
+								</div>
+							</a>
+							<hr class="dropdown-divider">
+							<a class="dropdown-item d-flex align-items-center gap-2 py-2" href='<%= ResolveUrl("~/Admin/frmMyProfile.aspx") %>'>
+								<i class="material-icons-outlined">person_outline</i>Profile
+							</a>
+
+							<a class="dropdown-item d-flex align-items-center gap-2 py-2" href='<%= ResolveUrl("~/frmChgPass.aspx")%>'><i
+								class="material-icons-outlined">local_bar</i>Change Password</a>
+							<a class="dropdown-item d-flex align-items-center gap-2 py-2" href='<%= ResolveUrl("~/frmDashboard.aspx")%>'><i
+								class="material-icons-outlined">dashboard</i>Dashboard</a>
+							<a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;" visible="false" runat="server"><i
+								class="material-icons-outlined">account_balance</i>Earning</a>
+							<a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;" visible="false" runat="server"><i
+								class="material-icons-outlined">cloud_download</i>Downloads</a>
+							<hr class="dropdown-divider">
+							<a class="dropdown-item d-flex align-items-center gap-2 py-2" href="<%= ResolveUrl("~/Logout.aspx") %>"><i
+								class="material-icons-outlined">power_settings_new</i>Logout</a>
+						</div>
+					</li>
+				</ul>
+
+			</nav>
+		</header>
+        <!--end top header-->
+
+        <!--start sidebar-->
+        <aside class="sidebar-wrapper" data-simplebar="true">
+            <div class="sidebar-header">
+                <div class="logo-icon">
+                    <%--<img src="https://pcv-demo.hitachi-systems-mc.com:5723/assetsdata/images/logo-icon.png" class="logo-img" alt="">--%>
+                    <asp:Image ID="imgOrg" runat="server" CssClass="logo-img" style="width:236px" />
+                </div>
+                <div class="logo-name flex-grow-1" hidden>
+                    <p class="mb-0">
+                        <asp:Label runat="server" ID="lblOrg"></asp:Label>
+                    </p>
+                </div>
+                <div class="sidebar-close">
+                    <span class="material-icons-outlined">close</span>
+                </div>
+            </div>
+			<div class="sidebar-nav">
+				<ul class="metismenu" id="sidenav">
+					<asp:Repeater ID="rptCategories" runat="server" OnItemDataBound="rptCategories_ItemDataBound">
+						<ItemTemplate>
+							<li runat="server" id="parentLi">
+								<a href='<%#Eval("MenuLocation") %>' class="has-arrow" id="parentmenu" runat="server">
+									<div class="parent-icon">
+										<i class='<%#Eval("MenuIcon") %>'>
+											<asp:Label runat="server" ID="lblName"></asp:Label>
+										</i>
+									</div>
+									<div class="menu-title">
+										<%#Eval("MenuName") %>
+									</div>
+								</a>
+								<asp:Literal ID="ltrlSubMenu" runat="server"></asp:Literal>
+							</li>
+						</ItemTemplate>
+					</asp:Repeater>
+				</ul>
+
+
+
+			</div>
+        </aside>
+        <!--end sidebar-->
+
+
+        <main class="main-wrapper">
+            <div class="main-content">
+                <div class=" body-content">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+
+                </div>
+            </div>
+        </main>
+
+
+        <!--start overlay-->
+        <div class="overlay btn-toggle"></div>
+        <!--end overlay-->
+
+        <!--start footer-->
+        <footer class="page-footer" style="bottom: 0; left: 0; position: fixed; right: 0; backdrop-filter: blur(2.625rem); height: 25px; z-index: 1;">
+            <p class="mb-0 small"><a href="https://hitachi-systems.co.in/" class=" copyright text-decoration-none">Hitachi Systems India Pvt Ltd</a> © 2024. All right reserved.</p>
+
+        </footer>
+        <!--top footer-->
+
+
+        <!--start cart-->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart">
+            <div class="offcanvas-header border-bottom h-70">
+                <div class="">
+                    <h5 class="mb-0">Theme Customizer</h5>
+                    <p class="mb-0">Customize your theme</p>
+                </div>
+                <a href="javascript:;" class="primaery-menu-close" data-bs-dismiss="offcanvas">
+                    <i class="material-icons-outlined">close</i>
+                </a>
+            </div>
+			<div class="offcanvas-body">
+				<div>
+					<p>Theme variation</p>
+
+					<div class="row g-3">
+						<div class="col-12 col-xl-6 col-6">
+							<asp:RadioButton ID="rbdBlueTheme" class="btn-check" runat="server" GroupName="theme" AutoPostBack="true" OnCheckedChanged="Theme_CheckedChanged" />
+							<label class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4" for="rbdBlueTheme">
+								<span class="material-icons-outlined">contactless</span>
+								<span>Blue</span>
+							</label>
+						</div>
+						<div class="col-12 col-xl-6 col-6">
+							<asp:RadioButton ID="rbdLightTheme" class="btn-check" runat="server" GroupName="theme" AutoPostBack="true" OnCheckedChanged="Theme_CheckedChanged" />
+							<label class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4" for="rbdLightTheme">
+								<span class="material-icons-outlined">light_mode</span>
+								<span>Light</span>
+							</label>
+						</div>
+						<div class="col-12 col-xl-6 col-6">
+							<asp:RadioButton ID="rbdDarkTheme" class="btn-check" runat="server" GroupName="theme" AutoPostBack="true" OnCheckedChanged="Theme_CheckedChanged" />
+							<label class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4" for="rbdDarkTheme">
+								<span class="material-icons-outlined">dark_mode</span>
+								<span>Dark</span>
+							</label>
+						</div>
+						<div class="col-12 col-xl-6 col-6">
+							<asp:RadioButton ID="rbdSemiDarkTheme" class="btn-check" runat="server" GroupName="theme" AutoPostBack="true" OnCheckedChanged="Theme_CheckedChanged" />
+							<label class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4" for="rbdSemiDarkTheme">
+								<span class="material-icons-outlined">contrast</span>
+								<span>Semi Dark</span>
+							</label>
+						</div>
+						<div class="col-12 col-xl-6 d-none">
+							<asp:RadioButton ID="rbdBoderedTheme" class="btn-check" runat="server" GroupName="theme" AutoPostBack="true" OnCheckedChanged="Theme_CheckedChanged" />
+							<label class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4" for="rbdBoderedTheme">
+								<span class="material-icons-outlined">border_style</span>
+								<span>Bordered</span>
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+
+    </form>
+    <script>
+        $(function () {
+            "use strict";
+
+            new PerfectScrollbar(".notify-list");
+            new PerfectScrollbar(".search-content");
+
+            // Function to save toggle state
+            function saveToggleState(isToggled) {
+                sessionStorage.setItem('isToggled', JSON.stringify(isToggled));
+            }
+
+            // Function to load toggle state
+            function loadToggleState() {
+                const state = sessionStorage.getItem('isToggled');
+                return state ? JSON.parse(state) : false;
+            }
+
+            // Load initial toggle state
+            const isToggled = loadToggleState();
+            if (isToggled) {
+                $("body").addClass("toggled");
+                $(".sidebar-wrapper").hover(function () {
+                    $("body").addClass("sidebar-hovered");
+                }, function () {
+                    $("body").removeClass("sidebar-hovered");
+                });
+            }
+
+            $(".btn-toggle").click(function () {
+                const newToggleState = !$("body").hasClass("toggled");
+                $("body").toggleClass("toggled", newToggleState);
+                saveToggleState(newToggleState);
+
+                if (newToggleState) {
+                    $(".sidebar-wrapper").hover(function () {
+                        $("body").addClass("sidebar-hovered");
+                    }, function () {
+                        $("body").removeClass("sidebar-hovered");
+                    });
+                } else {
+                    $(".sidebar-wrapper").unbind("hover");
+                }
+            });
+
+            /* menu */
+            $(function () {
+                $('#sidenav').metisMenu();
+            });
+
+            $(".sidebar-close").on("click", function () {
+                $("body").removeClass("toggled");
+                saveToggleState(false);
+            });
+
+            /* dark mode button */
+            $(".dark-mode i").click(function () {
+                $(this).text(function (i, v) {
+                    return v === 'dark_mode' ? 'light_mode' : 'dark_mode';
+                });
+            });
+
+            $(".dark-mode").click(function () {
+                $("html").attr("data-bs-theme", function (i, v) {
+                    return v === 'dark' ? 'light' : 'dark';
+                });
+            });
+
+            /* sticky header */
+            $(window).on("scroll", function () {
+                if ($(this).scrollTop() > 60) {
+                    $('.top-header .navbar').addClass('sticky-header');
+                } else {
+                    $('.top-header .navbar').removeClass('sticky-header');
+                }
+            });
+
+            /* email */
+            $(".email-toggle-btn").on("click", function () {
+                $(".email-wrapper").toggleClass("email-toggled");
+            });
+            $(".email-toggle-btn-mobile").on("click", function () {
+                $(".email-wrapper").removeClass("email-toggled");
+            });
+            $(".compose-mail-btn").on("click", function () {
+                $(".compose-mail-popup").show();
+            });
+            $(".compose-mail-close").on("click", function () {
+                $(".compose-mail-popup").hide();
+            });
+
+            /* chat */
+            $(".chat-toggle-btn").on("click", function () {
+                $(".chat-wrapper").toggleClass("chat-toggled");
+            });
+            $(".chat-toggle-btn-mobile").on("click", function () {
+                $(".chat-wrapper").removeClass("chat-toggled");
+            });
+
+            /* search */
+            $(".search-control").click(function () {
+                $(".search-popup").addClass("d-block");
+                $(".search-close").addClass("d-block");
+            });
+            $(".search-close").click(function () {
+                $(".search-popup").removeClass("d-block");
+                $(".search-close").removeClass("d-block");
+            });
+            $(".mobile-search-btn").click(function () {
+                $(".search-popup").addClass("d-block");
+            });
+            $(".mobile-search-close").click(function () {
+                $(".search-popup").removeClass("d-block");
+            });
+
+            /* menu active */
+            $(function () {
+                for (var e = window.location, o = $(".metismenu li a").filter(function () {
+                    return this.href == e;
+                }).addClass("").parent().addClass("mm-active"); o.is("li");) o = o.parent("").addClass("mm-show").parent("").addClass("mm-active");
+            });
+        });
+    </script>
+
+    <!--bootstrap js-->
+    <!--plugins-->
+    <script src="<%= ResolveUrl("~/assetsdata/plugins/perfect-scrollbar/js/perfect-scrollbar.js") %>"></script>
+    <script src="<%= ResolveUrl("~/assetsdata/plugins/metismenu/metisMenu.min.js") %>"></script>
+    <script src="<%= ResolveUrl("~/assetsdata/plugins/simplebar/js/simplebar.min.js") %>"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>-->
+    <script src="<%= ResolveUrl("~/assetsdata/js/select2.min.js") %>"></script>
+    <script src="<%= ResolveUrl("~/assetsdata/plugins/select2/js/select2-custom.js") %>"></script>
+    <script src="<%= ResolveUrl("~/assetsdata/plugins/bs-stepper/js/bs-stepper.min.js") %>"></script>
+    <script src="<%= ResolveUrl("~/assetsdata/plugins/bs-stepper/js/main.js") %>"></script>
+    <%-- DATATABLE START --%>
+    <script src="<%= ResolveUrl("~/assetsdata/plugins/datatable/js/jquery.dataTables.min.js") %>"></script>
+    <script src="<%= ResolveUrl("~/assetsdata/plugins/datatable/js/dataTables.bootstrap5.min.js") %>"></script>
+    <script src="<%= ResolveUrl("~/assetsdata/plugins/notifications/js/lobibox.min.js") %>"></script>
+    <script src="<%= ResolveUrl("~/assetsdata/plugins/notifications/js/notifications.min.js") %>"></script>
+    <script src="<%= ResolveUrl("~/assetsdata/plugins/notifications/js/notification-custom-script.js") %>"></script>
+    <script src="<%= ResolveUrl("~/assetsdata/js/flatpickr v4.6.13.js") %>"></script>
+
+
+
+
+    <script>
+        $(document).ready(function () {
+            $('.data-table1').DataTable();
+        });
+    </script>
+
+    <%--DATATABLE END--%>
+
+    <script>
+        $(document).ready(function () {
+            $('.data-table').each(function () {
+                if ($.fn.DataTable.isDataTable(this)) {
+                    $(this).DataTable().clear().destroy();
+                }
+                $(this).DataTable({
+                    lengthChange: false,
+                    dom: 'Bfrtip',
+                    buttons: [
+                        'csv', 'excel', 'print' // Replaced 'copy' with 'csv' also removed pdf
+                    ]
+                });
+
+            });
+        });
+    </script>
+
+
+
+    <script>
+        $(".data-attributes span").peity("donut")
+    </script>
+    <%--<script src="https://pcv-demo.hitachi-systems-mc.com:5723/assetsdata/js/dashboard2.js"></script>--%>
+    <script>
+        $(".datepicker").flatpickr({
+            dateFormat: "d-m-Y"
+        });
+
+        $(".time-picker").flatpickr({
+            enableTime: true,
+            noCalendar: true,
+            dateFormat: "d-m-Y H:i",
+        });
+
+        $(".date-time").flatpickr({
+            enableTime: true,
+            dateFormat: "d-m-Y H:i",
+        });
+
+        $(".date-format").flatpickr({
+            altInput: true,
+            altFormat: "j F, Y",
+            dateFormat: "d-m-Y"
+        });
+
+        $(".date-range").flatpickr({
+            mode: "range",
+            altInput: true,
+            altFormat: "j F, Y",
+            dateFormat: "d-m-Y"
+        });
+
+        $(".date-inline").flatpickr({
+            inline: true,
+            altInput: true,
+            altFormat: "j F, Y",
+            dateFormat: "d-m-Y"
+        });
+    </script>
+
+    <%--<script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const searchInput = document.getElementById('searchInput');
+            const searchResults = document.getElementById('searchResults');
+            const searchResultsContainer = document.getElementById('searchResultsContainer');
+            const searchClose = document.getElementById('searchClose');
+            const recentSearches = document.getElementById('recentSearches');
+            const recentSearchesContainer = document.getElementById('recentSearchesContainer');
+            const searchPopup = document.getElementById('searchPopup');
+
+            // This should be populated with your actual menu items
+            const menuItems = [
+                { name: 'Ticket Details', url: '/frmAddIncident.aspx' },
+                { name: 'Profile', url: '/profile' },
+                { name: 'Settings', url: '/settings' },
+                // Add more menu items as needed
+            ];
+
+            // Load recent searches from localStorage
+            let recentSearchList = JSON.parse(localStorage.getItem('recentSearches')) || [];
+
+            function updateRecentSearches() {
+                recentSearches.innerHTML = '';
+                recentSearchList.forEach(search => {
+                    const a = document.createElement('a');
+                    a.href = 'javascript:;';
+                    a.className = 'kewords';
+                    a.innerHTML = `<span>${search}</span><i class="material-icons-outlined fs-6">search</i>`;
+                    a.addEventListener('click', function () {
+                        searchInput.value = search;
+                        performSearch(search);
+                    });
+                    recentSearches.appendChild(a);
+                });
+            }
+
+            function addToRecentSearches(search) {
+                if (!recentSearchList.includes(search)) {
+                    recentSearchList.unshift(search);
+                    if (recentSearchList.length > 5) {
+                        recentSearchList.pop();
+                    }
+                    localStorage.setItem('recentSearches', JSON.stringify(recentSearchList));
+                    updateRecentSearches();
+                }
+            }
+
+            function performSearch(searchTerm) {
+                const filteredItems = menuItems.filter(item =>
+                    item.name.toLowerCase().includes(searchTerm.toLowerCase())
+                );
+                displayResults(filteredItems);
+                if (searchTerm.trim() !== '') {
+                    addToRecentSearches(searchTerm);
+                }
+            }
+
+            searchInput.addEventListener('input', function () {
+                performSearch(this.value);
+            });
+
+            searchClose.addEventListener('click', function () {
+                searchInput.value = '';
+                hideSearchPopup();
+            });
+
+            function displayResults(items) {
+                searchResults.innerHTML = '';
+                if (items.length > 0) {
+                    items.forEach(item => {
+                        const div = document.createElement('div');
+                        div.className = 'search-list-item d-flex align-items-center gap-3';
+                        div.innerHTML = `
+                    <div class="list-icon">
+                        <i class="material-icons-outlined fs-5">chevron_right</i>
+                    </div>
+                    <div>
+                        <h5 class="mb-0 search-list-title">${item.name}</h5>
+                    </div>
+                `;
+                        div.addEventListener('click', function () {
+                            window.location.href = item.url;
+                        });
+                        searchResults.appendChild(div);
+                    });
+                    showSearchResults();
+                } else if (searchInput.value.trim() !== '') {
+                    const div = document.createElement('div');
+                    div.className = 'search-list-item';
+                    div.textContent = 'No results found';
+                    searchResults.appendChild(div);
+                    showSearchResults();
+                } else {
+                    showRecentSearches();
+                }
+            }
+
+            function showSearchResults() {
+                searchPopup.style.display = 'block';
+                recentSearchesContainer.style.display = 'none';
+                searchResultsContainer.style.display = 'block';
+            }
+
+            function showRecentSearches() {
+                searchPopup.style.display = 'block';
+                recentSearchesContainer.style.display = 'block';
+                searchResultsContainer.style.display = 'none';
+            }
+
+            function hideSearchPopup() {
+                searchPopup.style.display = 'none';
+            }
+
+            // Show recent searches when focusing on search input
+            searchInput.addEventListener('focus', function () {
+                if (this.value.trim() === '') {
+                    showRecentSearches();
+                } else {
+                    performSearch(this.value);
+                }
+            });
+
+            // Close search results when clicking outside
+            document.addEventListener('click', function (event) {
+                if (!searchInput.contains(event.target) && !searchPopup.contains(event.target)) {
+                    hideSearchPopup();
+                }
+            });
+
+            // Initialize recent searches
+            updateRecentSearches();
+        });
+    </script>--%>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const searchInput = document.getElementById('searchInput');
+            const searchResults = document.getElementById('searchResults');
+            const searchResultsContainer = document.getElementById('searchResultsContainer');
+            const searchClose = document.getElementById('searchClose');
+            const recentSearches = document.getElementById('recentSearches');
+            const recentSearchesContainer = document.getElementById('recentSearchesContainer');
+            const searchPopup = document.getElementById('searchPopup');
+
+            // Function to extract sub-menu items from the DOM
+            function getSubMenuItems() {
+                const subMenuItems = [];
+                const sideNav = document.getElementById('sidenav');
+                const menuItems = sideNav.querySelectorAll('li');
+
+                menuItems.forEach(item => {
+                    const subMenuContainer = item.querySelector('ul');
+                    if (subMenuContainer) {
+                        const subMenuLinks = subMenuContainer.querySelectorAll('a');
+                        subMenuLinks.forEach(link => {
+                            subMenuItems.push({
+                                // Use replace to remove 'arrow_right' from the name
+                                name: link.textContent.trim().replace('arrow_right', ''),
+                                url: link.getAttribute('href')
+                            });
+                        });
+                    }
+                });
+
+                return subMenuItems;
+            }
+
+            // Get sub-menu items
+            const menuItems = getSubMenuItems();
+
+            // Load recent searches from localStorage
+            let recentSearchList = JSON.parse(localStorage.getItem('recentSearches')) || [];
+
+            function updateRecentSearches() {
+                recentSearches.innerHTML = '';
+                recentSearchList.forEach(search => {
+                    const a = document.createElement('a');
+                    a.href = 'javascript:;';
+                    a.className = 'kewords';
+                    a.innerHTML = `<span>${search}</span><i class="material-icons-outlined fs-6">search</i>`;
+                    a.addEventListener('click', function () {
+                        searchInput.value = search;
+                        performSearch(search);
+                    });
+                    recentSearches.appendChild(a);
+                });
+            }
+
+            function addToRecentSearches(search) {
+                if (!recentSearchList.includes(search)) {
+                    recentSearchList.unshift(search);
+                    if (recentSearchList.length > 5) {
+                        recentSearchList.pop();
+                    }
+                    localStorage.setItem('recentSearches', JSON.stringify(recentSearchList));
+                    updateRecentSearches();
+                }
+            }
+
+            function performSearch(searchTerm) {
+                const filteredItems = menuItems.filter(item =>
+                    item.name.toLowerCase().includes(searchTerm.toLowerCase())
+                );
+                displayResults(filteredItems);
+                if (searchTerm.trim() !== '') {
+                    addToRecentSearches(searchTerm);
+                }
+            }
+
+            searchInput.addEventListener('input', function () {
+                performSearch(this.value);
+            });
+
+            searchClose.addEventListener('click', function () {
+                searchInput.value = '';
+                hideSearchPopup();
+            });
+
+            function displayResults(items) {
+                searchResults.innerHTML = '';
+                if (items.length > 0) {
+                    items.forEach(item => {
+                        const div = document.createElement('div');
+                        div.className = 'search-list-item d-flex align-items-center gap-3';
+                        div.innerHTML = `
+                <div class="list-icon">
+                    <i class="material-icons-outlined fs-5">chevron_right</i>
+                </div>
+                <div>
+                    <h5 class="mb-0 search-list-title">${item.name}</h5>
+                </div>
+            `;
+                        div.addEventListener('click', function () {
+                            window.location.href = item.url;
+                        });
+                        searchResults.appendChild(div);
+                    });
+                    showSearchResults();
+                } else if (searchInput.value.trim() !== '') {
+                    const div = document.createElement('div');
+                    div.className = 'search-list-item';
+                    div.textContent = 'No results found';
+                    searchResults.appendChild(div);
+                    showSearchResults();
+                } else {
+                    showRecentSearches();
+                }
+            }
+
+            function showSearchResults() {
+                searchPopup.style.display = 'block';
+                recentSearchesContainer.style.display = 'none';
+                searchResultsContainer.style.display = 'block';
+            }
+
+            function showRecentSearches() {
+                searchPopup.style.display = 'block';
+                recentSearchesContainer.style.display = 'block';
+                searchResultsContainer.style.display = 'none';
+            }
+
+            function hideSearchPopup() {
+                searchPopup.style.display = 'none';
+            }
+
+            // Show recent searches when focusing on search input
+            searchInput.addEventListener('focus', function () {
+                if (this.value.trim() === '') {
+                    showRecentSearches();
+                } else {
+                    performSearch(this.value);
+                }
+            });
+
+            // Close search results when clicking outside
+            document.addEventListener('click', function (event) {
+                if (!searchInput.contains(event.target) && !searchPopup.contains(event.target)) {
+                    hideSearchPopup();
+                }
+            });
+
+            // Initialize recent searches
+            updateRecentSearches();
+        });
+    </script>
+
+
+
+</body>
+</html>
+

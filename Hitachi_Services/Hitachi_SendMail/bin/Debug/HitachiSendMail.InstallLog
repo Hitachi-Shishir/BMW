@@ -1,0 +1,39 @@
+﻿Uninstalling assembly 'C:\psubscriberii\ServiceDeskV2\Hitachi_Services\Hitachi_SendMail\bin\Debug\HitachiSendMail.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\psubscriberii\ServiceDeskV2\Hitachi_Services\Hitachi_SendMail\bin\Debug\HitachiSendMail.InstallLog
+   assemblypath = C:\psubscriberii\ServiceDeskV2\Hitachi_Services\Hitachi_SendMail\bin\Debug\HitachiSendMail.exe
+Removing EventLog source Hitachi_SendMail.
+Service Hitachi_SendMail is being removed from the system...
+Service Hitachi_SendMail was successfully removed from the system.
+Attempt to stop service Hitachi_SendMail.
+Installing assembly 'C:\psubscriberii\ServiceDeskV2\Hitachi_Services\Hitachi_SendMail\bin\Debug\HitachiSendMail.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\psubscriberii\ServiceDeskV2\Hitachi_Services\Hitachi_SendMail\bin\Debug\HitachiSendMail.InstallLog
+   assemblypath = C:\psubscriberii\ServiceDeskV2\Hitachi_Services\Hitachi_SendMail\bin\Debug\HitachiSendMail.exe
+Installing service Hitachi_SendMail...
+Service Hitachi_SendMail has been successfully installed.
+Creating EventLog source Hitachi_SendMail in log Application...
+Committing assembly 'C:\psubscriberii\ServiceDeskV2\Hitachi_Services\Hitachi_SendMail\bin\Debug\HitachiSendMail.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\psubscriberii\ServiceDeskV2\Hitachi_Services\Hitachi_SendMail\bin\Debug\HitachiSendMail.InstallLog
+   assemblypath = C:\psubscriberii\ServiceDeskV2\Hitachi_Services\Hitachi_SendMail\bin\Debug\HitachiSendMail.exe
+Uninstalling assembly 'C:\psubscriberii\ServiceDeskV2\Hitachi_Services\Hitachi_SendMail\bin\Debug\HitachiSendMail.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\psubscriberii\ServiceDeskV2\Hitachi_Services\Hitachi_SendMail\bin\Debug\HitachiSendMail.InstallLog
+   assemblypath = C:\psubscriberii\ServiceDeskV2\Hitachi_Services\Hitachi_SendMail\bin\Debug\HitachiSendMail.exe
+Removing EventLog source Hitachi_SendMail.
+Service Hitachi_SendMail is being removed from the system...
+Service Hitachi_SendMail was successfully removed from the system.
+Uninstalling assembly 'C:\psubscriberii\ServiceDeskV2\Hitachi_Services\Hitachi_SendMail\bin\Debug\HitachiSendMail.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\psubscriberii\ServiceDeskV2\Hitachi_Services\Hitachi_SendMail\bin\Debug\HitachiSendMail.InstallLog
+   assemblypath = C:\psubscriberii\ServiceDeskV2\Hitachi_Services\Hitachi_SendMail\bin\Debug\HitachiSendMail.exe
+Removing EventLog source Hitachi_SendMail.
+Warning: The source Hitachi_SendMail is not registered on the local machine.
+Service Hitachi_SendMail is being removed from the system...
+Service Hitachi_SendMail was successfully removed from the system.

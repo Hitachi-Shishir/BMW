@@ -1,0 +1,23 @@
+1. Cosmo
+
+   Esclation multilevel ---- IT tickets to Rahul sir 
+                             App to Shashi
+2. points suggested by Mayura
+	
+ASK		     
+1. same session for service request(if engineer work on same page)  done	 
+2. all request be visible on single page 
+3.Bulk update for conversion
+4. export page on main 
+5. Custom fields to be added in report for mis
+ 
+3. Atoncap
+   ticket not getting update check for issue 
+
+4. tiger analytics
+   category mapping on the basis of severity
+   VIP user priority on SR, severity on incident should be always high
+5. HIREL
+   hold escalation issue
+6. 
+

@@ -1,0 +1,9 @@
+D:\Inhouse\Hitachi_SD_services\Hitachi_SendMail\bin\Debug\HitachiSendMail.exe.config
+D:\Inhouse\Hitachi_SD_services\Hitachi_SendMail\bin\Debug\HitachiSendMail.exe
+D:\Inhouse\Hitachi_SD_services\Hitachi_SendMail\bin\Debug\HitachiSendMail.pdb
+D:\Inhouse\Hitachi_SD_services\Hitachi_SendMail\obj\Debug\HitachiSendMail.csproj.AssemblyReference.cache
+D:\Inhouse\Hitachi_SD_services\Hitachi_SendMail\obj\Debug\Hitachi_SendMail.ProjectInstaller.resources
+D:\Inhouse\Hitachi_SD_services\Hitachi_SendMail\obj\Debug\HitachiSendMail.csproj.GenerateResource.cache
+D:\Inhouse\Hitachi_SD_services\Hitachi_SendMail\obj\Debug\HitachiSendMail.csproj.CoreCompileInputs.cache
+D:\Inhouse\Hitachi_SD_services\Hitachi_SendMail\obj\Debug\HitachiSendMail.exe
+D:\Inhouse\Hitachi_SD_services\Hitachi_SendMail\obj\Debug\HitachiSendMail.pdb

@@ -1,0 +1,35 @@
+﻿Installing assembly 'C:\psubscriber\ServiceDeskV2\Hitachi_Services\Hitachi_ExecProc\bin\Debug\Hitachi_ExecProc.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\psubscriber\ServiceDeskV2\Hitachi_Services\Hitachi_ExecProc\bin\Debug\Hitachi_ExecProc.InstallLog
+   assemblypath = C:\psubscriber\ServiceDeskV2\Hitachi_Services\Hitachi_ExecProc\bin\Debug\Hitachi_ExecProc.exe
+Installing service Hitachi_ExecProc...
+Service Hitachi_ExecProc has been successfully installed.
+Creating EventLog source Hitachi_ExecProc in log Application...
+Committing assembly 'C:\psubscriber\ServiceDeskV2\Hitachi_Services\Hitachi_ExecProc\bin\Debug\Hitachi_ExecProc.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\psubscriber\ServiceDeskV2\Hitachi_Services\Hitachi_ExecProc\bin\Debug\Hitachi_ExecProc.InstallLog
+   assemblypath = C:\psubscriber\ServiceDeskV2\Hitachi_Services\Hitachi_ExecProc\bin\Debug\Hitachi_ExecProc.exe
+Uninstalling assembly 'C:\psubscriberii\ServiceDeskV2\Hitachi_Services\Hitachi_ExecProc\bin\Debug\Hitachi_ExecProc.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\psubscriberii\ServiceDeskV2\Hitachi_Services\Hitachi_ExecProc\bin\Debug\Hitachi_ExecProc.InstallLog
+   assemblypath = C:\psubscriberii\ServiceDeskV2\Hitachi_Services\Hitachi_ExecProc\bin\Debug\Hitachi_ExecProc.exe
+Removing EventLog source Hitachi_ExecProc.
+Service Hitachi_ExecProc is being removed from the system...
+Service Hitachi_ExecProc was successfully removed from the system.
+Attempt to stop service Hitachi_ExecProc.
+Installing assembly 'C:\psubscriber\Hitachi_Services\Hitachi_ExecProc\bin\Debug\Hitachi_ExecProc.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\psubscriber\Hitachi_Services\Hitachi_ExecProc\bin\Debug\Hitachi_ExecProc.InstallLog
+   assemblypath = C:\psubscriber\Hitachi_Services\Hitachi_ExecProc\bin\Debug\Hitachi_ExecProc.exe
+Installing service Hitachi_ExecProc...
+Service Hitachi_ExecProc has been successfully installed.
+Creating EventLog source Hitachi_ExecProc in log Application...
+Committing assembly 'C:\psubscriber\Hitachi_Services\Hitachi_ExecProc\bin\Debug\Hitachi_ExecProc.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\psubscriber\Hitachi_Services\Hitachi_ExecProc\bin\Debug\Hitachi_ExecProc.InstallLog
+   assemblypath = C:\psubscriber\Hitachi_Services\Hitachi_ExecProc\bin\Debug\Hitachi_ExecProc.exe

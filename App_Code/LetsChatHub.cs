@@ -1,0 +1,394 @@
+﻿using Microsoft.AspNet.SignalR;
+using Microsoft.AspNet.SignalR.Hubs;
+using System;
+using System.Collections.Concurrent;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace UserChat.Hubs
+{
+    public class ChatMessage
+    {
+        public string Name { get; set; }
+        public string Message { get; set; }
+        public string GroupName { get; set; }
+        public string FriendUniqueId { get; set; }
+        public bool IsRead { get; set; }
+        public string SenderId { get; set; }
+        public string ReceiverId { get; set; }
+        public DateTime Timestamp { get; set; }
+    }
+
+    public class UserStatus
+    {
+        public string ConnectionId { get; set; }
+        public bool IsOnline { get; set; }
+        public string LastSeen { get; set; }
+    }
+
+    [HubName("letsChatHub")]
+    public class LetsChatHub : Hub
+    {
+        private static readonly string ConnectionString = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
+        private static readonly ConcurrentDictionary<string, string> UserConnectionMap = new ConcurrentDictionary<string, string>();
+        private static readonly ConcurrentDictionary<string, bool> OnlineUsers = new ConcurrentDictionary<string, bool>();
+
+        private async Task UpdateUnreadMessageCounts(string userId)
+        {
+            try
+            {
+                using (var conn = new SqlConnection(ConnectionString))
+                {
+                    await conn.OpenAsync();
+                    using (var cmd = new SqlCommand("sp_GetUnreadMessageCounts", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@UserId", userId);
+
+                        var unreadCounts = new Dictionary<string, int>();
+                        using (var reader = await cmd.ExecuteReaderAsync())
+                        {
+                            while (await reader.ReadAsync())
+                            {
+                                string senderId = reader["SenderId"].ToString();
+                                int count = Convert.ToInt32(reader["UnreadCount"]);
+                                unreadCounts[senderId] = count;
+                            }
+                        }
+
+                        if (UserConnectionMap.TryGetValue(userId, out string connectionId))
+                        {
+                            await Clients.Client(connectionId).updateUnreadMessageCounts(unreadCounts);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public async Task GetUnreadMessageCounts(string userId)
+        {
+            try
+            {
+                using (var conn = new SqlConnection(ConnectionString))
+                {
+                    await conn.OpenAsync();
+                    using (var cmd = new SqlCommand("sp_GetUnreadMessageCounts", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@UserId", userId);
+
+                        var unreadCounts = new Dictionary<string, int>();
+                        using (var reader = await cmd.ExecuteReaderAsync())
+                        {
+                            while (await reader.ReadAsync())
+                            {
+                                string senderId = reader["SenderId"].ToString();
+                                int count = Convert.ToInt32(reader["UnreadCount"]);
+                                unreadCounts[senderId] = count;
+                            }
+                        }
+
+                        await Clients.Caller.updateUnreadMessageCounts(unreadCounts);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task RegisterUser(string sdUid)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(sdUid)) return;
+
+                UserConnectionMap.AddOrUpdate(sdUid, Context.ConnectionId, (_, __) => Context.ConnectionId);
+                OnlineUsers[sdUid] = true;
+
+                using (var conn = new SqlConnection(ConnectionString))
+                {
+                    await conn.OpenAsync();
+                    using (var cmd = new SqlCommand("sp_UpdateUserStatus", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@UserId", sdUid);
+                        cmd.Parameters.AddWithValue("@IsOnline", true);
+                        cmd.Parameters.AddWithValue("@ConnectionId", Context.ConnectionId);
+                        await cmd.ExecuteNonQueryAsync();
+                    }
+
+                    using (var cmd = new SqlCommand("sp_GetAllUserStatuses", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        using (var reader = await cmd.ExecuteReaderAsync())
+                        {
+                            var userStatuses = new List<UserStatus>();
+                            while (await reader.ReadAsync())
+                            {
+                                userStatuses.Add(new UserStatus
+                                {
+                                    ConnectionId = reader["ConnectionId"].ToString(),
+                                    IsOnline = Convert.ToBoolean(reader["IsOnline"]),
+                                    LastSeen = reader["LastSeen"].ToString()
+                                });
+                            }
+                            await Clients.Caller.updateAllUserStatuses(userStatuses);
+                        }
+                    }
+                }
+                await UpdateUnreadMessageCounts(sdUid);
+                await Clients.Others.userStatusChanged(sdUid, true);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public override async Task OnReconnected()
+        {
+            try
+            {
+                var userId = UserConnectionMap.FirstOrDefault(x => x.Value == Context.ConnectionId).Key;
+                if (!string.IsNullOrEmpty(userId))
+                {
+                    using (var conn = new SqlConnection(ConnectionString))
+                    {
+                        await conn.OpenAsync();
+                        using (var cmd = new SqlCommand("sp_UpdateUserStatus", conn))
+                        {
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@UserId", userId);
+                            cmd.Parameters.AddWithValue("@IsOnline", true);
+                            cmd.Parameters.AddWithValue("@ConnectionId", Context.ConnectionId);
+                            await cmd.ExecuteNonQueryAsync();
+                        }
+                    }
+
+                    await UpdateUnreadMessageCounts(userId);
+                    await Clients.Others.userStatusChanged(userId, true);
+
+                    var friends = OnlineUsers.Keys.Where(uid => uid != userId).ToList();
+                    foreach (var friend in friends)
+                    {
+                        await GetMessageHistory(friend);
+                    }
+                }
+                await base.OnReconnected();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        //public Task<List<string>> GetOnlineUsers()
+        //{
+        //    var onlineUserIds = OnlineUsers.Keys.ToList();
+        //    return Task.FromResult(onlineUserIds);
+        //}
+        public List<string> GetOnlineUsers()
+        {
+            try
+            {
+                List<string> onlineUsers = new List<string>();
+
+                using (SqlConnection conn = new SqlConnection(ConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT UserId FROM UserStatus with(nolock) WHERE IsOnline = 1", conn);
+                    conn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        onlineUsers.Add(reader["UserId"].ToString());
+                    }
+                }
+
+                return onlineUsers;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task GetMessageHistory(string friendId)
+        {
+            try
+            {
+                var senderId = UserConnectionMap.FirstOrDefault(x => x.Value == Context.ConnectionId).Key;
+                if (string.IsNullOrEmpty(senderId)) return;
+
+                var participants = new[] { senderId, friendId }.OrderBy(x => x);
+                var conversationId = string.Join("-", participants);
+
+                using (var conn = new SqlConnection(ConnectionString))
+                {
+                    await conn.OpenAsync();
+                    using (var cmd = new SqlCommand("sp_GetMessageHistory", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@ConversationId", conversationId);
+
+                        var messages = new List<ChatMessage>();
+                        using (var reader = await cmd.ExecuteReaderAsync())
+                        {
+                            while (await reader.ReadAsync())
+                            {
+                                messages.Add(new ChatMessage
+                                {
+                                    SenderId = reader["SenderId"].ToString(),
+                                    ReceiverId = reader["ReceiverId"].ToString(),
+                                    Message = reader["Message"].ToString(),
+                                    Name = reader["Name"].ToString(),
+                                    Timestamp = Convert.ToDateTime(reader["Timestamp"]),
+                                    IsRead = Convert.ToBoolean(reader["IsRead"])
+                                });
+                            }
+                        }
+
+                        var sortedMessages = messages.OrderBy(m => m.Timestamp).ToList();
+                        await Clients.Caller.loadMessageHistory(sortedMessages);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public async Task SendPrivateMessage(ChatMessage message)
+        {
+
+            try
+            {
+                Networking obj = new Networking();
+                string IP = obj.GetIPAddress();
+                //string VistorIP = obj.GetVistorIPAddress();
+                //string physicalAddress = obj.getPhysicalAddress();
+                string ClientMachineName = "";//obj.getClientMachineName();
+                //string DeviceId = obj.getDeviceId();
+                //string getCPUId = obj.getCPUId();
+                //WebsiteVistorData ob = new WebsiteVistorData();
+                //var vistorData = ob.getClientIPData();
+                //string City = vistorData.City;
+                //string Region = vistorData.Region;
+                //string Country = vistorData.Country;
+                //string CountryCode = vistorData.CountryCode;
+                //string RegionName = vistorData.RegionName;
+                //string Zip = Convert.ToString(vistorData.Zip);
+                //string Lat = Convert.ToString(vistorData.Lat);
+                //string Lon = Convert.ToString(vistorData.Lon);
+                var senderId = UserConnectionMap.FirstOrDefault(x => x.Value == Context.ConnectionId).Key;
+                if (string.IsNullOrEmpty(senderId)) return;
+
+                var participants = new[] { senderId, message.FriendUniqueId }.OrderBy(x => x);
+                var conversationId = string.Join("-", participants);
+                var timestamp = DateTime.Now;
+
+                using (var conn = new SqlConnection(ConnectionString))
+                {
+                    await conn.OpenAsync();
+                    using (var cmd = new SqlCommand("sp_StoreMessage", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@SenderId", senderId);
+                        cmd.Parameters.AddWithValue("@ReceiverId", message.FriendUniqueId);
+                        cmd.Parameters.AddWithValue("@Message", message.Message);
+                        cmd.Parameters.AddWithValue("@Name", message.Name);
+                        cmd.Parameters.AddWithValue("@Timestamp", timestamp);
+                        cmd.Parameters.AddWithValue("@ConversationId", conversationId);
+                        cmd.Parameters.AddWithValue("@IPAdress", IP);
+                        //cmd.Parameters.AddWithValue("@VistorIP", VistorIP);
+                        //cmd.Parameters.AddWithValue("@physicalAddress", physicalAddress);
+                        cmd.Parameters.AddWithValue("@ClientMachineName", ClientMachineName);
+                        //cmd.Parameters.AddWithValue("@DeviceId", DeviceId);
+                        //cmd.Parameters.AddWithValue("@City", City);
+                        //cmd.Parameters.AddWithValue("@Region", Region);
+                        //cmd.Parameters.AddWithValue("@Country", Country);
+                        //cmd.Parameters.AddWithValue("@CountryCode", CountryCode);
+                        //cmd.Parameters.AddWithValue("@RegionName", RegionName);
+                        //cmd.Parameters.AddWithValue("@Zip", Zip);
+                        //cmd.Parameters.AddWithValue("@Lat", Lat);
+                        await cmd.ExecuteNonQueryAsync();
+                    }
+                    if (UserConnectionMap.TryGetValue(message.FriendUniqueId, out string receiverConnectionId))
+                    {
+                        await Clients.Client(receiverConnectionId).addNewPrivateMessageToPage(
+                            message.Name, message.Message, senderId, message.FriendUniqueId, timestamp);
+                    }
+
+                    await Clients.Caller.addNewPrivateMessageToPage(
+                        message.Name, message.Message, senderId, message.FriendUniqueId, timestamp);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public async Task MarkMessagesAsRead(string senderId, string receiverId)
+        {
+            try
+            {
+                using (var conn = new SqlConnection(ConnectionString))
+                {
+                    await conn.OpenAsync();
+                    using (var cmd = new SqlCommand("sp_MarkMessagesAsRead", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@SenderId", senderId);
+                        cmd.Parameters.AddWithValue("@ReceiverId", receiverId);
+                        await cmd.ExecuteNonQueryAsync();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public override async Task OnDisconnected(bool stopCalled)
+        {
+            try
+            {
+                var userId = UserConnectionMap.FirstOrDefault(x => x.Value == Context.ConnectionId).Key;
+                if (!string.IsNullOrEmpty(userId))
+                {
+                    string removedValue;
+                    UserConnectionMap.TryRemove(userId, out removedValue);
+                    OnlineUsers[userId] = false;
+
+                    using (var conn = new SqlConnection(ConnectionString))
+                    {
+                        await conn.OpenAsync();
+                        using (var cmd = new SqlCommand("sp_UpdateUserStatus", conn))
+                        {
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@UserId", userId);
+                            cmd.Parameters.AddWithValue("@IsOnline", false);
+                            cmd.Parameters.AddWithValue("@ConnectionId", Context.ConnectionId);
+                            await cmd.ExecuteNonQueryAsync();
+                        }
+                    }
+
+                    await Clients.Others.userStatusChanged(userId, false);
+                }
+                await base.OnDisconnected(stopCalled);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+    }
+}

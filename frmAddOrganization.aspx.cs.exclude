@@ -1,0 +1,487 @@
+﻿using ClosedXML.Excel;
+using Nest;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
+using System.Data;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Threading;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class frmAddOrganization : System.Web.UI.Page
+{
+    InsertErrorLogs inEr = new InsertErrorLogs();
+    Random r = new Random();
+    public static Int64 ID;
+    public static long OrgID;
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        try
+        {
+            //checkPanel();
+            if (Session["UserScope"] != null)
+            {
+                if (!IsPostBack)
+                {
+                    //Session["CurrentStep"] = null;
+
+                    #region Add Orgainisation
+                    if ((Session["CurrentStep"] == null) || (Convert.ToString(Session["CurrentStep"]) == "1"))
+                    {
+                        getOrg();
+                    }
+                    else
+                    {
+                     //   pnlShowOrg.Visible = false;
+                    }
+                    #endregion Add Orgainisation 
+                }
+            }
+            else
+            {
+                Response.Redirect("/Default.aspx");
+            }
+
+        }
+        catch (ThreadAbortException e2)
+        {
+            Console.WriteLine("Exception message: {0}", e2.Message);
+            Thread.ResetAbort();
+        }
+        catch (Exception ex)
+        {
+            var st = new StackTrace(ex, true);
+            var frame = st.GetFrame(0);
+            var line = frame.GetFileLineNumber();
+            inEr.InsertErrorLogsF(Session["UserName"].ToString()
+        , " " + Request.Url.ToString() + "Got Exception" + "Line Number :" + line.ToString() + ex.ToString());
+            ScriptManager.RegisterStartupScript(this, GetType(), "showNotification", $"error_noti(); setTimeout(function() {{ window.location.reload(); }}, 2000);", true);
+        }
+    }
+    #region Start Add Orgainsation
+    private void getOrg()
+    {
+        btnOrg(null, null);
+        DataBind();
+        FillOrgDetails();
+    }
+    private void FillOrgDetails()
+    {
+        try
+        {
+            DataTable SD_Org = new FillSDFields().FillOrganization();
+            ViewState["SD_Org"] = SD_Org;
+            if (SD_Org.Rows.Count > 0)
+            {
+                this.gvOrg.DataSource = (object)SD_Org;
+                this.gvOrg.DataBind();
+            }
+            else
+            {
+                this.gvOrg.DataSource = (object)null;
+                this.gvOrg.DataBind();
+            }
+            if (SD_Org.Rows.Count > 0 && SD_Org != null)
+            {
+                //GridFormat1(SD_Org);
+            }
+        }
+        catch (ThreadAbortException e2)
+        {
+            Console.WriteLine("Exception message: {0}", e2.Message);
+            Thread.ResetAbort();
+        }
+        catch (Exception ex)
+        {
+            if (ex.ToString().Contains("System.Threading.Thread.AbortInternal()"))
+            {
+
+            }
+            else
+            {
+                var st = new StackTrace(ex, true);
+                var frame = st.GetFrame(0);
+                var line = frame.GetFileLineNumber();
+                inEr.InsertErrorLogsF(Session["UserName"].ToString()
+    , " " + Request.Url.ToString() + "Got Exception" + "Line Number :" + line.ToString() + ex.ToString());
+                ScriptManager.RegisterStartupScript(this, GetType(), "showNotification", $"error_noti(); setTimeout(function() {{ window.location.reload(); }}, 2000);", true);
+            }
+        }
+    }
+    protected void ImgBtnExport_Click(object sender, EventArgs e)
+
+    {
+        try
+        {
+            DataTable dt = new DataTable("GridView_Data");
+            foreach (System.Web.UI.WebControls.TableCell cell in gvOrg.HeaderRow.Cells)
+            {
+                dt.Columns.Add(cell.Text);
+            }
+            foreach (GridViewRow row in gvOrg.Rows)
+            {
+                dt.Rows.Add();
+                for (int i = 0; i < row.Cells.Count; i++)
+                {
+                    dt.Rows[dt.Rows.Count - 1][i] = row.Cells[i].Text;
+                }
+            }
+            using (XLWorkbook wb = new XLWorkbook())
+            {
+                wb.Worksheets.Add(dt);
+
+                Response.Clear();
+                Response.Buffer = true;
+                Response.Charset = "";
+                Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                Response.AddHeader("content-disposition", "attachment;filename=Priority.xlsx");
+                using (MemoryStream MyMemoryStream = new MemoryStream())
+                {
+                    wb.SaveAs(MyMemoryStream);
+                    MyMemoryStream.WriteTo(Response.OutputStream);
+                    Response.Flush();
+                    Response.End();
+                }
+            }
+
+
+        }
+        catch (ThreadAbortException e2)
+        {
+            Console.WriteLine("Exception message: {0}", e2.Message);
+            Thread.ResetAbort();
+        }
+        catch (Exception ex)
+        {
+            var st = new StackTrace(ex, true);
+            var frame = st.GetFrame(0);
+            var line = frame.GetFileLineNumber();
+            inEr.InsertErrorLogsF(Session["UserName"].ToString()
+, " " + Request.Url.ToString() + "Got Exception" + "Line Number :" + line.ToString() + ex.ToString());
+            ScriptManager.RegisterStartupScript(this, GetType(), "showNotification", $"error_noti(); setTimeout(function() {{ window.location.reload(); }}, 2000);", true);
+        }
+    }
+    protected void gvOrg_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+        try
+        {
+            if (e.CommandName == "DeleteEx")
+            {
+                int rowIndex = Convert.ToInt32(e.CommandArgument);
+                long OrgID = Convert.ToInt64(gvOrg.DataKeys[rowIndex].Values["Org_ID"].ToString());
+                string Deskref = gvOrg.Rows[rowIndex].Cells[1].Text;
+                string PriorityName = gvOrg.Rows[rowIndex].Cells[2].Text;
+                try
+                {
+                    using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ConnectionString))
+                    {
+                        con.Open();
+                        using (SqlCommand cmd = new SqlCommand("SD_spAddOrganization", con))
+                        {
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@Org_ID", OrgID);
+                            cmd.Parameters.AddWithValue("@Option", "DeleteOrg");
+                            cmd.CommandTimeout = 180;
+                            int res = cmd.ExecuteNonQuery();
+                            con.Close();
+                            if (res > 0)
+                            {
+                                ScriptManager.RegisterStartupScript(this, GetType(), "showNotification", $"success_noti('{HttpUtility.JavaScriptStringEncode("Deleted Successfully !")}');", true);
+                                FillOrgDetails();
+                            }
+                        }
+                    }
+                }
+                catch (ThreadAbortException e2)
+                {
+                    Console.WriteLine("Exception message: {0}", e2.Message);
+                    Thread.ResetAbort();
+                }
+                catch (Exception ex)
+                {
+                    if (ex.ToString().Contains("System.Threading.Thread.AbortInternal()"))
+                    {
+
+                    }
+                    else
+                    {
+                        var st = new StackTrace(ex, true);
+                        // Get the top stack frame
+                        var frame = st.GetFrame(0);
+                        // Get the line number from the stack frame
+                        var line = frame.GetFileLineNumber();
+                        inEr.InsertErrorLogsF(Session["UserName"].ToString()
+            , " " + Request.Url.ToString() + "Got Exception" + "Line Number :" + line.ToString() + ex.ToString());
+                        ScriptManager.RegisterStartupScript(this, GetType(), "showNotification",
+   $"error_noti(); setTimeout(function() {{ window.location.reload(); }}, 2000);", true);
+                    }
+                }
+
+            }
+            if (e.CommandName == "SelectState")
+            {
+                int rowIndex = Convert.ToInt32(e.CommandArgument);
+                OrgID = Convert.ToInt64(gvOrg.DataKeys[rowIndex].Values["Org_ID"].ToString());
+                txtOrgName.Text = gvOrg.Rows[rowIndex].Cells[1].Text;
+                txtOrgDesc.Text = gvOrg.Rows[rowIndex].Cells[2].Text;
+                txtCntnctPrnsName.Text = gvOrg.Rows[rowIndex].Cells[3].Text;
+                txtCntctPrnsMob.Text = gvOrg.Rows[rowIndex].Cells[4].Text;
+                txtCntctPrsnEmail.Text = gvOrg.Rows[rowIndex].Cells[5].Text;
+                txtCntctPrsnNameII.Text = gvOrg.Rows[rowIndex].Cells[6].Text;
+                txtCntctPrsnMobII.Text = gvOrg.Rows[rowIndex].Cells[7].Text;
+                txtCntctPrnsEmailII.Text = gvOrg.Rows[rowIndex].Cells[8].Text;
+                btnInsertOrg.Visible = false;
+                btnUpdateOrg.Visible = true;
+            }
+        }
+        catch (ThreadAbortException e2)
+        {
+            Console.WriteLine("Exception message: {0}", e2.Message);
+            Thread.ResetAbort();
+        }
+        catch (Exception ex)
+        {
+
+            if (ex.ToString().Contains("System.Threading.Thread.AbortInternal()"))
+            {
+
+            }
+            else
+            {
+                var st = new StackTrace(ex, true);
+                // Get the top stack frame
+                var frame = st.GetFrame(0);
+                // Get the line number from the stack frame
+                var line = frame.GetFileLineNumber();
+                inEr.InsertErrorLogsF(Session["UserName"].ToString()
+    , " " + Request.Url.ToString() + "Got Exception" + "Line Number :" + line.ToString() + ex.ToString());
+                ScriptManager.RegisterStartupScript(this, GetType(), "showNotification",
+   $"error_noti(); setTimeout(function() {{ window.location.reload(); }}, 2000);", true);
+            }
+        }
+        FillOrgDetails();
+    }
+    protected void SaveData()
+    {
+        try
+        {
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ConnectionString))
+            {
+
+                using (SqlCommand cmd = new SqlCommand("SD_spAddOrganization", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@OrgName", txtOrgName.Text.Trim());
+                    cmd.Parameters.AddWithValue("@OrgDesc", txtOrgDesc.Text.Trim());
+                    cmd.Parameters.AddWithValue("@Org_ID", r.Next());
+                    cmd.Parameters.AddWithValue("@CntctPrsnName", txtCntnctPrnsName.Text.Trim());
+                    cmd.Parameters.AddWithValue("@CntctPrsnMob", txtCntctPrnsMob.Text.Trim());
+                    cmd.Parameters.AddWithValue("@CntctPrsnEmail", txtCntctPrsnEmail.Text);
+                    cmd.Parameters.AddWithValue("@CntctPrsnNameII", txtCntctPrsnNameII.Text);
+                    cmd.Parameters.AddWithValue("@CntctPrsnMobII", txtCntctPrsnMobII.Text);
+                    cmd.Parameters.AddWithValue("@CntctPrsnEmailII", txtCntctPrnsEmailII.Text);
+                    cmd.Parameters.Add("@Error", SqlDbType.VarChar, 50).Direction = ParameterDirection.Output;
+                    cmd.Parameters.AddWithValue("@Option", "AddOrg");
+                    con.Open();
+                    int res = cmd.ExecuteNonQuery();
+                    string ErrorChk = cmd.Parameters["@Error"].Value.ToString();
+                    if (res > 0)
+                    {
+                        ScriptManager.RegisterStartupScript(this, GetType(), "showNotification", $"if (window.location.pathname.endsWith('/frmAddOrganization.aspx')) {{ success_noti('{HttpUtility.JavaScriptStringEncode("Saved Successfully!")}'); setTimeout(function() {{ window.location.reload(); }}, 2000); }}", true);
+                    }
+                    else
+                    {
+                        ScriptManager.RegisterStartupScript(this, GetType(), "showNotification", $"if (window.location.pathname.endsWith('/frmAddOrganization.aspx')) {{ warning_noti('{HttpUtility.JavaScriptStringEncode("" + ErrorChk + "")}'); setTimeout(function() {{ window.location.reload(); }}, 2000); }}", true);
+                    }
+                }
+            }
+        }
+        catch (ThreadAbortException e2)
+        {
+            Console.WriteLine("Exception message: {0}", e2.Message);
+            Thread.ResetAbort();
+        }
+        catch (Exception ex)
+        {
+            if (ex.ToString().Contains("System.Threading.Thread.AbortInternal()"))
+            {
+
+            }
+            else
+            {
+                var st = new StackTrace(ex, true);
+                var frame = st.GetFrame(0);
+                var line = frame.GetFileLineNumber();
+                inEr.InsertErrorLogsF(Session["UserName"].ToString()
+    , " " + Request.Url.ToString() + "Got Exception" + "Line Number :" + line.ToString() + ex.ToString());
+                ScriptManager.RegisterStartupScript(this, GetType(), "showNotification",
+   $"error_noti(); setTimeout(function() {{ window.location.reload(); }}, 2000);", true);
+            }
+        }
+    }
+    protected void btnInsertOrg_Click(object sender, EventArgs e)
+    {
+        if (txtCntnctPrnsName.Text.Trim().ToLower() == txtCntctPrsnNameII.Text.Trim().ToLower())
+        {
+            ScriptManager.RegisterStartupScript(this, GetType(), "showNotification", $"warning_noti('{HttpUtility.JavaScriptStringEncode("Contact Person Name and Contact PersonII Name could not be same !")}');", true);
+            return;
+        }
+        if (txtCntctPrnsMob.Text.Trim().ToLower() == txtCntctPrsnMobII.Text.Trim().ToLower())
+        {
+            ScriptManager.RegisterStartupScript(this, GetType(), "showNotification", $"warning_noti('{HttpUtility.JavaScriptStringEncode("Contact Person Mobile and Contact PersonII Mobile could not be same !")}');", true);
+            return;
+        }
+        if (txtCntctPrsnEmail.Text.Trim().ToLower() == txtCntctPrnsEmailII.Text.Trim().ToLower())
+        {
+            ScriptManager.RegisterStartupScript(this, GetType(), "showNotification", $"warning_noti('{HttpUtility.JavaScriptStringEncode("Contact Person Email and Contact PersonII Email could not be same !")}');", true);
+            return;
+        }
+        SaveData();
+    }
+    protected void gvOrg_RowDataBound(object sender, GridViewRowEventArgs e)
+    {
+        try
+        {
+            if (Session["UserScope"].ToString() == "Master")
+            {
+                e.Row.Cells[4].Visible = true;
+                e.Row.Cells[5].Visible = true;
+            }
+
+            if (Session["UserScope"].ToString() == "Technician")
+            {
+                e.Row.Cells[4].Visible = true;
+                e.Row.Cells[5].Visible = false;
+
+            }
+        }
+        catch (ThreadAbortException e2)
+        {
+            Console.WriteLine("Exception message: {0}", e2.Message);
+            Thread.ResetAbort();
+        }
+        catch (Exception ex)
+        {
+            var st = new StackTrace(ex, true);
+            var frame = st.GetFrame(0);
+            var line = frame.GetFileLineNumber();
+            inEr.InsertErrorLogsF(Session["UserName"].ToString()
+, " " + Request.Url.ToString() + "Got Exception" + "Line Number :" + line.ToString() + ex.ToString());
+            ScriptManager.RegisterStartupScript(this, GetType(), "showNotification", $"error_noti(); setTimeout(function() {{ window.location.reload(); }}, 2000);", true);
+        }
+    }
+    protected void btnCancel_Click(object sender, EventArgs e)
+    {
+        Response.Redirect(Request.Url.AbsoluteUri);
+    }
+    protected void btnOrg(object sender, EventArgs e)
+    {
+        pnlShowOrg.Visible = true;
+    }
+    protected void btnUpdateOrg_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SD_spAddOrganization", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@OrgName", txtOrgName.Text.Trim());
+                    cmd.Parameters.AddWithValue("@OrgDesc", txtOrgDesc.Text.Trim());
+                    cmd.Parameters.AddWithValue("@Org_ID", OrgID);
+                    cmd.Parameters.AddWithValue("@CntctPrsnName", txtCntnctPrnsName.Text.Trim());
+                    cmd.Parameters.AddWithValue("@CntctPrsnMob", txtCntctPrnsMob.Text.Trim());
+                    cmd.Parameters.AddWithValue("@CntctPrsnEmail", txtCntctPrsnEmail.Text);
+                    cmd.Parameters.AddWithValue("@CntctPrsnNameII", txtCntctPrsnNameII.Text);
+                    cmd.Parameters.AddWithValue("@CntctPrsnMobII", txtCntctPrsnMobII.Text);
+                    cmd.Parameters.AddWithValue("@CntctPrsnEmailII", txtCntctPrnsEmailII.Text);
+                    cmd.Parameters.AddWithValue("@Option", "UpdateOrg");
+                    con.Open();
+                    int res = cmd.ExecuteNonQuery();
+                    if (res > 0)
+                    {
+                        ScriptManager.RegisterStartupScript(this, GetType(), "showNotification", $"if (window.location.pathname.endsWith('/frmAddOrganization.aspx')) {{ success_noti('{HttpUtility.JavaScriptStringEncode("Saved Successfully!")}'); setTimeout(function() {{ window.location.reload(); }}, 2000); }}", true);
+                        FillOrgDetails();
+                    }
+                }
+            }
+        }
+        catch (ThreadAbortException e2)
+        {
+            Console.WriteLine("Exception message: {0}", e2.Message);
+            Thread.ResetAbort();
+        }
+        catch (Exception ex)
+        {
+            if (ex.ToString().Contains("System.Threading.Thread.AbortInternal()"))
+            {
+
+            }
+            else
+            {
+                var st = new StackTrace(ex, true);
+                // Get the top stack frame
+                var frame = st.GetFrame(0);
+                // Get the line number from the stack frame
+                var line = frame.GetFileLineNumber();
+                inEr.InsertErrorLogsF(Session["UserName"].ToString()
+    , " " + Request.Url.ToString() + "Got Exception" + "Line Number :" + line.ToString() + ex.ToString());
+                ScriptManager.RegisterStartupScript(this, GetType(), "showNotification",
+   $"error_noti(); setTimeout(function() {{ window.location.reload(); }}, 2000);", true);
+
+            }
+        }
+    }
+
+    protected void GridFormat1(DataTable dt)
+
+    {
+        gvOrg.UseAccessibleHeader = true;
+        gvOrg.HeaderRow.TableSection = TableRowSection.TableHeader;
+
+        if (gvOrg.TopPagerRow != null)
+        {
+            gvOrg.TopPagerRow.TableSection = TableRowSection.TableHeader;
+        }
+        if (gvOrg.BottomPagerRow != null)
+        {
+            gvOrg.BottomPagerRow.TableSection = TableRowSection.TableFooter;
+        }
+        if (dt.Rows.Count > 0)
+            gvOrg.FooterRow.TableSection = TableRowSection.TableFooter;
+    }
+    private void RegisterDataTableScripts()
+    {
+        string script = @"
+        <script src='https://pcv-demo.hitachi-systems-mc.com:5723/assetsdata/plugins/datatable/js/jquery.dataTables.min.js'></script>
+        <script src='https://pcv-demo.hitachi-systems-mc.com:5723/assetsdata/plugins/datatable/js/dataTables.bootstrap5.min.js'></script>
+        <script src='https://pcv-demo.hitachi-systems-mc.com:5723/assetsdata/js/jquery-3.6.0.min.js'></script>
+        <script>
+            $(document).ready(function () {
+                $('.data-table').each(function () {
+                    if ($.fn.DataTable.isDataTable(this)) {
+                        $(this).DataTable().clear().destroy();
+                    }
+                    $(this).DataTable({
+                        lengthChange: false,
+                        dom: 'Bfrtip',
+                        buttons: [
+                            'copy', 'excel', 'pdf', 'print'
+                        ]
+                    });
+                });
+            });
+        </script>
+        <link href='https://pcv-demo.hitachi-systems-mc.com:5723/assetsdata/plugins/datatable/css/dataTables.bootstrap5.min.css' rel='stylesheet' />
+    ";
+
+        ClientScript.RegisterStartupScript(this.GetType(), "DataTableScript", script, false);
+    }
+    #endregion End Add Orgainsation
+}

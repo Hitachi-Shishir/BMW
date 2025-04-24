@@ -1,0 +1,60 @@
+﻿Installing assembly 'C:\ServiceDeskII\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\ServiceDeskII\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.InstallLog
+   assemblypath = C:\ServiceDeskII\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.exe
+Installing service GetMailFrom2Min...
+Service GetMailFrom2Min has been successfully installed.
+Creating EventLog source GetMailFrom2Min in log Application...
+Committing assembly 'C:\ServiceDeskII\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\ServiceDeskII\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.InstallLog
+   assemblypath = C:\ServiceDeskII\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.exe
+Installing assembly 'C:\ServiceDeskLive\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\ServiceDeskLive\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.InstallLog
+   assemblypath = C:\ServiceDeskLive\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.exe
+Installing service GetMailFrom2Min...
+Service GetMailFrom2Min has been successfully installed.
+Creating EventLog source GetMailFrom2Min in log Application...
+Committing assembly 'C:\ServiceDeskLive\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\ServiceDeskLive\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.InstallLog
+   assemblypath = C:\ServiceDeskLive\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.exe
+Uninstalling assembly 'C:\ServiceDeskLive\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\ServiceDeskLive\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.InstallLog
+   assemblypath = C:\ServiceDeskLive\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.exe
+Removing EventLog source GetMailFrom2Min.
+Service GetMailFrom2Min is being removed from the system...
+Service GetMailFrom2Min was successfully removed from the system.
+Installing assembly 'C:\ServiceDeskLive\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\ServiceDeskLive\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.InstallLog
+   assemblypath = C:\ServiceDeskLive\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.exe
+Installing service GetMailFrom2Min...
+Service GetMailFrom2Min has been successfully installed.
+Creating EventLog source GetMailFrom2Min in log Application...
+Committing assembly 'C:\ServiceDeskLive\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\ServiceDeskLive\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.InstallLog
+   assemblypath = C:\ServiceDeskLive\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.exe
+Installing assembly 'C:\ServiceDeskLive\Hitachi_SD_services\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\ServiceDeskLive\Hitachi_SD_services\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.InstallLog
+   assemblypath = C:\ServiceDeskLive\Hitachi_SD_services\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.exe
+Installing service GetMailFrom2Min...
+Service GetMailFrom2Min has been successfully installed.
+Creating EventLog source GetMailFrom2Min in log Application...
+Committing assembly 'C:\ServiceDeskLive\Hitachi_SD_services\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\ServiceDeskLive\Hitachi_SD_services\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.InstallLog
+   assemblypath = C:\ServiceDeskLive\Hitachi_SD_services\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.exe

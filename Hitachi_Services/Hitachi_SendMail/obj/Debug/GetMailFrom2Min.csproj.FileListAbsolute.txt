@@ -1,0 +1,75 @@
+C:\Users\m6730\source\repos\GetMailFrom2Min\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.exe.config
+C:\Users\m6730\source\repos\GetMailFrom2Min\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.exe
+C:\Users\m6730\source\repos\GetMailFrom2Min\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.pdb
+C:\Users\m6730\source\repos\GetMailFrom2Min\GetMailFrom2Min\obj\Debug\GetMailFrom2Min.csproj.AssemblyReference.cache
+C:\Users\m6730\source\repos\GetMailFrom2Min\GetMailFrom2Min\obj\Debug\GetMailFrom2Min.csproj.SuggestedBindingRedirects.cache
+C:\Users\m6730\source\repos\GetMailFrom2Min\GetMailFrom2Min\obj\Debug\GetMailFrom2Min.ProjectInstaller.resources
+C:\Users\m6730\source\repos\GetMailFrom2Min\GetMailFrom2Min\obj\Debug\GetMailFrom2Min.csproj.GenerateResource.cache
+C:\Users\m6730\source\repos\GetMailFrom2Min\GetMailFrom2Min\obj\Debug\GetMailFrom2Min.csproj.CoreCompileInputs.cache
+C:\Users\m6730\source\repos\GetMailFrom2Min\GetMailFrom2Min\obj\Debug\GetMailFrom2Min.exe
+C:\Users\m6730\source\repos\GetMailFrom2Min\GetMailFrom2Min\obj\Debug\GetMailFrom2Min.pdb
+D:\hh\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.exe.config
+D:\hh\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.exe
+D:\hh\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.pdb
+D:\hh\GetMailFrom2Min\obj\Debug\GetMailFrom2Min.csproj.AssemblyReference.cache
+D:\hh\GetMailFrom2Min\obj\Debug\GetMailFrom2Min.csproj.SuggestedBindingRedirects.cache
+D:\hh\GetMailFrom2Min\obj\Debug\GetMailFrom2Min.ProjectInstaller.resources
+D:\hh\GetMailFrom2Min\obj\Debug\GetMailFrom2Min.csproj.GenerateResource.cache
+D:\hh\GetMailFrom2Min\obj\Debug\GetMailFrom2Min.csproj.CoreCompileInputs.cache
+D:\hh\GetMailFrom2Min\obj\Debug\GetMailFrom2Min.exe
+D:\hh\GetMailFrom2Min\obj\Debug\GetMailFrom2Min.pdb
+D:\hh\demo\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.exe.config
+D:\hh\demo\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.exe
+D:\hh\demo\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.pdb
+D:\hh\demo\GetMailFrom2Min\obj\Debug\GetMailFrom2Min.csproj.AssemblyReference.cache
+D:\hh\demo\GetMailFrom2Min\obj\Debug\GetMailFrom2Min.csproj.SuggestedBindingRedirects.cache
+D:\hh\demo\GetMailFrom2Min\obj\Debug\GetMailFrom2Min.ProjectInstaller.resources
+D:\hh\demo\GetMailFrom2Min\obj\Debug\GetMailFrom2Min.csproj.GenerateResource.cache
+D:\hh\demo\GetMailFrom2Min\obj\Debug\GetMailFrom2Min.csproj.CoreCompileInputs.cache
+D:\hh\demo\GetMailFrom2Min\obj\Debug\GetMailFrom2Min.exe
+D:\hh\demo\GetMailFrom2Min\obj\Debug\GetMailFrom2Min.pdb
+D:\Hitachi_SD_services\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.exe.config
+D:\Hitachi_SD_services\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.exe
+D:\Hitachi_SD_services\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.pdb
+D:\Hitachi_SD_services\GetMailFrom2Min\obj\Debug\GetMailFrom2Min.csproj.AssemblyReference.cache
+D:\Hitachi_SD_services\GetMailFrom2Min\obj\Debug\GetMailFrom2Min.ProjectInstaller.resources
+D:\Hitachi_SD_services\GetMailFrom2Min\obj\Debug\GetMailFrom2Min.csproj.GenerateResource.cache
+D:\Hitachi_SD_services\GetMailFrom2Min\obj\Debug\GetMailFrom2Min.csproj.CoreCompileInputs.cache
+D:\Hitachi_SD_services\GetMailFrom2Min\obj\Debug\GetMailFrom2Min.exe
+D:\Hitachi_SD_services\GetMailFrom2Min\obj\Debug\GetMailFrom2Min.pdb
+D:\OneDrive - Hitachi Group\Hitachi_Projects\New folder 1\New folder\bin\Debug\GetMailFrom2Min.exe.config
+D:\OneDrive - Hitachi Group\Hitachi_Projects\New folder 1\New folder\bin\Debug\GetMailFrom2Min.exe
+D:\OneDrive - Hitachi Group\Hitachi_Projects\New folder 1\New folder\bin\Debug\GetMailFrom2Min.pdb
+D:\OneDrive - Hitachi Group\Hitachi_Projects\New folder 1\New folder\obj\Debug\GetMailFrom2Min.csproj.AssemblyReference.cache
+D:\OneDrive - Hitachi Group\Hitachi_Projects\New folder 1\New folder\obj\Debug\GetMailFrom2Min.ProjectInstaller.resources
+D:\OneDrive - Hitachi Group\Hitachi_Projects\New folder 1\New folder\obj\Debug\GetMailFrom2Min.csproj.GenerateResource.cache
+D:\OneDrive - Hitachi Group\Hitachi_Projects\New folder 1\New folder\obj\Debug\GetMailFrom2Min.csproj.CoreCompileInputs.cache
+D:\OneDrive - Hitachi Group\Hitachi_Projects\New folder 1\New folder\obj\Debug\GetMailFrom2Min.exe
+D:\OneDrive - Hitachi Group\Hitachi_Projects\New folder 1\New folder\obj\Debug\GetMailFrom2Min.pdb
+D:\OneDrive - Hitachi Group\Hitachi_Projects\New folder 1\Email Service\bin\Debug\GetMailFrom2Min.exe.config
+D:\OneDrive - Hitachi Group\Hitachi_Projects\New folder 1\Email Service\bin\Debug\GetMailFrom2Min.exe
+D:\OneDrive - Hitachi Group\Hitachi_Projects\New folder 1\Email Service\bin\Debug\GetMailFrom2Min.pdb
+D:\OneDrive - Hitachi Group\Hitachi_Projects\New folder 1\Email Service\obj\Debug\GetMailFrom2Min.csproj.AssemblyReference.cache
+D:\OneDrive - Hitachi Group\Hitachi_Projects\New folder 1\Email Service\obj\Debug\GetMailFrom2Min.ProjectInstaller.resources
+D:\OneDrive - Hitachi Group\Hitachi_Projects\New folder 1\Email Service\obj\Debug\GetMailFrom2Min.csproj.GenerateResource.cache
+D:\OneDrive - Hitachi Group\Hitachi_Projects\New folder 1\Email Service\obj\Debug\GetMailFrom2Min.csproj.CoreCompileInputs.cache
+D:\OneDrive - Hitachi Group\Hitachi_Projects\New folder 1\Email Service\obj\Debug\GetMailFrom2Min.exe
+D:\OneDrive - Hitachi Group\Hitachi_Projects\New folder 1\Email Service\obj\Debug\GetMailFrom2Min.pdb
+D:\Hitachi Proj\Email Service\bin\Debug\GetMailFrom2Min.exe.config
+D:\Hitachi Proj\Email Service\bin\Debug\GetMailFrom2Min.exe
+D:\Hitachi Proj\Email Service\bin\Debug\GetMailFrom2Min.pdb
+D:\Hitachi Proj\Email Service\obj\Debug\GetMailFrom2Min.csproj.AssemblyReference.cache
+D:\Hitachi Proj\Email Service\obj\Debug\GetMailFrom2Min.ProjectInstaller.resources
+D:\Hitachi Proj\Email Service\obj\Debug\GetMailFrom2Min.csproj.GenerateResource.cache
+D:\Hitachi Proj\Email Service\obj\Debug\GetMailFrom2Min.csproj.CoreCompileInputs.cache
+D:\Hitachi Proj\Email Service\obj\Debug\GetMailFrom2Min.exe
+D:\Hitachi Proj\Email Service\obj\Debug\GetMailFrom2Min.pdb
+D:\hh\hshshsishsofs\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.exe.config
+D:\hh\hshshsishsofs\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.exe
+D:\hh\hshshsishsofs\GetMailFrom2Min\bin\Debug\GetMailFrom2Min.pdb
+D:\hh\hshshsishsofs\GetMailFrom2Min\obj\Debug\GetMailFrom2Min.csproj.AssemblyReference.cache
+D:\hh\hshshsishsofs\GetMailFrom2Min\obj\Debug\GetMailFrom2Min.ProjectInstaller.resources
+D:\hh\hshshsishsofs\GetMailFrom2Min\obj\Debug\GetMailFrom2Min.csproj.GenerateResource.cache
+D:\hh\hshshsishsofs\GetMailFrom2Min\obj\Debug\GetMailFrom2Min.csproj.CoreCompileInputs.cache
+D:\hh\hshshsishsofs\GetMailFrom2Min\obj\Debug\GetMailFrom2Min.exe
+D:\hh\hshshsishsofs\GetMailFrom2Min\obj\Debug\GetMailFrom2Min.pdb

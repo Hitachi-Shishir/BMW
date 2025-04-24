@@ -1,0 +1,13 @@
+﻿Installing assembly 'C:\psubscriber\ServiceDeskV2\Hitachi_Services\Hitachi_SendMail\bin\Debug\HitachiSendMail.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\psubscriber\ServiceDeskV2\Hitachi_Services\Hitachi_SendMail\bin\Debug\HitachiSendMail.InstallLog
+   assemblypath = C:\psubscriber\ServiceDeskV2\Hitachi_Services\Hitachi_SendMail\bin\Debug\HitachiSendMail.exe
+Installing service Hitachi_SendMail...
+Service Hitachi_SendMail has been successfully installed.
+Creating EventLog source Hitachi_SendMail in log Application...
+Committing assembly 'C:\psubscriber\ServiceDeskV2\Hitachi_Services\Hitachi_SendMail\bin\Debug\HitachiSendMail.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\psubscriber\ServiceDeskV2\Hitachi_Services\Hitachi_SendMail\bin\Debug\HitachiSendMail.InstallLog
+   assemblypath = C:\psubscriber\ServiceDeskV2\Hitachi_Services\Hitachi_SendMail\bin\Debug\HitachiSendMail.exe

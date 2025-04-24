@@ -1,0 +1,336 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="SDAssigneeCallDetails.aspx.cs" Inherits="Reports_SDAssigneeCallDetails" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
+    <div class="row">
+        <div class="col-md-12 ">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-3 grid_box1">
+
+                            <label class="control-label ">
+                                Select Desk : 
+                    <asp:RequiredFieldValidator ID="RequiredSDDrop" runat="server" ControlToValidate="DropDesks" InitialValue="0" ErrorMessage="Required" ForeColor="Red" ValidationGroup="SU"></asp:RequiredFieldValidator>
+                            </label>
+                            <asp:DropDownList ID="DropDesks" runat="server" CssClass="form-control form-control-sm chzn-select">
+                            </asp:DropDownList>
+                        </div>
+
+                        <div class="col-md-2 ">
+                            <asp:Label ID="lblError" runat="server"></asp:Label>
+                            <label class="control-label ">
+                                From :<asp:RequiredFieldValidator ID="RequiredFieldtxtFrom" runat="server" ControlToValidate="txtFrom" ErrorMessage="Required" ForeColor="Red" ValidationGroup="SU"></asp:RequiredFieldValidator>
+                            </label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-calendar"></i></span>
+                                </div>
+                                <asp:TextBox ID="txtFrom" runat="server" CssClass="form-control form-control-sm" MaxLength="10" autocomplete="off" ClientIDMode="static"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div class="col-md-2 ">
+                            <label class="control-label ">
+                                To :<asp:RequiredFieldValidator ID="RequiredtxtTo" runat="server" ControlToValidate="txtTo" ErrorMessage="Required" ForeColor="Red" ValidationGroup="SU"></asp:RequiredFieldValidator>
+                            </label>
+                            &nbsp;<div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-calendar"></i></span>
+                                </div>
+                                <asp:TextBox ID="txtTo" runat="server" CssClass="form-control form-control-sm" MaxLength="10" autocomplete="off" ClientIDMode="static"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div class="col-md-2  mt-2">
+                            <asp:Button ID="btnSearch" runat="server" Text="Search" ValidationGroup="SU" CssClass="btn btn-sm savebtn mt-4" OnClick="btnSearch_Click" />
+                        </div>
+                        <div class="col-md-3">
+
+                            <asp:GridView ID="gvOpenClosed" runat="server" Class="table table-bordered" AutoGenerateColumns="False">
+                                <Columns>
+                                    <asp:BoundField ItemStyle-Width="150px" DataField="Total" HeaderText="Total" />
+                                    <asp:BoundField ItemStyle-Width="150px" DataField="Open" HeaderText="Open" />
+                                    <asp:BoundField ItemStyle-Width="150px" DataField="Closed" HeaderText="Closed" />
+                                    <asp:BoundField ItemStyle-Width="150px" DataField="Closed Percent" HeaderText="Closed %" DataFormatString="{0:0}%" />
+                                </Columns>
+                            </asp:GridView>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-4 graphs">
+                            <div class="xs">
+                                <div class="well1 white">
+                                    <div class="card card-default">
+                                        <div class="card-header">
+                                            Assignee Wise Tickets
+                            <asp:ImageButton ID="ImgBtnExport" runat="server" ImageUrl="~/Images/New folder/excelnew.png" OnClick="ImgBtnExport_Click" CssClass="pull-right control-label" class="fa fa-download" />
+                                        </div>
+                                        <div style="overflow: scroll">
+                                            <asp:GridView ID="gvAssigneeCallsStatus" runat="server" Class="table table-bordered" OnDataBound="gvAssigneeCallsStatus_DataBound" ShowFooter="True">
+                                            </asp:GridView>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 graphs">
+                            <div class="xs">
+                                <div class="well1 white">
+                                    <div class="card card-default">
+                                        <div class="card-header">
+                                            Assignee Wise Aging
+                                        </div>
+                                        <asp:GridView ID="gvCallAging" runat="server" Class="table table-bordered" AutoGenerateColumns="False" OnRowCommand="gvCallAging_RowCommand" ShowFooter="True">
+                                            <Columns>
+                                                <asp:BoundField DataField="Assignee" HeaderText="Assignee" />
+                                                <asp:TemplateField HeaderText="0 to 3 Days">
+                                                    <ItemTemplate>
+                                                        <asp:LinkButton runat="server" ID="lnkView0to3" CommandArgument='<%#Eval("Assignee") %>' Text='<%#(String.IsNullOrEmpty(Eval("0 to 3 Days").ToString()) ? "0" : Eval("0 to 3 Days"))%>'
+                                                            CommandName="VIEW0to3">View Deal</asp:LinkButton>
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
+                                                <asp:TemplateField HeaderText="4 to 7 Days">
+                                                    <ItemTemplate>
+                                                        <asp:LinkButton runat="server" ID="lnkView4to7" CommandArgument='<%#Eval("Assignee") %>' Text='<%#(String.IsNullOrEmpty(Eval("4 to 7 Days").ToString()) ? "0" : Eval("4 to 7 Days"))%>'
+                                                            CommandName="VIEW4to7">View Deal</asp:LinkButton>
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
+                                                <asp:TemplateField HeaderText="8 to 10 Days">
+                                                    <ItemTemplate>
+                                                        <asp:LinkButton runat="server" ID="lnkView8to10" CommandArgument='<%#Eval("Assignee") %>' Text='<%#(String.IsNullOrEmpty(Eval("8 to 10 Days").ToString()) ? "0" : Eval("8 to 10 Days"))%>'
+                                                            CommandName="VIEW8to10">View Deal</asp:LinkButton>
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
+                                                <asp:TemplateField HeaderText="More than 10 Days">
+                                                    <ItemTemplate>
+                                                        <asp:LinkButton runat="server" ID="lnkViewMore10Days" CommandArgument='<%#Eval("Assignee") %>' Text='<%#(String.IsNullOrEmpty(Eval("More than 10 Days").ToString()) ? "0" : Eval("More than 10 Days"))%>'
+                                                            CommandName="VIEWMore10Days">View Deal</asp:LinkButton>
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
+                                            </Columns>
+                                        </asp:GridView>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 graphs">
+                            <div class="xs">
+                                <div class="well1 white">
+                                    <div class="card card-default">
+                                        <div class="card-header">
+                                            Status Wise Tickets
+             <asp:Button ID="btnchartcallstatus" runat="server" OnClick="btnchartcallstatus_Click" hidden />
+                                        </div>
+                                        <div class="card-body">
+                                            <canvas id="chart_callstatus" height="300" width="300" class="chartjs-render-monitor"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 graphs " hidden>
+                            <div class="xs">
+                                <div class="well1 white">
+                                    <div class="card card-default">
+                                        <div class="card-header">
+                                            Today Tickets
+
+                                        </div>
+                                        <asp:Chart ID="Chart1" runat="server" Width="170px" Height="220px" Palette="EarthTones">
+                                            <titles>
+                                                <asp:Title ShadowOffset="3" Name="Items" />
+                                            </titles>
+                                            <legends>
+                                                <asp:Legend Alignment="Center" Docking="Bottom" IsTextAutoFit="False" Name="Default"
+                                                    LegendStyle="Table" Enabled="False" />
+                                            </legends>
+                                            <series>
+                                                <asp:Series ChartArea="ChartArea1" LegendPostBackValue="#VALX" LegendToolTip="#PERCENT" CustomProperties="BarLabelStyle=Right"
+                                                    Palette="EarthTones" Name="Series1" PostBackValue="#VALX" ToolTip="#PERCENT" IsValueShownAsLabel="True" />
+                                            </series>
+                                            <chartareas>
+
+                                                <asp:ChartArea Name="ChartArea1">
+                                                    <axisy islabelautofit="False" textorientation="Rotated90"
+                                                        titlefont="Verdana, 7pt">
+                                                        <labelstyle font="Microsoft Sans Serif, 6.75pt" />
+                                                        <majorgrid enabled="false" />
+                                                    </axisy>
+                                                    <axisx islabelautofit="False" labelautofitmaxfontsize="8"
+                                                        labelautofitminfontsize="7" labelautofitstyle="None">
+                                                        <labelstyle font="Microsoft Sans Serif,  7.5pt" interval="1"
+                                                            isendlabelvisible="False" />
+                                                        <scalebreakstyle breaklinestyle="None" />
+                                                        <majorgrid enabled="false" />
+                                                    </axisx>
+                                                    <axisx2 islabelautofit="False" labelautofitmaxfontsize="8"
+                                                        labelautofitstyle="None">
+                                                        <labelstyle angle="90" />
+                                                    </axisx2>
+                                                    <area3dstyle enable3d="false" />
+                                                </asp:ChartArea>
+                                            </chartareas>
+                                        </asp:Chart>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" hidden>
+                        <div class="col-md-4 graphs">
+                            <div class="xs">
+                                <div class="well1 white">
+                                    <div class="card card-default">
+                                        <div class="card-header">
+                                            Location Wise Tickets
+                            <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/Images/New folder/excelnew.png" OnClick="ImageButton2_Click" CssClass="pull-right control-label" class="fa fa-download" />
+                                        </div>
+                                        <asp:GridView ID="gridviewcategory" runat="server" Class="table table-bordered" OnDataBound="gridviewcategory_DataBound" ShowFooter="True">
+                                        </asp:GridView>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="well1 white">
+                                <div class="card card-default">
+                                    <div class="card-body">
+                                        <div class="row ">
+                                            <div class="col-md-4">
+                                                <asp:Label ID="lblsofname" runat="server" Text="      Assignee Wise Tickets" Font-Size="Larger" ForeColor="Black"></asp:Label>
+                                            </div>
+                                            <div class="col-md-3 offset-5">
+                                                <div class="btn btn-sm elevation-1 ml-1" style="padding: 0px; margin-bottom: 10px; padding-top: 1px">
+                                                    <label class="mr-3  mb-0">Export</label>
+                                                    <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Images/New folder/excelnew.png" OnClick="ImgBtnExport_Click" CssClass="pull-right ml-4 btn-outline-success control-label" class="fa fa-download" />
+                                                </div>
+                                                <asp:Label ID="lblTotalHead" runat="server" Font-Size="Large" CssClass=" control-label" Text="Total: "></asp:Label>
+                                                <asp:Label ID="lblTotal" Font-Size="Large" runat="server" CssClass=" control-label" Text="0"></asp:Label>
+                                            </div>
+                                        </div>
+                                        <asp:GridView ID="gvCallAgingDetails" runat="server" Class="table table-bordered" OnDataBound="gvAssigneeCallsStatus_DataBound" ShowFooter="True">
+                                        </asp:GridView>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <asp:Literal ID="ltrcallstatus" runat="server"></asp:Literal>
+    <asp:HiddenField ID="hdnfldVariable" runat="server" />
+    <script src="../chartjs/js/chart.js"></script>
+    <script src="../chartjs/js/chart.min.js"></script>
+    <script type="text/javascript">
+        var chartWorkstationdata;
+        var chartWorkstationlabel;
+
+        function clickhandler(evt) {
+
+            console.log("clicked!!!!!!!!!!!!!!!", evt);
+            let label;
+            let value;
+            let points = myChart1.getElementsAtEventForMode(evt, 'nearest', { intersect: true }, true);
+
+
+            if (points.length) {
+                console.log("!!!!!!!!!!!!!!!", label, value);
+                let firstPoint = points[0];
+                console.log("points", points)
+                console.log("myChart1.data", myChart1.data)
+                label = myChart1.data.labels[firstPoint.index];
+                value = myChart1.data.datasets[firstPoint.datasetIndex].data[firstPoint.index];
+
+                //    alert(label);
+                document.getElementById('<%=hdnfldVariable.ClientID %>').value = label;
+             document.getElementById('<%=btnchartcallstatus.ClientID %>').click();
+
+            }
+
+        }
+
+
+        var ctx = document.getElementById('chart_callstatus').getContext('2d');
+        var myChart1 = new Chart(ctx, {
+            type: 'pie',
+
+            data: {
+                labels: chartWorkstationlabel,
+
+                datasets: [{
+                    label: 'MS Office Flavors',
+                    data: chartWorkstationdata,
+                    tension: 0.4,
+                    borderWidth: 0,
+                    percentageInnerCutout: 90,
+                    borderRadius: 4,
+                    maxBarThickness: 30,
+                    yAxisID: 'yAxis',
+                    xAxisID: 'xAxis',
+                    backgroundColor: [
+
+                        'rgba(153, 230, 255, 0.8)',
+                        'rgba(102, 179, 255, 0.8)',
+                        'rgba(133, 224, 133, 0.8)',
+
+                        'rgba(255, 179, 179, 0.8)',
+                        'rgba(230, 46, 0, 0.8)',
+                        'rgba(255, 179, 26, 0.8)',
+                        'rgba(255, 128, 0, 0.8)',
+
+
+                        'rgba(230, 204, 255, 0.8)',
+                        'rgba(255, 179, 26, 0.8)',
+                        'rgba(45, 134, 45,0.8)',
+                    ],
+                    borderColor: [
+                        'rgba(153, 230, 255, 1)',
+                        'rgba(102, 179, 255, 1)',
+                        'rgba(133, 224, 133, 1)',
+
+                        'rgba(255, 179, 179, 1)',
+                        'rgba(230, 46, 0, 1)',
+                        'rgba(255, 179, 26, 1)',
+
+                        'rgba(255, 128, 0,1)',
+                        'rgba(230, 204, 255, 1)',
+                        'rgba(255, 179, 26, 1)',
+                        'rgba(45, 134, 45,1)',
+                    ],
+                    borderWidth: 1
+                }]
+
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                //onClick: function (e) {
+                //    var xLabel = this.scales[0].getValueForPixel(e.x);
+                //    console.log(xLabel);
+                //    alert("clicked x-axis area: " + xLabel);
+                //},
+                plugins: {
+                    legend: {
+                        display: true,
+                    }
+                },
+                tooltips: {
+                    mode: 'index',
+                    intersect: false,
+                },
+
+                onClick: clickhandler
+
+            },
+        });
+    </script>
+</asp:Content>
+
