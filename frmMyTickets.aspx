@@ -18,6 +18,9 @@
     <link rel="stylesheet" href="<%= ResolveUrl("~/assets/fontawesome/css/sharp-duotone-thin.css") %>" />
 
 
+    <link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/plugins/datatable/css/dataTables.bootstrap5.min.css") %>">
+
+
 
     <style>
           .back-button {
@@ -135,7 +138,7 @@
 					</div>
 				</div>
 				<div class="table-responsive table-container">
-					<asp:GridView ID="gvAllTickets" runat="server" CssClass="data-table1 table table-striped table-sm text-nowrap" PageSize="10"
+					<asp:GridView ID="gvAllTickets" runat="server" CssClass="data-table table table-striped border table-sm text-nowrap dataTable no-footer" PageSize="10"
 						AutoGenerateColumns="false" OnRowCommand="gvAllTickets_RowCommand">
 <Columns>
 							<asp:TemplateField HeaderText="TicketNumber" ControlStyle-CssClass="truncate-text" ItemStyle-Font-Size="Smaller" SortExpression="TicketNumber">

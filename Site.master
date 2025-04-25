@@ -10,14 +10,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
     <!--favicon-->
-<link rel="icon" href="<%= ResolveUrl("~/assetsdata/images/Hitachi/Hitachi_logo.png") %>" type="image/png">
+    <link rel="icon" href="<%= ResolveUrl("~/assetsdata/images/Hitachi/Hitachi_logo.png") %>" type="image/png">
 
-<!-- loader-->
-<link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/css/pace.min.css") %>">
-<% if (!Page.Items.Contains("SkipPace"))
-   { %>
-<script src="<%= ResolveUrl("~/assetsdata/js/pace.min.js") %>"></script>
-<% } %>
+    <!-- loader-->
+    <link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/css/pace.min.css") %>">
+    <% if (!Page.Items.Contains("SkipPace"))
+        { %>
+    <script src="<%= ResolveUrl("~/assetsdata/js/pace.min.js") %>"></script>
+    <% } %>
 
 
     <link rel="icon" type="image/png" href="AgentTicketCSS/images/icons/favicon.ico" />
@@ -30,48 +30,48 @@
     <link rel="stylesheet" href="<%= ResolveUrl("~/assets/fontawesome/css/sharp-duotone-thin.css") %>" />
 
 
-<!--plugins-->
-<link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/plugins/perfect-scrollbar/css/perfect-scrollbar.css") %>">
-<link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/css/all.min.css") %>">
+    <!--plugins-->
+    <link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/plugins/perfect-scrollbar/css/perfect-scrollbar.css") %>">
+    <link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/css/all.min.css") %>">
 
-<link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/plugins/metismenu/metisMenu.min.css") %>">
-<link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/plugins/metismenu/mm-vertical.css") %>">
-<link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/plugins/simplebar/css/simplebar.css") %>">
-<link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/plugins/datatable/css/dataTables.bootstrap5.min.css") %>">
-<link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/plugins/bs-stepper/css/bs-stepper.css") %>">
-<link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/css/date-picker.css") %>">
+    <link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/plugins/metismenu/metisMenu.min.css") %>">
+    <link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/plugins/metismenu/mm-vertical.css") %>">
+    <link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/plugins/simplebar/css/simplebar.css") %>">
+    <link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/plugins/datatable/css/dataTables.bootstrap5.min.css") %>">
+    <link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/plugins/bs-stepper/css/bs-stepper.css") %>">
+    <link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/css/date-picker.css") %>">
 
-<!-- bootstrap css -->
-<link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/css/bootstrap.min.css") %>">
-<link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/plugins/bs-stepper/css/bs-stepper.css") %>">
-<link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/css/extra-icons.css") %>">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/css/bootstrap.min.css") %>">
+    <link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/plugins/bs-stepper/css/bs-stepper.css") %>">
+    <link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/css/extra-icons.css") %>">
 
-<!-- Google Fonts -->
-<link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/css/googleapis.css") %>">
-<link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/css/googleapis_material.css") %>">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/css/googleapis.css") %>">
+    <link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/css/googleapis_material.css") %>">
 
 
-<link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/plugins/notifications/css/lobibox.min.css") %>">
+    <link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/plugins/notifications/css/lobibox.min.css") %>">
 
-<!-- main css -->
-<link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/css/bootstrap-extended.css") %>">
-<link rel="stylesheet" href="<%= ResolveUrl("~/sassdata/main.css") %>">
-<link rel="stylesheet" href="<%= ResolveUrl("~/sassdata/dark-theme.css") %>">
-<link rel="stylesheet" href="<%= ResolveUrl("~/sassdata/blue-theme.css") %>">
-<link rel="stylesheet" href="<%= ResolveUrl("~/sassdata/semi-dark.css") %>">
-<link rel="stylesheet" href="<%= ResolveUrl("~/sassdata/bordered-theme.css") %>">
-<link rel="stylesheet" href="<%= ResolveUrl("~/sassdata/responsive.css") %>">
+    <!-- main css -->
+    <link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/css/bootstrap-extended.css") %>">
+    <link rel="stylesheet" href="<%= ResolveUrl("~/sassdata/main.css") %>">
+    <link rel="stylesheet" href="<%= ResolveUrl("~/sassdata/dark-theme.css") %>">
+    <link rel="stylesheet" href="<%= ResolveUrl("~/sassdata/blue-theme.css") %>">
+    <link rel="stylesheet" href="<%= ResolveUrl("~/sassdata/semi-dark.css") %>">
+    <link rel="stylesheet" href="<%= ResolveUrl("~/sassdata/bordered-theme.css") %>">
+    <link rel="stylesheet" href="<%= ResolveUrl("~/sassdata/responsive.css") %>">
 
-<!-- Plugins -->
-<link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/css/select2.min.css") %>">
-<link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/plugins/select2/css/select2-bootstrap-5-theme.min.css") %>">
+    <!-- Plugins -->
+    <link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/css/select2.min.css") %>">
+    <link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/plugins/select2/css/select2-bootstrap-5-theme.min.css") %>">
 
-<!-- Flatpickr -->
-<link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/css/flatpickr.min.css") %>">
+    <!-- Flatpickr -->
+    <link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/css/flatpickr.min.css") %>">
 
-<!-- jQuery and Bootstrap JS -->
-<script src="<%= ResolveUrl("~/assetsdata/js/jquery-3.6.0.min.js") %>"></script>
-<script src="<%= ResolveUrl("~/assetsdata/js/bootstrap.bundle.min.js") %>"></script>
+    <!-- jQuery and Bootstrap JS -->
+    <script src="<%= ResolveUrl("~/assetsdata/js/jquery-3.6.0.min.js") %>"></script>
+    <script src="<%= ResolveUrl("~/assetsdata/js/bootstrap.bundle.min.js") %>"></script>
 
 
 
@@ -79,6 +79,16 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <style>
+        /*this is custome code for sidebar logo - toggle start*/
+     @media screen and (min-width: 768px) {
+    body.toggled:not(.sidebar-hovered) .sidebar-wrapper .sidebar-header .logo-icon {
+        transform: translateX(-38%);
+    }
+}
+
+        /*this is custome code for sidebar logo - toggle end*/
+
+
         /* Centering the content inside the LinkButton */
         .center-btn {
             display: inline-flex; /* Makes the button behave like a flex container */
@@ -135,10 +145,10 @@
             margin-top: 1rem;
             margin-bottom: 4rem;
         }
-	.select2-container{
-        display:block;
- 
-    }
+
+        .select2-container {
+            display: block;
+        }
 
         [data-bs-theme=semi-dark] .ai-output {
             background-color: #212529 !important;
@@ -211,7 +221,7 @@
 
         [data-bs-theme=blue-theme] body {
             background-color: #0f1535;
-        background-image: url("Images/img.jpg")!important ;
+            background-image: url("Images/img.jpg") !important;
         }
 
         [data-bs-theme=semi-dark] .logo-name {
@@ -272,6 +282,7 @@
             color: black !important;
             border: 1px solid black;
         }
+
         [data-bs-theme=semi-dark] .app-name {
             color: #767676;
             font-size: 0.8rem;
@@ -488,7 +499,7 @@
         }
 
         .logo-img {
-            width: 229px !important;
+            width: 200px !important;
         }
 
         th {
@@ -502,7 +513,6 @@
 
         .fa-edit {
             color: var(--bs-body-color) !important;
-        
         }
 
         .wh-42 {
@@ -633,507 +643,504 @@
     <form id="form1" runat="server">
         <!--start header-->
 
-		<header class="top-header">
-			<nav class="navbar navbar-expand align-items-center gap-4">
-				<div class="btn-toggle">
-					<a href="javascript:;"><i class="material-icons-outlined">menu</i></a>
-				</div>
-				<div class="page-breadcrumb d-none d-sm-flex align-items-center border px-3 py-2 rounded-5">
-					<div class="breadcrumb-title pe-3">
-						<asp:Label ID="lblpnl" runat="server">Tickets</asp:Label>
-					</div>
-					<div class="ps-3">
-						<nav aria-label="breadcrumb">
-							<ol class="breadcrumb mb-0 p-0 ">
-								<li class="breadcrumb-item active" aria-current="page">
-									<asp:Label ID="lblpnlPage" runat="server">Edit Ticket By Assignee</asp:Label>
-								</li>
+        <header class="top-header">
+            <nav class="navbar navbar-expand align-items-center gap-4">
+                <div class="btn-toggle">
+                    <a href="javascript:;"><i class="material-icons-outlined">menu</i></a>
+                </div>
+                <div class="page-breadcrumb d-none d-sm-flex align-items-center border px-3 py-2 rounded-5">
+                    <div class="breadcrumb-title pe-3">
+                        <asp:Label ID="lblpnl" runat="server">Tickets</asp:Label>
+                    </div>
+                    <div class="ps-3">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb mb-0 p-0 ">
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    <asp:Label ID="lblpnlPage" runat="server">Edit Ticket By Assignee</asp:Label>
+                                </li>
 
-							</ol>
-						</nav>
-					</div>
+                            </ol>
+                        </nav>
+                    </div>
 
-				</div>
+                </div>
 
-				<div class="search-bar flex-grow-1">
-					<div class="position-relative">
-						<input id="searchInput" class="form-control rounded-5 px-5 search-control d-lg-block d-none form-control-sm py-2" type="text" placeholder="Search menu items">
-						<span class="material-icons-outlined position-absolute d-lg-block d-none ms-3 translate-middle-y start-0 top-50 opacity-50">search</span>
-						<span id="searchClose" class="material-icons-outlined position-absolute me-3 translate-middle-y end-0 top-50 search-close">close</span>
-						<div id="searchPopup" class="search-popup p-3" style="display: none;">
-							<div class="card rounded-4 overflow-hidden">
-								<div class="card-body search-content">
-									<div id="recentSearchesContainer">
-										<p class="search-title">Recent Searches</p>
-										<div id="recentSearches" class="d-flex align-items-start flex-wrap gap-2 kewords-wrapper">
-											<!-- Recent searches will be dynamically added here -->
-										</div>
-										<hr>
-									</div>
-									<div id="searchResultsContainer" style="display: none;">
-										<p class="search-title">Search Results</p>
-										<div id="searchResults" class="search-list d-flex flex-column gap-2">
-											<!-- Search results will be dynamically added here -->
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+                <div class="search-bar flex-grow-1">
+                    <div class="position-relative">
+                        <input id="searchInput" class="form-control rounded-5 px-5 search-control d-lg-block d-none form-control-sm py-2" type="text" placeholder="Search menu items">
+                        <span class="material-icons-outlined position-absolute d-lg-block d-none ms-3 translate-middle-y start-0 top-50 opacity-50">search</span>
+                        <span id="searchClose" class="material-icons-outlined position-absolute me-3 translate-middle-y end-0 top-50 search-close">close</span>
+                        <div id="searchPopup" class="search-popup p-3" style="display: none;">
+                            <div class="card rounded-4 overflow-hidden">
+                                <div class="card-body search-content">
+                                    <div id="recentSearchesContainer">
+                                        <p class="search-title">Recent Searches</p>
+                                        <div id="recentSearches" class="d-flex align-items-start flex-wrap gap-2 kewords-wrapper">
+                                            <!-- Recent searches will be dynamically added here -->
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div id="searchResultsContainer" style="display: none;">
+                                        <p class="search-title">Search Results</p>
+                                        <div id="searchResults" class="search-list d-flex flex-column gap-2">
+                                            <!-- Search results will be dynamically added here -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-				<ul class="navbar-nav gap-1 nav-right-links align-items-center">
+                <ul class="navbar-nav gap-1 nav-right-links align-items-center">
 
-					<li class="nav-item dropdown position-static  d-none">
-						<a class="nav-link dropdown-toggle dropdown-toggle-nocaret" data-bs-auto-close="outside"
-							data-bs-toggle="dropdown" href="javascript:;"><i class="material-icons-outlined ">done_all</i></a>
-						<div class="dropdown-menu dropdown-menu-end mega-menu shadow-lg p-4 p-lg-5 d-none">
-							<div class="mega-menu-widgets">
-								<div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3 g-4 g-lg-5">
-									<div class="col">
-										<div class="card rounded-4 shadow-none border mb-0">
-											<div class="card-body">
-												<div class="d-flex align-items-start gap-3">
-													<div class="mega-menu-icon flex-shrink-0 bg-danger">
-														<i class="material-icons-outlined">question_answer</i>
-													</div>
-													<div class="mega-menu-content">
-														<h5>Marketing</h5>
-														<p class="mb-0 f-14">
-															In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                    <li class="nav-item dropdown position-static  d-none">
+                        <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" data-bs-auto-close="outside"
+                            data-bs-toggle="dropdown" href="javascript:;"><i class="material-icons-outlined ">done_all</i></a>
+                        <div class="dropdown-menu dropdown-menu-end mega-menu shadow-lg p-4 p-lg-5 d-none">
+                            <div class="mega-menu-widgets">
+                                <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3 g-4 g-lg-5">
+                                    <div class="col">
+                                        <div class="card rounded-4 shadow-none border mb-0">
+                                            <div class="card-body">
+                                                <div class="d-flex align-items-start gap-3">
+                                                    <div class="mega-menu-icon flex-shrink-0 bg-danger">
+                                                        <i class="material-icons-outlined">question_answer</i>
+                                                    </div>
+                                                    <div class="mega-menu-content">
+                                                        <h5>Marketing</h5>
+                                                        <p class="mb-0 f-14">
+                                                            In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
                                                                 the visual form of a document.
                                                        
-														</p>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col">
-										<div class="card rounded-4 shadow-none border mb-0">
-											<div class="card-body">
-												<div class="d-flex align-items-start gap-3">
-													<img src="<%= ResolveUrl("~/assetsdata/images/megaIcons/02.png") %>" width="40" alt="">
-													<div class="mega-menu-content">
-														<h5>Website</h5>
-														<p class="mb-0 f-14">
-															In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card rounded-4 shadow-none border mb-0">
+                                            <div class="card-body">
+                                                <div class="d-flex align-items-start gap-3">
+                                                    <img src="<%= ResolveUrl("~/assetsdata/images/megaIcons/02.png") %>" width="40" alt="">
+                                                    <div class="mega-menu-content">
+                                                        <h5>Website</h5>
+                                                        <p class="mb-0 f-14">
+                                                            In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
                            the visual form of a document.
                                                        
-														</p>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col">
-										<div class="card rounded-4 shadow-none border mb-0">
-											<div class="card-body">
-												<div class="d-flex align-items-start gap-3">
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card rounded-4 shadow-none border mb-0">
+                                            <div class="card-body">
+                                                <div class="d-flex align-items-start gap-3">
                                                     <img src="<%= ResolveUrl("~/assetsdata/images/megaIcons/03.png") %>" width="40" alt="">
-													<div class="mega-menu-content">
-														<h5>Subscribers</h5>
-														<p class="mb-0 f-14">
-															In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                                                    <div class="mega-menu-content">
+                                                        <h5>Subscribers</h5>
+                                                        <p class="mb-0 f-14">
+                                                            In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
                                                             the visual form of a document.
                                                        
-														</p>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col">
-										<div class="card rounded-4 shadow-none border mb-0">
-											<div class="card-body">
-												<div class="d-flex align-items-start gap-3">
-												<img src="<%= ResolveUrl("~/assetsdata/images/megaIcons/01.png") %>" width="40" alt="">
-													<div class="mega-menu-content">
-														<h5>Hubspot</h5>
-														<p class="mb-0 f-14">
-															In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card rounded-4 shadow-none border mb-0">
+                                            <div class="card-body">
+                                                <div class="d-flex align-items-start gap-3">
+                                                    <img src="<%= ResolveUrl("~/assetsdata/images/megaIcons/01.png") %>" width="40" alt="">
+                                                    <div class="mega-menu-content">
+                                                        <h5>Hubspot</h5>
+                                                        <p class="mb-0 f-14">
+                                                            In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
                            the visual form of a document.
                                                        
-														</p>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col">
-										<div class="card rounded-4 shadow-none border mb-0">
-											<div class="card-body">
-												<div class="d-flex align-items-start gap-3">
-													<img src="<%= ResolveUrl("~/assetsdata/images/megaIcons/11.png") %>" width="40" alt="">
-													<div class="mega-menu-content">
-														<h5>Templates</h5>
-														<p class="mb-0 f-14">
-															In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card rounded-4 shadow-none border mb-0">
+                                            <div class="card-body">
+                                                <div class="d-flex align-items-start gap-3">
+                                                    <img src="<%= ResolveUrl("~/assetsdata/images/megaIcons/11.png") %>" width="40" alt="">
+                                                    <div class="mega-menu-content">
+                                                        <h5>Templates</h5>
+                                                        <p class="mb-0 f-14">
+                                                            In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
                            the visual form of a document.
                                                        
-														</p>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col">
-										<div class="card rounded-4 shadow-none border mb-0">
-											<div class="card-body">
-												<div class="d-flex align-items-start gap-3">
-													<img src="<%= ResolveUrl("~/assetsdata/images/megaIcons/13.png") %>" width="40" alt="">
-													<div class="mega-menu-content">
-														<h5>Ebooks</h5>
-														<p class="mb-0 f-14">
-															In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card rounded-4 shadow-none border mb-0">
+                                            <div class="card-body">
+                                                <div class="d-flex align-items-start gap-3">
+                                                    <img src="<%= ResolveUrl("~/assetsdata/images/megaIcons/13.png") %>" width="40" alt="">
+                                                    <div class="mega-menu-content">
+                                                        <h5>Ebooks</h5>
+                                                        <p class="mb-0 f-14">
+                                                            In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
                            the visual form of a document.
                                                        
-														</p>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col">
-										<div class="card rounded-4 shadow-none border mb-0">
-											<div class="card-body">
-												<div class="d-flex align-items-start gap-3">
-													<img src="<%= ResolveUrl("~/assetsdata/images/megaIcons/12.png") %>" width="40" alt="">
-													<div class="mega-menu-content">
-														<h5>Sales</h5>
-														<p class="mb-0 f-14">
-															In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card rounded-4 shadow-none border mb-0">
+                                            <div class="card-body">
+                                                <div class="d-flex align-items-start gap-3">
+                                                    <img src="<%= ResolveUrl("~/assetsdata/images/megaIcons/12.png") %>" width="40" alt="">
+                                                    <div class="mega-menu-content">
+                                                        <h5>Sales</h5>
+                                                        <p class="mb-0 f-14">
+                                                            In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
                            the visual form of a document.
                                                        
-														</p>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col">
-										<div class="card rounded-4 shadow-none border mb-0">
-											<div class="card-body">
-												<div class="d-flex align-items-start gap-3">
-													<img src="<%= ResolveUrl("~/assetsdata/images/megaIcons/08.png") %>" width="40" alt="">
-													<div class="mega-menu-content">
-														<h5>Tools</h5>
-														<p class="mb-0 f-14">
-															In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card rounded-4 shadow-none border mb-0">
+                                            <div class="card-body">
+                                                <div class="d-flex align-items-start gap-3">
+                                                    <img src="<%= ResolveUrl("~/assetsdata/images/megaIcons/08.png") %>" width="40" alt="">
+                                                    <div class="mega-menu-content">
+                                                        <h5>Tools</h5>
+                                                        <p class="mb-0 f-14">
+                                                            In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
                            the visual form of a document.
                                                        
-														</p>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col">
-										<div class="card rounded-4 shadow-none border mb-0">
-											<div class="card-body">
-												<div class="d-flex align-items-start gap-3">
-													<img src="<%= ResolveUrl("~/assetsdata/images/megaIcons/09.png") %>" width="40" alt="">
-													<div class="mega-menu-content">
-														<h5>Academy</h5>
-														<p class="mb-0 f-14">
-															In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card rounded-4 shadow-none border mb-0">
+                                            <div class="card-body">
+                                                <div class="d-flex align-items-start gap-3">
+                                                    <img src="<%= ResolveUrl("~/assetsdata/images/megaIcons/09.png") %>" width="40" alt="">
+                                                    <div class="mega-menu-content">
+                                                        <h5>Academy</h5>
+                                                        <p class="mb-0 f-14">
+                                                            In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
                            the visual form of a document.
                                                        
-														</p>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!--end row-->
-							</div>
-						</div>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle dropdown-toggle-nocaret" data-bs-auto-close="outside"
-							data-bs-toggle="dropdown" href="javascript:;"><i class="material-icons-outlined">apps</i></a>
-						<div class="dropdown-menu dropdown-menu-end dropdown-apps shadow-lg p-3">
-							<div class="border rounded-4 overflow-hidden">
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end row-->
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" data-bs-auto-close="outside"
+                            data-bs-toggle="dropdown" href="javascript:;"><i class="material-icons-outlined">apps</i></a>
+                        <div class="dropdown-menu dropdown-menu-end dropdown-apps shadow-lg p-3">
+                            <div class="border rounded-4 overflow-hidden">
 
-								<!--end row-->
+                                <!--end row-->
 
-								<div class="row row-cols-3 g-0 border-bottom">
-									<div class="col border-end">
-										<a href="https://www.youtube.com/@hitachisystemsindiapvtltd9106" target="_blank">
-											<div class="app-wrapper d-flex flex-column gap-2 text-center">
-												<div class="app-icon">
-													<img src="<%= ResolveUrl("~/assetsdata/images/apps/04.png") %>" width="40" alt="">
-												</div>
-												<div class="app-name">
-													<p class="mb-0">YouTube</p>
-												</div>
-											</div>
-										</a>
-									</div>
-									<div class="col border-end">
-										<a href="https://hitachi-systems.co.in/" target="_blank">
-											<div class="app-wrapper d-flex flex-column gap-2 text-center">
-												<div class="app-icon">
-                                                      <img src="<%= ResolveUrl("~/assetsdata/images/06.png") %>" width="40" alt="">
-												</div>
-												<div class="app-name">
-													<p class="mb-0">Hitachi</p>
-												</div>
-											</div>
-										</a>
-									</div>
-									<div class="col">
-										<a href="https://www.instagram.com/hitachisystemsindia?igsh=MXB6aHR3YzQ1OW01Ng==" target="_blank">
-											<div class="app-wrapper d-flex flex-column gap-2 text-center">
-												<div class="app-icon">
-													 <img src="<%= ResolveUrl("~/assetsdata/images/apps/06.png") %>" width="40" alt="">
-												</div>
-												<div class="app-name">
-													<p class="mb-0">Instagram</p>
-												</div>
-											</div>
-										</a>
-									</div>
-								</div>
+                                <div class="row row-cols-3 g-0 border-bottom">
+                                    <div class="col border-end">
+                                        <a href="https://www.youtube.com/@hitachisystemsindiapvtltd9106" target="_blank">
+                                            <div class="app-wrapper d-flex flex-column gap-2 text-center">
+                                                <div class="app-icon">
+                                                    <img src="<%= ResolveUrl("~/assetsdata/images/apps/04.png") %>" width="40" alt="">
+                                                </div>
+                                                <div class="app-name">
+                                                    <p class="mb-0">YouTube</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col border-end">
+                                        <a href="https://hitachi-systems.co.in/" target="_blank">
+                                            <div class="app-wrapper d-flex flex-column gap-2 text-center">
+                                                <div class="app-icon">
+                                                    <img src="<%= ResolveUrl("~/assetsdata/images/06.png") %>" width="40" alt="">
+                                                </div>
+                                                <div class="app-name">
+                                                    <p class="mb-0">Hitachi</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a href="https://www.instagram.com/hitachisystemsindia?igsh=MXB6aHR3YzQ1OW01Ng==" target="_blank">
+                                            <div class="app-wrapper d-flex flex-column gap-2 text-center">
+                                                <div class="app-icon">
+                                                    <img src="<%= ResolveUrl("~/assetsdata/images/apps/06.png") %>" width="40" alt="">
+                                                </div>
+                                                <div class="app-name">
+                                                    <p class="mb-0">Instagram</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
 
-								<div class="row row-cols-3 g-0 border-bottom" hidden>
-									<div class="col border-end">
-										<div class="app-wrapper d-flex flex-column gap-2 text-center">
-											<div class="app-icon">
-												<img src="<%= ResolveUrl("~/assetsdata/images/apps/01.png") %>" width="40" alt="">
-											</div>
-											<div class="app-name">
-												<p class="mb-0">Gmail</p>
-											</div>
-										</div>
-									</div>
-									<div class="col">
-										<div class="app-wrapper d-flex flex-column gap-2 text-center">
-											<div class="app-icon">
-												<img src="<%= ResolveUrl("~/assetsdata/images/apps/09.png") %>" width="40" alt="">
-											</div>
-											<div class="app-name">
-												<p class="mb-0">Facebook</p>
-											</div>
-										</div>
-									</div>
-									<div class="col border-start">
-										<div class="app-wrapper d-flex flex-column gap-2 text-center">
-											<div class="app-icon">
-												<img src="<%= ResolveUrl("~/assetsdata/images/apps/11.png") %>" width="40" alt="">
-											</div>
-											<div class="app-name">
-												<p class="mb-0">Paypal</p>
-											</div>
-										</div>
-									</div>
+                                <div class="row row-cols-3 g-0 border-bottom" hidden>
+                                    <div class="col border-end">
+                                        <div class="app-wrapper d-flex flex-column gap-2 text-center">
+                                            <div class="app-icon">
+                                                <img src="<%= ResolveUrl("~/assetsdata/images/apps/01.png") %>" width="40" alt="">
+                                            </div>
+                                            <div class="app-name">
+                                                <p class="mb-0">Gmail</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="app-wrapper d-flex flex-column gap-2 text-center">
+                                            <div class="app-icon">
+                                                <img src="<%= ResolveUrl("~/assetsdata/images/apps/09.png") %>" width="40" alt="">
+                                            </div>
+                                            <div class="app-name">
+                                                <p class="mb-0">Facebook</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col border-start">
+                                        <div class="app-wrapper d-flex flex-column gap-2 text-center">
+                                            <div class="app-icon">
+                                                <img src="<%= ResolveUrl("~/assetsdata/images/apps/11.png") %>" width="40" alt="">
+                                            </div>
+                                            <div class="app-name">
+                                                <p class="mb-0">Paypal</p>
+                                            </div>
+                                        </div>
+                                    </div>
 
-								</div>
-								<!--end row-->
+                                </div>
+                                <!--end row-->
 
-							</div>
-						</div>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" data-bs-auto-close="outside" tooltip="Coming Soon" style="cursor: not-allowed;"
-							data-bs-toggle="dropdown" href="javascript:;"><i class="material-icons-outlined">notifications</i>
-							<span class="badge-notify d-none">5</span>
-						</a>
-						<div class="dropdown-menu dropdown-notify dropdown-menu-end shadow d-none">
-							<div class="px-3 py-1 d-flex align-items-center justify-content-between border-bottom">
-								<h5 class="notiy-title mb-0">Notifications</h5>
-								<div class="dropdown">
-									<button class="btn btn-secondary dropdown-toggle dropdown-toggle-nocaret option" type="button"
-										data-bs-toggle="dropdown" aria-expanded="false">
-										<span class="material-icons-outlined">more_vert
-										</span>
-									</button>
-									<div class="dropdown-menu dropdown-option dropdown-menu-end shadow">
-										<div>
-											<a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
-												class="material-icons-outlined fs-6">inventory_2</i>Archive All</a>
-										</div>
-										<div>
-											<a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
-												class="material-icons-outlined fs-6">done_all</i>Mark all as read</a>
-										</div>
-										<div>
-											<a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
-												class="material-icons-outlined fs-6">mic_off</i>Disable Notifications</a>
-										</div>
-										<div>
-											<a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
-												class="material-icons-outlined fs-6">grade</i>What's new ?</a>
-										</div>
-										<div>
-											<hr class="dropdown-divider">
-										</div>
-										<div>
-											<a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
-												class="material-icons-outlined fs-6">leaderboard</i>Reports</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="notify-list">
-								<div>
-									<a class="dropdown-item border-bottom py-2" href="javascript:;">
-										<div class="d-flex align-items-center gap-3">
-											<div class="">
-												<img src="assetsdata/images/avatars/01.png" class="rounded-circle" width="45" height="45" alt="">
-											</div>
-											<div class="">
-												<h5 class="notify-title">Congratulations Jhon</h5>
-												<p class="mb-0 notify-desc">Many congtars jhon. You have won the gifts.</p>
-												<p class="mb-0 notify-time">Today</p>
-											</div>
-											<div class="notify-close position-absolute end-0 me-3">
-												<i class="material-icons-outlined fs-6">close</i>
-											</div>
-										</div>
-									</a>
-								</div>
-								<div>
-									<a class="dropdown-item border-bottom py-2" href="javascript:;">
-										<div class="d-flex align-items-center gap-3">
-											<div class="user-wrapper bg-primary text-primary bg-opacity-10">
-												<span>RS</span>
-											</div>
-											<div class="">
-												<h5 class="notify-title">New Account Created</h5>
-												<p class="mb-0 notify-desc">From USA an user has registered.</p>
-												<p class="mb-0 notify-time">Yesterday</p>
-											</div>
-											<div class="notify-close position-absolute end-0 me-3">
-												<i class="material-icons-outlined fs-6">close</i>
-											</div>
-										</div>
-									</a>
-								</div>
-								<div>
-									<a class="dropdown-item border-bottom py-2" href="javascript:;">
-										<div class="d-flex align-items-center gap-3">
-											<div class="">
-												<img src="<%= ResolveUrl("~/assetsdata/images/apps/13.png") %>" class="rounded-circle" width="45" height="45" alt="">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" data-bs-auto-close="outside" tooltip="Coming Soon" style="cursor: not-allowed;"
+                            data-bs-toggle="dropdown" href="javascript:;"><i class="material-icons-outlined">notifications</i>
+                            <span class="badge-notify d-none">5</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-notify dropdown-menu-end shadow d-none">
+                            <div class="px-3 py-1 d-flex align-items-center justify-content-between border-bottom">
+                                <h5 class="notiy-title mb-0">Notifications</h5>
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle dropdown-toggle-nocaret option" type="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <span class="material-icons-outlined">more_vert
+                                        </span>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-option dropdown-menu-end shadow">
+                                        <div>
+                                            <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
+                                                class="material-icons-outlined fs-6">inventory_2</i>Archive All</a>
+                                        </div>
+                                        <div>
+                                            <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
+                                                class="material-icons-outlined fs-6">done_all</i>Mark all as read</a>
+                                        </div>
+                                        <div>
+                                            <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
+                                                class="material-icons-outlined fs-6">mic_off</i>Disable Notifications</a>
+                                        </div>
+                                        <div>
+                                            <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
+                                                class="material-icons-outlined fs-6">grade</i>What's new ?</a>
+                                        </div>
+                                        <div>
+                                            <hr class="dropdown-divider">
+                                        </div>
+                                        <div>
+                                            <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
+                                                class="material-icons-outlined fs-6">leaderboard</i>Reports</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notify-list">
+                                <div>
+                                    <a class="dropdown-item border-bottom py-2" href="javascript:;">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="">
+                                                <img src="assetsdata/images/avatars/01.png" class="rounded-circle" width="45" height="45" alt="">
+                                            </div>
+                                            <div class="">
+                                                <h5 class="notify-title">Congratulations Jhon</h5>
+                                                <p class="mb-0 notify-desc">Many congtars jhon. You have won the gifts.</p>
+                                                <p class="mb-0 notify-time">Today</p>
+                                            </div>
+                                            <div class="notify-close position-absolute end-0 me-3">
+                                                <i class="material-icons-outlined fs-6">close</i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a class="dropdown-item border-bottom py-2" href="javascript:;">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="user-wrapper bg-primary text-primary bg-opacity-10">
+                                                <span>RS</span>
+                                            </div>
+                                            <div class="">
+                                                <h5 class="notify-title">New Account Created</h5>
+                                                <p class="mb-0 notify-desc">From USA an user has registered.</p>
+                                                <p class="mb-0 notify-time">Yesterday</p>
+                                            </div>
+                                            <div class="notify-close position-absolute end-0 me-3">
+                                                <i class="material-icons-outlined fs-6">close</i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a class="dropdown-item border-bottom py-2" href="javascript:;">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="">
+                                                <img src="<%= ResolveUrl("~/assetsdata/images/apps/13.png") %>" class="rounded-circle" width="45" height="45" alt="">
+                                            </div>
+                                            <div class="">
+                                                <h5 class="notify-title">Payment Recived</h5>
+                                                <p class="mb-0 notify-desc">New payment recived successfully</p>
+                                                <p class="mb-0 notify-time">1d ago</p>
+                                            </div>
+                                            <div class="notify-close position-absolute end-0 me-3">
+                                                <i class="material-icons-outlined fs-6">close</i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a class="dropdown-item border-bottom py-2" href="javascript:;">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="">
+                                                <img src="<%= ResolveUrl("~/assetsdata/images/apps/14.png") %>" class="rounded-circle" width="45" height="45" alt="">
+                                            </div>
+                                            <div class="">
+                                                <h5 class="notify-title">New Order Recived</h5>
+                                                <p class="mb-0 notify-desc">Recived new order from michle</p>
+                                                <p class="mb-0 notify-time">2:15 AM</p>
+                                            </div>
+                                            <div class="notify-close position-absolute end-0 me-3">
+                                                <i class="material-icons-outlined fs-6">close</i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a class="dropdown-item border-bottom py-2" href="javascript:;">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="">
+                                                <img src="<%= ResolveUrl("~/assetsdata/images/avatars/06.png") %>" class="rounded-circle" width="45" height="45" alt="">
+                                            </div>
+                                            <div class="">
+                                                <h5 class="notify-title">Congratulations Jhon</h5>
+                                                <p class="mb-0 notify-desc">Many congtars jhon. You have won the gifts.</p>
+                                                <p class="mb-0 notify-time">Today</p>
+                                            </div>
+                                            <div class="notify-close position-absolute end-0 me-3">
+                                                <i class="material-icons-outlined fs-6">close</i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a class="dropdown-item py-2" href="javascript:;">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="user-wrapper bg-danger text-danger bg-opacity-10">
+                                                <span>PK</span>
+                                            </div>
+                                            <div class="">
+                                                <h5 class="notify-title">New Account Created</h5>
+                                                <p class="mb-0 notify-desc">From USA an user has registered.</p>
+                                                <p class="mb-0 notify-time">Yesterday</p>
+                                            </div>
+                                            <div class="notify-close position-absolute end-0 me-3">
+                                                <i class="material-icons-outlined fs-6">close</i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
 
-											</div>
-											<div class="">
-												<h5 class="notify-title">Payment Recived</h5>
-												<p class="mb-0 notify-desc">New payment recived successfully</p>
-												<p class="mb-0 notify-time">1d ago</p>
-											</div>
-											<div class="notify-close position-absolute end-0 me-3">
-												<i class="material-icons-outlined fs-6">close</i>
-											</div>
-										</div>
-									</a>
-								</div>
-								<div>
-									<a class="dropdown-item border-bottom py-2" href="javascript:;">
-										<div class="d-flex align-items-center gap-3">
-											<div class="">
-												<img src="<%= ResolveUrl("~/assetsdata/images/apps/14.png") %>" class="rounded-circle" width="45" height="45" alt="">
+                    <li class="nav-item d-md-flex " id="divtoggletheme" runat="server">
+                        <a class="nav-link position-relative" data-bs-toggle="offcanvas" href="#offcanvasCart"><i
+                            class="material-icons-outlined">tune</i>
 
-											</div>
-											<div class="">
-												<h5 class="notify-title">New Order Recived</h5>
-												<p class="mb-0 notify-desc">Recived new order from michle</p>
-												<p class="mb-0 notify-time">2:15 AM</p>
-											</div>
-											<div class="notify-close position-absolute end-0 me-3">
-												<i class="material-icons-outlined fs-6">close</i>
-											</div>
-										</div>
-									</a>
-								</div>
-								<div>
-									<a class="dropdown-item border-bottom py-2" href="javascript:;">
-										<div class="d-flex align-items-center gap-3">
-											<div class="">
-												<img src="<%= ResolveUrl("~/assetsdata/images/avatars/06.png") %>" class="rounded-circle" width="45" height="45" alt="">
+                        </a>
+                    </li>
 
-											</div>
-											<div class="">
-												<h5 class="notify-title">Congratulations Jhon</h5>
-												<p class="mb-0 notify-desc">Many congtars jhon. You have won the gifts.</p>
-												<p class="mb-0 notify-time">Today</p>
-											</div>
-											<div class="notify-close position-absolute end-0 me-3">
-												<i class="material-icons-outlined fs-6">close</i>
-											</div>
-										</div>
-									</a>
-								</div>
-								<div>
-									<a class="dropdown-item py-2" href="javascript:;">
-										<div class="d-flex align-items-center gap-3">
-											<div class="user-wrapper bg-danger text-danger bg-opacity-10">
-												<span>PK</span>
-											</div>
-											<div class="">
-												<h5 class="notify-title">New Account Created</h5>
-												<p class="mb-0 notify-desc">From USA an user has registered.</p>
-												<p class="mb-0 notify-time">Yesterday</p>
-											</div>
-											<div class="notify-close position-absolute end-0 me-3">
-												<i class="material-icons-outlined fs-6">close</i>
-											</div>
-										</div>
-									</a>
-								</div>
-							</div>
-						</div>
-					</li>
+                    <li class="nav-item dropdown">
+                        <a href="javascrpt:;" class="dropdown-toggle dropdown-toggle-nocaret" data-bs-toggle="dropdown">
+                            <asp:Image ID="img" runat="server" class="rounded-circle p-1 border" Width="45" Height="45" alt="" />
+                        </a>
+                        <div class="dropdown-menu dropdown-user dropdown-menu-end shadow">
+                            <a class="dropdown-item  gap-2 py-2" href="javascript:;">
+                                <div class="text-center">
 
-					<li class="nav-item d-md-flex " id="divtoggletheme" runat="server">
-						<a class="nav-link position-relative" data-bs-toggle="offcanvas" href="#offcanvasCart"><i
-							class="material-icons-outlined">tune</i>
+                                    <asp:Label ID="lblUserID" runat="server" class="user-name mb-0 fw-bold"></asp:Label>
 
-						</a>
-					</li>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a class="dropdown-item d-flex align-items-center gap-2 py-2" href='<%= ResolveUrl("~/Admin/frmMyProfile.aspx") %>'>
+                                <i class="material-icons-outlined">person_outline</i>Profile
+                            </a>
 
-					<li class="nav-item dropdown">
-						<a href="javascrpt:;" class="dropdown-toggle dropdown-toggle-nocaret" data-bs-toggle="dropdown">
-							<asp:Image ID="img" runat="server" class="rounded-circle p-1 border" Width="45" Height="45" alt="" />
-						</a>
-						<div class="dropdown-menu dropdown-user dropdown-menu-end shadow">
-							<a class="dropdown-item  gap-2 py-2" href="javascript:;">
-								<div class="text-center">
-						
-									<asp:Label ID="lblUserID" runat="server" class="user-name mb-0 fw-bold"></asp:Label>
+                            <a class="dropdown-item d-flex align-items-center gap-2 py-2" href='<%= ResolveUrl("~/frmChgPass.aspx")%>'><i
+                                class="material-icons-outlined">local_bar</i>Change Password</a>
+                            <a class="dropdown-item d-flex align-items-center gap-2 py-2" href='<%= ResolveUrl("~/frmDashboard.aspx")%>'><i
+                                class="material-icons-outlined">dashboard</i>Dashboard</a>
+                            <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;" visible="false" runat="server"><i
+                                class="material-icons-outlined">account_balance</i>Earning</a>
+                            <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;" visible="false" runat="server"><i
+                                class="material-icons-outlined">cloud_download</i>Downloads</a>
+                            <hr class="dropdown-divider">
+                            <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="<%= ResolveUrl("~/Logout.aspx") %>"><i
+                                class="material-icons-outlined">power_settings_new</i>Logout</a>
+                        </div>
+                    </li>
+                </ul>
 
-								</div>
-							</a>
-							<hr class="dropdown-divider">
-							<a class="dropdown-item d-flex align-items-center gap-2 py-2" href='<%= ResolveUrl("~/Admin/frmMyProfile.aspx") %>'>
-								<i class="material-icons-outlined">person_outline</i>Profile
-							</a>
-
-							<a class="dropdown-item d-flex align-items-center gap-2 py-2" href='<%= ResolveUrl("~/frmChgPass.aspx")%>'><i
-								class="material-icons-outlined">local_bar</i>Change Password</a>
-							<a class="dropdown-item d-flex align-items-center gap-2 py-2" href='<%= ResolveUrl("~/frmDashboard.aspx")%>'><i
-								class="material-icons-outlined">dashboard</i>Dashboard</a>
-							<a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;" visible="false" runat="server"><i
-								class="material-icons-outlined">account_balance</i>Earning</a>
-							<a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;" visible="false" runat="server"><i
-								class="material-icons-outlined">cloud_download</i>Downloads</a>
-							<hr class="dropdown-divider">
-							<a class="dropdown-item d-flex align-items-center gap-2 py-2" href="<%= ResolveUrl("~/Logout.aspx") %>"><i
-								class="material-icons-outlined">power_settings_new</i>Logout</a>
-						</div>
-					</li>
-				</ul>
-
-			</nav>
-		</header>
+            </nav>
+        </header>
         <!--end top header-->
 
         <!--start sidebar-->
         <aside class="sidebar-wrapper" data-simplebar="true">
             <div class="sidebar-header">
                 <div class="logo-icon">
-                    <asp:Image ID="imgOrg" runat="server" CssClass="logo-img" style="width:236px" />
+                    <asp:Image ID="imgOrg" runat="server" CssClass="logo-img" />
                 </div>
                 <div class="logo-name flex-grow-1" hidden>
                     <p class="mb-0">
@@ -1144,30 +1151,30 @@
                     <span class="material-icons-outlined">close</span>
                 </div>
             </div>
-			<div class="sidebar-nav">
-				<ul class="metismenu" id="sidenav">
-					<asp:Repeater ID="rptCategories" runat="server" OnItemDataBound="rptCategories_ItemDataBound">
-						<ItemTemplate>
-							<li runat="server" id="parentLi">
-								<a href='<%#Eval("MenuLocation") %>' class="has-arrow" id="parentmenu" runat="server">
-									<div class="parent-icon">
-										<i class='<%#Eval("MenuIcon") %>'>
-											<asp:Label runat="server" ID="lblName"></asp:Label>
-										</i>
-									</div>
-									<div class="menu-title">
-										<%#Eval("MenuName") %>
-									</div>
-								</a>
-								<asp:Literal ID="ltrlSubMenu" runat="server"></asp:Literal>
-							</li>
-						</ItemTemplate>
-					</asp:Repeater>
-				</ul>
+            <div class="sidebar-nav">
+                <ul class="metismenu" id="sidenav">
+                    <asp:Repeater ID="rptCategories" runat="server" OnItemDataBound="rptCategories_ItemDataBound">
+                        <ItemTemplate>
+                            <li runat="server" id="parentLi">
+                                <a href='<%#Eval("MenuLocation") %>' class="has-arrow" id="parentmenu" runat="server">
+                                    <div class="parent-icon">
+                                        <i class='<%#Eval("MenuIcon") %>'>
+                                            <asp:Label runat="server" ID="lblName"></asp:Label>
+                                        </i>
+                                    </div>
+                                    <div class="menu-title">
+                                        <%#Eval("MenuName") %>
+                                    </div>
+                                </a>
+                                <asp:Literal ID="ltrlSubMenu" runat="server"></asp:Literal>
+                            </li>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </ul>
 
 
 
-			</div>
+            </div>
         </aside>
         <!--end sidebar-->
 
@@ -1206,49 +1213,49 @@
                     <i class="material-icons-outlined">close</i>
                 </a>
             </div>
-			<div class="offcanvas-body">
-				<div>
-					<p>Theme variation</p>
+            <div class="offcanvas-body">
+                <div>
+                    <p>Theme variation</p>
 
-					<div class="row g-3">
-						<div class="col-12 col-xl-6 col-6">
-							<asp:RadioButton ID="rbdBlueTheme" class="btn-check" runat="server" GroupName="theme" AutoPostBack="true" OnCheckedChanged="Theme_CheckedChanged" />
-							<label class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4" for="rbdBlueTheme">
-								<span class="material-icons-outlined">contactless</span>
-								<span>Blue</span>
-							</label>
-						</div>
-						<div class="col-12 col-xl-6 col-6">
-							<asp:RadioButton ID="rbdLightTheme" class="btn-check" runat="server" GroupName="theme" AutoPostBack="true" OnCheckedChanged="Theme_CheckedChanged" />
-							<label class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4" for="rbdLightTheme">
-								<span class="material-icons-outlined">light_mode</span>
-								<span>Light</span>
-							</label>
-						</div>
-						<div class="col-12 col-xl-6 col-6">
-							<asp:RadioButton ID="rbdDarkTheme" class="btn-check" runat="server" GroupName="theme" AutoPostBack="true" OnCheckedChanged="Theme_CheckedChanged" />
-							<label class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4" for="rbdDarkTheme">
-								<span class="material-icons-outlined">dark_mode</span>
-								<span>Dark</span>
-							</label>
-						</div>
-						<div class="col-12 col-xl-6 col-6">
-							<asp:RadioButton ID="rbdSemiDarkTheme" class="btn-check" runat="server" GroupName="theme" AutoPostBack="true" OnCheckedChanged="Theme_CheckedChanged" />
-							<label class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4" for="rbdSemiDarkTheme">
-								<span class="material-icons-outlined">contrast</span>
-								<span>Semi Dark</span>
-							</label>
-						</div>
-						<div class="col-12 col-xl-6 d-none">
-							<asp:RadioButton ID="rbdBoderedTheme" class="btn-check" runat="server" GroupName="theme" AutoPostBack="true" OnCheckedChanged="Theme_CheckedChanged" />
-							<label class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4" for="rbdBoderedTheme">
-								<span class="material-icons-outlined">border_style</span>
-								<span>Bordered</span>
-							</label>
-						</div>
-					</div>
-				</div>
-			</div>
+                    <div class="row g-3">
+                        <div class="col-12 col-xl-6 col-6">
+                            <asp:RadioButton ID="rbdBlueTheme" class="btn-check" runat="server" GroupName="theme" AutoPostBack="true" OnCheckedChanged="Theme_CheckedChanged" />
+                            <label class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4" for="rbdBlueTheme">
+                                <span class="material-icons-outlined">contactless</span>
+                                <span>Blue</span>
+                            </label>
+                        </div>
+                        <div class="col-12 col-xl-6 col-6">
+                            <asp:RadioButton ID="rbdLightTheme" class="btn-check" runat="server" GroupName="theme" AutoPostBack="true" OnCheckedChanged="Theme_CheckedChanged" />
+                            <label class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4" for="rbdLightTheme">
+                                <span class="material-icons-outlined">light_mode</span>
+                                <span>Light</span>
+                            </label>
+                        </div>
+                        <div class="col-12 col-xl-6 col-6">
+                            <asp:RadioButton ID="rbdDarkTheme" class="btn-check" runat="server" GroupName="theme" AutoPostBack="true" OnCheckedChanged="Theme_CheckedChanged" />
+                            <label class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4" for="rbdDarkTheme">
+                                <span class="material-icons-outlined">dark_mode</span>
+                                <span>Dark</span>
+                            </label>
+                        </div>
+                        <div class="col-12 col-xl-6 col-6">
+                            <asp:RadioButton ID="rbdSemiDarkTheme" class="btn-check" runat="server" GroupName="theme" AutoPostBack="true" OnCheckedChanged="Theme_CheckedChanged" />
+                            <label class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4" for="rbdSemiDarkTheme">
+                                <span class="material-icons-outlined">contrast</span>
+                                <span>Semi Dark</span>
+                            </label>
+                        </div>
+                        <div class="col-12 col-xl-6 d-none">
+                            <asp:RadioButton ID="rbdBoderedTheme" class="btn-check" runat="server" GroupName="theme" AutoPostBack="true" OnCheckedChanged="Theme_CheckedChanged" />
+                            <label class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4" for="rbdBoderedTheme">
+                                <span class="material-icons-outlined">border_style</span>
+                                <span>Bordered</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </form>
