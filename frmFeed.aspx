@@ -23,6 +23,54 @@
     <link href="https://pcv-demo.hitachi-systems-mc.com:5723/assetsdata/css/bootstrap-extended.css" rel="stylesheet">
 
     <style>
+        /*rating start*/
+
+        .rating {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            /* align-items: center; */
+        }
+
+            .rating input {
+                display: none;
+            }
+
+            .rating label {
+                font-size: 24px !important;
+                color: #b6b6b6;
+                cursor: pointer;
+                transition: color 0.4s, transform 0.2s;
+            }
+
+                .rating label:hover,
+                .rating input:checked ~ label {
+                    /* color: gold; */
+                    transform: scale(1.2);
+                }
+
+            .rating input[value="1"]:checked ~ label {
+                color: rgb(187, 3, 3);
+            }
+
+            .rating input[value="2"]:checked ~ label {
+                color: rgb(201, 132, 2);
+            }
+
+            .rating input[value="3"]:checked ~ label {
+                color: rgb(243, 243, 32);
+            }
+
+            .rating input[value="4"]:checked ~ label {
+                color: rgb(185, 209, 9);
+            }
+
+            .rating input[value="5"]:checked ~ label {
+                color: #009273;
+            }
+        /*rating end*/
+
+
         table > tbody > tr > td {
             border-left: 0px solid red !important;
         }
@@ -82,6 +130,7 @@
             }
         }
     </style>
+
 </head>
 <body style="background-image: url(Asset/img/bg005.jpg); height: auto; background-size: cover; background-repeat: round;">
     <form id="form1" runat="server">
@@ -89,7 +138,7 @@
             <div class="card shadow">
                 <div id="header-wrapper">
                     <div id="header" class="card-body">
-                        <div class="card border rounded " style="height: 70vh">
+                        <div class="card border rounded ">
                             <div class="card-body">
                                 <asp:Panel ID="Panel1" runat="server">
 
@@ -122,6 +171,29 @@
                                             <asp:TextBox ID="txtComments" runat="server" Rows="7" TextMode="MultiLine" CssClass="form-control form-control-sm" placeholder="Write your Feedback..."></asp:TextBox>
                                         </div>
 
+                                        <div class="col-md-12">
+                                            <asp:Label class="form-label " ID="Label1" runat="server" Text="Yha daal le khud se content "></asp:Label>
+
+
+                                        </div>
+                                        <div class="col-md-6 mt-1">
+                                            <div class="rating">
+
+                                                <input type="radio" id="q1star5" name="q1rating" value="5" />
+                                                <label for="q1star5">&#9733;</label>
+                                                <input type="radio" id="q1star4" name="q1rating" value="4" />
+                                                <label for="q1star4">&#9733;</label>
+                                                <input type="radio" id="q1star3" name="q1rating" value="3" />
+                                                <label for="q1star3">&#9733;</label>
+                                                <input type="radio" id="q1star2" name="q1rating" value="2" />
+                                                <label for="q1star2">&#9733;</label>
+                                                <input type="radio" id="q1star1" name="q1rating" value="1" />
+                                                <label for="q1star1">&#9733;</label>
+                                            </div>
+                                        </div>
+
+
+
                                         <div class="col-md-12 text-end">
                                             <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" Text="Submit" ValidationGroup="Bla" class="btn text-white btn-sm btn-grd-info" />
 
@@ -135,6 +207,7 @@
                             </div>
                         </div>
                     </div>
+
 
 
 
@@ -185,6 +258,8 @@
         </div>
 
         <script>
+
+
             function showThankYouCard() {
                 // Hide the header-wrapper
                 document.getElementById("header-wrapper").style.display = "none";
@@ -205,10 +280,10 @@
                 }
                 current.checked = true;
             }
-    </script>
+        </script>
         <script type="text/javascript">
             window.history.forward(1);
-    </script>
+        </script>
     </form>
 
 </body>
