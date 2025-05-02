@@ -8,19 +8,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
-    <script src="assetsdata/plugins/summernote/jquery.js"></script>
-    <link href="assetsdata/plugins/summernote/summernote-bs4.css" rel="stylesheet" />
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 
-    <link href="https://pcv-demo.hitachi-systems-mc.com:5723/assetsdata/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
-    <link href="https://pcv-demo.hitachi-systems-mc.com:5723/sassdata/main.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css">
-    <link href="https://pcv-demo.hitachi-systems-mc.com:5723/assetsdata/plugins/select2/css/select2-bootstrap-5-theme.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link href="https://pcv-demo.hitachi-systems-mc.com:5723/assetsdata/css/bootstrap-extended.css" rel="stylesheet">
+<%--    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>--%>
+
+    <link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/css/bootstrap.min.css") %>">
+     <!-- Google Fonts -->
+    <link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/css/googleapis.css") %>">
+    <link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/css/googleapis_material.css") %>">
+    <link rel="stylesheet" href="<%= ResolveUrl("~/assetsdata/css/bootstrap-extended.css") %>">
+    <link rel="stylesheet" href="<%= ResolveUrl("~/sassdata/main.css") %>">
 
     <style>
         /*rating start*/
